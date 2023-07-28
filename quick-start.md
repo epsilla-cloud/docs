@@ -13,13 +13,13 @@ docker pull epsilla/vectordb
 Start the docker as the backend service
 
 ```sh
-docker run -d -p 8888:8888 epsilla/vectordb
+docker run --pull=always -d -p 8888:8888 epsilla/vectordb
 ```
 
 Your EpsillaDB service is up and running. You can use REST API to interact with EpsillaDB, or install a python client.
 
 ```sh
-pip3 install pyepsilla
+pip3 install --upgrade pyepsilla
 ```
 
 ## 2. Connect to EpsillaDB
