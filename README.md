@@ -1,2 +1,3 @@
-# docs
+# 🏠 Home
+
 Epsilla Documentations
