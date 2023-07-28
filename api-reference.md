@@ -1,14 +1,14 @@
 # ⚙ API Reference
 
-## Initialize client - Python
+## Initialize Python Client
 
-### client for localhost
+### client connect to localhost
 
 ```python
 from pyepsilla import vectordb
 client = vectordb.Client()
 ```
-### client for remote server
+### client connect to remote server
 ```python
 from pyepsilla import vectordb
 client = vectordb.Client(host='3.100.100.100', port='8888', db_name='default')
