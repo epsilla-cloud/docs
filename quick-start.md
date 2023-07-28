@@ -1,2 +1,312 @@
 # 🚀 Quick Start
 
+## 1. Installation
+
+To run a pre-built EpsillaDB image on your machine, make sure Docker is installed on your system.
+
+Download image from [Dockerhub](https://hub.docker.com/r/epsilla/vectordb).
+
+```sh
+docker pull epsilla/vectordb
+```
+
+Start the docker as the backend service
+
+```sh
+docker run -d -p 8888:8888 epsilla/vectordb
+```
+
+Your EpsillaDB service is up and running. You can use REST API to interact with EpsillaDB, or install a python client.
+
+```sh
+pip3 install pyepsilla
+```
+
+## 2. Connect to EpsillaDB
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+from pyepsilla import vectordb
+
+## connect to vectordb
+client = vectordb.Client(
+  host='localhost',
+  port='8888'
+)
+```
+{% endtab %}
+
+{% tab title="Shell" %}
+```sh
+curl -X GET "http://localhost:8888"
+```
+
+Response
+
+```sh
+Welcome to Epsilla VectorDB.
+```
+{% endtab %}
+{% endtabs %}
+
+## 3. Create or load a database
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+client.load_db(db_name="MyDB", db_path="/tmp/epsilla")
+client.use_db(db_name="MyDB")
+```
+{% endtab %}
+
+{% tab title="Shell" %}
+```sh
+curl -X POST 'http://localhost:8888/api/load' \
+    -d '{
+        "path": "/tmp/epsilla",
+        "name": "MyDB"
+    }'
+```
+
+Response:
+
+```json
+{
+    "statusCode": 200,
+    "message": "Load/Create MyDB successfully."
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## 4. Create a table
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+client.create_table(
+  table_name="MyTable",
+  table_fields=[
+    {"name": "ID", "dataType": "INT", "primaryKey": True},
+    {"name": "Doc", "dataType": "STRING"},
+    {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
+  ]
+)
+```
+{% endtab %}
+
+{% tab title="Shell" %}
+```sh
+curl -X POST 'http://localhost:8888/api/MyDB/schema/tables' \
+    -d '{
+        "name": "MyTable",
+        "fields": [
+          {
+            "name": "ID",
+            "dataType": "INT"
+          },
+          {
+            "name": "Doc",
+            "dataType": "STRING"
+          },
+          {
+            "name": "Embedding",
+            "dataType": "VECTOR_FLOAT",
+            "dimensions": 4
+          }
+        ]
+     }'
+```
+
+Response:
+
+```json
+{
+    "statusCode":200,
+    "message":"Create MyTable successfully."
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## 5. Insert new records
+
+You can insert multiple records in a batch.
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+client.insert(
+  table_name="MyTable",
+  records=[
+    {"ID": 1, "Doc": "Berlin", "Embedding": [0.05, 0.61, 0.76, 0.74]},
+    {"ID": 2, "Doc": "London", "Embedding": [0.19, 0.81, 0.75, 0.11]},
+    {"ID": 3, "Doc": "Moscow", "Embedding": [0.36, 0.55, 0.47, 0.94]},
+    {"ID": 4, "Doc": "San Francisco", "Embedding": [0.18, 0.01, 0.85, 0.80]},
+    {"ID": 5, "Doc": "Shanghai", "Embedding": [0.24, 0.18, 0.22, 0.44]}
+  ]
+)
+```
+{% endtab %}
+
+{% tab title="Shell" %}
+```sh
+curl -X POST 'http://localhost:8888/api/MyDB/data/insert' \
+    -d '{
+        "table": "MyTable",
+        "data": [
+            {
+              "ID": 1,
+              "Doc": "Berlin",
+              "Embedding": [0.05, 0.61, 0.76, 0.74]
+            },
+            {
+              "ID": 2,
+              "Doc": "London",
+              "Embedding": [0.19, 0.81, 0.75, 0.11]
+            },
+            {
+              "ID": 3,
+              "Doc": "Moscow",
+              "Embedding": [0.36, 0.55, 0.47, 0.94]
+            },
+            {
+              "ID": 4,
+              "Doc": "San Francisco",
+              "Embedding": [0.18, 0.01, 0.85, 0.80]
+            },
+            {
+              "ID": 5,
+              "Doc": "Shanghai",
+              "Embedding": [0.24, 0.18, 0.22, 0.44]
+            }
+         ]
+     }'          
+```
+
+Response:
+
+```json
+{
+    "statusCode": 200,
+    "message": "Insert data to MyTable successfully."
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## 6. Search
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+status_code, response = client.query(
+  table_name="MyTable",
+  query_field="Embedding",
+  query_vector=[0.35, 0.55, 0.47, 0.94],
+  limit=2
+)
+print(response)
+```
+
+Output
+
+```
+{'statusCode': 200, 'message': 'Query search successfully.', 'result': [{'ID': 3, 'Doc': 'Moscow', 'Embedding': [0.36, 0.55, 0.47, 0.94]}, {'ID': 1, 'Doc': 'Berlin', 'Embedding': [0.05, 0.61, 0.76, 0.74]}]}
+```
+{% endtab %}
+
+{% tab title="Shell" %}
+```sh
+curl -X POST 'http://localhost:8888/api/MyDB/data/query' \
+    -d '{
+        "table": "MyTable",
+        "queryField": "Embedding",
+        "queryVector": [0.35, 0.55, 0.47, 0.94],
+        "limit": 2
+     }'        
+```
+
+Response:
+
+```json
+{
+    "statusCode": 200,
+    "message": "Query search successfully.",
+    "result": [
+        {
+            "ID": 3,
+            "Doc": "Moscow",
+            "Embedding": [0.36, 0.55, 0.47, 0.94]
+        },
+        {
+            "ID": 1,
+            "Doc": "Berlin",
+            "Embedding": [0.05, 0.61, 0.76, 0.74]
+        }
+    ]
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## 7. Drop a table
+
+Drop a table will remove the&#x20;
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+client.drop_table("MyTable")
+```
+{% endtab %}
+
+{% tab title="Shell" %}
+```sh
+curl -X DELETE 'http://localhost:8888/api/MyDB/schema/tables/MyTable'      
+```
+
+Response:
+
+```json
+{
+    "statusCode": 200,
+    "message": "Drop MyTable from MyDB successfully."
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## 5. Unload a database
+
+Offload a database that is not in use to release memory (the database files are still on disk).
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+client.unload_db("MyDB")
+```
+{% endtab %}
+
+{% tab title="Shell" %}
+```sh
+curl -X POST 'http://localhost:8888/api/MyDB/unload'      
+```
+
+Response:
+
+```json
+{
+    "statusCode": 200,
+    "message": "Unload MyDB successfully."
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## Next steps[​](https://docs.trychroma.com/getting-started#-next-steps) <a href="#next-steps" id="next-steps"></a>
+
+EpsillaDB is designed to be simple enough to get started. Refer to [API Reference](api-reference.md) for more flexibility and options on each API.
+
+We are tirelessly working to enhance EpsillaDB with more features. Please consult our [Roadmap](roadmap.md) to glimpse into the future developments.
