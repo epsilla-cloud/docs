@@ -88,7 +88,7 @@ Response:
 client.create_table(
   table_name="MyTable",
   table_fields=[
-    {"name": "ID", "dataType": "INT", "primaryKey": True},
+    {"name": "ID", "dataType": "INT"},
     {"name": "Doc", "dataType": "STRING"},
     {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
   ]
@@ -253,7 +253,7 @@ Response:
 
 ## 7. Drop a table
 
-Drop a table will remove the&#x20;
+Drop a table will remove the
 
 {% tabs %}
 {% tab title="Python" %}
