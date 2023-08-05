@@ -205,7 +205,8 @@ status_code, response = client.query(
   table_name="MyTable",
   query_field="Embedding",
   query_vector=[0.35, 0.55, 0.47, 0.94],
-  limit=2
+  limit=2,
+  with_distance=True
 )
 print(response)
 ```
@@ -224,7 +225,8 @@ curl -X POST 'http://localhost:8888/api/MyDB/data/query' \
         "table": "MyTable",
         "queryField": "Embedding",
         "queryVector": [0.35, 0.55, 0.47, 0.94],
-        "limit": 2
+        "limit": 2,
+        "withDistance": true
      }'        
 ```
 
