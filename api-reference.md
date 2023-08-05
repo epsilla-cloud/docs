@@ -86,7 +86,7 @@ response_fields = ["Doc"]
 query_vector = [0.24, 0.18, 0.22, 0.44]
 limit = 2
 
-status_code, response = c.query(table_name="MyTable", query_field=query_field, query_vector=query_vector, response_fields=response_fields, limit=limit)
+status_code, response = c.query(table_name="MyTable", query_field=query_field, query_vector=query_vector, response_fields=response_fields, limit=limit, with_distance=True)
 print("status_code", status_code, "response", response)
 ```
 
