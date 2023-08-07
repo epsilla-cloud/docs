@@ -16,11 +16,21 @@ Start the docker as the backend service
 docker run --pull=always -d -p 8888:8888 epsilla/vectordb
 ```
 
-Your EpsillaDB service is up and running. You can use REST API to interact with EpsillaDB, or install a python client.
+Your EpsillaDB service is up and running. You can use REST API to interact with EpsillaDB, or install a Python/JavaScripy client.
 
-```sh
+{% tabs %}
+{% tab title="Python" %}
+```bash
 pip3 install --upgrade pyepsilla
 ```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```sh
+npm install epsillajs
+```
+{% endtab %}
+{% endtabs %}
 
 ## 2. Connect to EpsillaDB
 
@@ -34,6 +44,18 @@ client = vectordb.Client(
   host='localhost',
   port='8888'
 )
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+const epsillajs = require('epsillajs');
+
+// connect to vectordb
+const db = new epsillajs.EpsillaDB({
+  host: 'localhost',
+  port: 9999
+});
 ```
 {% endtab %}
 
@@ -57,6 +79,13 @@ Welcome to Epsilla VectorDB.
 ```python
 client.load_db(db_name="MyDB", db_path="/tmp/epsilla")
 client.use_db(db_name="MyDB")
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await db.loadDB('/tmp/epsilla', 'MyDB');
+db.useDB("MyDB");
 ```
 {% endtab %}
 
@@ -93,6 +122,18 @@ client.create_table(
     {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
   ]
 )
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await db.createTable('MyTable',
+  [
+    {"name": "ID", "dataType": "INT"},
+    {"name": "Doc", "dataType": "STRING"},
+    {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
+  ]
+);
 ```
 {% endtab %}
 
@@ -147,6 +188,20 @@ client.insert(
     {"ID": 5, "Doc": "Shanghai", "Embedding": [0.24, 0.18, 0.22, 0.44]}
   ]
 )
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await db.insert('MyTable',
+  [
+    {"ID": 1, "Doc": "Berlin", "Embedding": [0.05, 0.61, 0.76, 0.74]},
+    {"ID": 2, "Doc": "London", "Embedding": [0.19, 0.81, 0.75, 0.11]},
+    {"ID": 3, "Doc": "Moscow", "Embedding": [0.36, 0.55, 0.47, 0.94]},
+    {"ID": 4, "Doc": "San Francisco", "Embedding": [0.18, 0.01, 0.85, 0.80]},
+    {"ID": 5, "Doc": "Shanghai", "Embedding": [0.24, 0.18, 0.22, 0.44]}
+  ]
+);
 ```
 {% endtab %}
 
@@ -217,6 +272,25 @@ Output
 ```
 {% endtab %}
 
+{% tab title="JavaScript" %}
+```javascript
+// search
+const query = await db.query(
+  'MyTable',
+  "Embedding", // query field
+  [0.35, 0.55, 0.47, 0.94], // query vector
+  2 // top K
+);
+console.log(JSON.stringify(query));
+```
+
+Output:
+
+```
+{"statusCode":200,"message":"Query search successfully.","result":[{"Doc":"Moscow","Embedding":[0.3600000143051147,0.550000011920929,0.4699999988079071,0.9399999976158142],"ID":3},{"Doc":"Berlin","Embedding":[0.05000000074505806,0.6100000143051147,0.7599999904632568,0.7400000095367432],"ID":1}]}
+```
+{% endtab %}
+
 {% tab title="Shell" %}
 ```sh
 curl -X POST 'http://localhost:8888/api/MyDB/data/query' \
@@ -262,6 +336,12 @@ client.drop_table("MyTable")
 ```
 {% endtab %}
 
+{% tab title="JavaScript" %}
+```javascript
+await db.dropTable('MyTable');
+```
+{% endtab %}
+
 {% tab title="Shell" %}
 ```sh
 curl -X DELETE 'http://localhost:8888/api/MyDB/schema/tables/MyTable'      
@@ -286,6 +366,12 @@ Offload a database that is not in use to release memory (the database files are 
 {% tab title="Python" %}
 ```python
 client.unload_db("MyDB")
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await db.unloadDB('MyDB');
 ```
 {% endtab %}
 
