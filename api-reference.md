@@ -245,6 +245,13 @@ status_code, response = client.query(
                                          # as True, each matched record will have a
                                          # @distance field returned.
 )
+print(response)
+```
+
+Response example:
+
+```
+{'statusCode': 200, 'message': 'Query search successfully.', 'result': [{'@distance': 0.0001000004049274139, 'Doc': 'Moscow'}, {'@distance': 0.2176999747753143, 'Doc': 'Berlin'}]}
 ```
 {% endtab %}
 
@@ -262,7 +269,27 @@ const query = await db.query(
                               // the response. Default is False. When given
                               // as true, each matched record will have a
                               // @distance field returned.
-)
+);
+console.log(JSON.stringify(query, undefined, 2));
+```
+
+Response example:
+
+```
+{
+  "statusCode": 200,
+  "message": "Query search successfully.",
+  "result": [
+    {
+      "@distance": 0.0001000004049274139,
+      "Doc": "Moscow"
+    },
+    {
+      "@distance": 0.2176999747753143,
+      "Doc": "Berlin"
+    }
+  ]
+}
 ```
 {% endtab %}
 {% endtabs %}
