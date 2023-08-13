@@ -30,6 +30,13 @@ pip3 install --upgrade pyepsilla
 npm install epsillajs
 ```
 {% endtab %}
+
+{% tab title="Ruby" %}
+```sh
+gem install epsilla-ruby
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## 2. Connect to EpsillaDB
@@ -56,6 +63,15 @@ const db = new epsillajs.EpsillaDB({
   host: 'localhost',
   port: 9999
 });
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+require "epsilla"
+
+## connect to vectordb
+client = Epsilla::Client.new(protocol="http", host="127.0.0.1", port="8888")
 ```
 {% endtab %}
 
@@ -86,6 +102,13 @@ client.use_db(db_name="MyDB")
 ```javascript
 await db.loadDB('/tmp/epsilla', 'MyDB');
 db.useDB("MyDB");
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+status_code, response = client.database.load_db(db_name="MyDB", db_path="/tmp/epsilla")
+puts status_code, response
 ```
 {% endtab %}
 
@@ -134,6 +157,20 @@ await db.createTable('MyTable',
     {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
   ]
 );
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+status_code, response = client.database.create_table(
+  table_name="MyTable",
+  table_fields=[
+  {"name" => "ID", "dataType" => "INT"},
+  {"name" => "Doc", "dataType" => "STRING"},
+  {"name" => "Embedding", "dataType" => "VECTOR_FLOAT", "dimensions" => 4}
+])
+puts status_code, response
+
 ```
 {% endtab %}
 
@@ -202,6 +239,29 @@ await db.insert('MyTable',
     {"ID": 5, "Doc": "Shanghai", "Embedding": [0.24, 0.18, 0.22, 0.44]}
   ]
 );
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+table_records = [
+  {"ID" => 1, "Doc" => "Berlin", "Embedding" => [0.05, 0.61, 0.76, 0.74]},
+  {"ID" => 2, "Doc" => "London", "Embedding" => [0.19, 0.81, 0.75, 0.11]},
+  {"ID" => 3, "Doc" => "Moscow", "Embedding" => [0.36, 0.55, 0.47, 0.94]},
+  {"ID" => 4, "Doc" => "San Francisco", "Embedding" => [0.18, 0.01, 0.85, 0.80]},
+  {"ID" => 5, "Doc" => "Shanghai", "Embedding" => [0.24, 0.18, 0.22, 0.44]}  
+]
+
+status_code, response = client.database.insert(
+  table_name="MyTable",
+  table_records=[
+    {"ID" => 1, "Doc" => "Berlin", "Embedding" => [0.05, 0.61, 0.76, 0.74]},
+    {"ID" => 2, "Doc" => "London", "Embedding" => [0.19, 0.81, 0.75, 0.11]},
+    {"ID" => 3, "Doc" => "Moscow", "Embedding" => [0.36, 0.55, 0.47, 0.94]},
+    {"ID" => 4, "Doc" => "San Francisco", "Embedding" => [0.18, 0.01, 0.85, 0.80]},
+    {"ID" => 5, "Doc" => "Shanghai", "Embedding" => [0.24, 0.18, 0.22, 0.44]}  
+])
+puts status_code, response
 ```
 {% endtab %}
 
@@ -292,6 +352,25 @@ Output:
 ```
 {% endtab %}
 
+{% tab title="Ruby" %}
+```ruby
+status_code, response = client.database.query(
+  table_name="MyTable",
+  query_field="Embedding",
+  query_vector=[0.35, 0.55, 0.47, 0.94],
+  response_fields=["Doc"],
+  limit=2,
+  with_distance=true)
+puts status_code, response
+```
+
+Output
+
+```
+{'statusCode': 200, 'message': 'Query search successfully.', 'result': [{'ID': 3, 'Doc': 'Moscow', 'Embedding': [0.36, 0.55, 0.47, 0.94]}, {'ID': 1, 'Doc': 'Berlin', 'Embedding': [0.05, 0.61, 0.76, 0.74]}]}
+```
+{% endtab %}
+
 {% tab title="Shell" %}
 ```sh
 curl -X POST 'http://localhost:8888/api/MyDB/data/query' \
@@ -344,6 +423,12 @@ await db.dropTable('MyTable');
 ```
 {% endtab %}
 
+{% tab title="Ruby" %}
+```ruby
+client.database.drop_table("MyTable")
+```
+{% endtab %}
+
 {% tab title="Shell" %}
 ```sh
 curl -X DELETE 'http://localhost:8888/api/MyDB/schema/tables/MyTable'      
@@ -374,6 +459,12 @@ client.unload_db("MyDB")
 {% tab title="JavaScript" %}
 ```javascript
 await db.unloadDB('MyDB');
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+client.database.unload_db("MyDB")
 ```
 {% endtab %}
 
