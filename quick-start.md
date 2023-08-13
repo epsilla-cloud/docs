@@ -244,14 +244,6 @@ await db.insert('MyTable',
 
 {% tab title="Ruby" %}
 ```ruby
-table_records = [
-  {"ID" => 1, "Doc" => "Berlin", "Embedding" => [0.05, 0.61, 0.76, 0.74]},
-  {"ID" => 2, "Doc" => "London", "Embedding" => [0.19, 0.81, 0.75, 0.11]},
-  {"ID" => 3, "Doc" => "Moscow", "Embedding" => [0.36, 0.55, 0.47, 0.94]},
-  {"ID" => 4, "Doc" => "San Francisco", "Embedding" => [0.18, 0.01, 0.85, 0.80]},
-  {"ID" => 5, "Doc" => "Shanghai", "Embedding" => [0.24, 0.18, 0.22, 0.44]}  
-]
-
 status_code, response = client.database.insert(
   table_name="MyTable",
   table_records=[
