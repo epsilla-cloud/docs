@@ -36,7 +36,6 @@ npm install epsillajs
 gem install epsilla-ruby
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## 2. Connect to EpsillaDB
@@ -140,7 +139,7 @@ Response:
 client.create_table(
   table_name="MyTable",
   table_fields=[
-    {"name": "ID", "dataType": "INT"},
+    {"name": "ID", "dataType": "INT", "primaryKey": True},
     {"name": "Doc", "dataType": "STRING"},
     {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
   ]
@@ -152,7 +151,7 @@ client.create_table(
 ```javascript
 await db.createTable('MyTable',
   [
-    {"name": "ID", "dataType": "INT"},
+    {"name": "ID", "dataType": "INT", "primaryKey": true},
     {"name": "Doc", "dataType": "STRING"},
     {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
   ]
@@ -165,7 +164,7 @@ await db.createTable('MyTable',
 status_code, response = client.database.create_table(
   table_name="MyTable",
   table_fields=[
-  {"name" => "ID", "dataType" => "INT"},
+  {"name" => "ID", "dataType" => "INT", "primaryKey" => true},
   {"name" => "Doc", "dataType" => "STRING"},
   {"name" => "Embedding", "dataType" => "VECTOR_FLOAT", "dimensions" => 4}
 ])
@@ -182,7 +181,8 @@ curl -X POST 'http://localhost:8888/api/MyDB/schema/tables' \
         "fields": [
           {
             "name": "ID",
-            "dataType": "INT"
+            "dataType": "INT",
+            "primaryKey": true
           },
           {
             "name": "Doc",

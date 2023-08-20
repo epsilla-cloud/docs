@@ -133,7 +133,7 @@ In Epsilla, you can have multiple tables in a database. A table has its name, an
 status_code, response = client.create_table(
     table_name="MyTable",
     table_fields=[
-        {"name": "ID", "dataType": "INT"},
+        {"name": "ID", "dataType": "INT", "primaryKey": True},
         {"name": "Doc", "dataType": "STRING"},
         {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
     ]
@@ -145,7 +145,7 @@ status_code, response = client.create_table(
 ```javascript
 await db.createTable('MyTable',
   [
-    {"name": "ID", "dataType": "INT"},
+    {"name": "ID", "dataType": "INT", "primaryKey": true},
     {"name": "Doc", "dataType": "STRING"},
     {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
   ]
@@ -169,6 +169,16 @@ VECTOR_FLOAT # A vector of float field, dimension must be provided
 ```
 
 Epsilla supports defining multiple embedding fields in one table. This is very convenient for you to manage multiple embeddings (could be embedded from different models) for the same documents.&#x20;
+
+Optionally, you can define one field of a table as the primary key. By defining primary key, Epsilla will automatically conduct duplication check, and reject records that have a primary key value that already exists in the table. The primary key field has to be one of the following data types:
+
+```
+TINYINT
+SMALLINT
+INT
+BIGINT
+STRING
+```
 
 ### Drop a table from a database
 
