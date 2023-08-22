@@ -165,6 +165,7 @@ FLOAT        # A float field
 DOUBLE       # A double field
 STRING       # A string field
 BOOL         # A boolean field
+JSON         # Any valid JSON
 VECTOR_FLOAT # A vector of float field, dimension must be provided
 ```
 
