@@ -4,7 +4,11 @@ We're thrilled to present a comprehensive overview of the features and projects 
 
 * [x] [**\[Launched 8/7/2023\]**](https://www.linkedin.com/posts/epsilla\_vectordatabase-javascript-generativeai-activity-7094316258925432834-yj2D?utm\_source=share\&utm\_medium=member\_desktop) **JavaScript/TypeScript Library**: A library to interact EpsillaDB with JavaScript/TypeScript.
 * [ ] **CLI with SQL-style Syntax**: A new command-line interface is in the works, featuring a syntax similar to SQL for intuitive, straightforward commands.
-* [ ] **Integration Support**: We're developing integrations with LangChain, LlamaIndex, OpenAI plugin, AutoGPT, and others.
+* [ ] **Integration Support**:&#x20;
+  * [x] [\[Launched 8/23/2023\]](https://medium.com/@richard\_50832/epsilla-x-langchain-retrieval-augmented-generation-rag-in-llm-powered-question-answering-3a674c0d7c7b) LangChain
+  * [ ] LlamaIndex
+  * [ ] OpenAI plugin
+  * [ ] AutoGPT
 * [ ] **Built-in Embedding Support**: We aim to streamline your workflow by enabling document embedding directly within EpsillaDB, eliminating the need for pre-insertion embedding.
 * [ ] **Multi-modal Document Support**: EpsillaDB is expanding to support a variety of document formats, including images, audio, video, and more.
 * [ ] **Comprehensive DBMS Features**: We're committed to enhancing our database management system features to provide you with a powerful, flexible tool for managing your data.
