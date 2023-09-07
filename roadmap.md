@@ -9,6 +9,7 @@ We're thrilled to present a comprehensive overview of the features and projects 
   * [x] LlamaIndex
   * [ ] OpenAI plugin
   * [ ] AutoGPT
+* [ ] **Hybrid Search Support**: We plan to support hybrid search allows you to perform semantic and keyword search and combine the results for improving result relevance.
 * [ ] **Built-in Embedding Support**: We aim to streamline your workflow by enabling document embedding directly within EpsillaDB, eliminating the need for pre-insertion embedding.
 * [ ] **Multi-modal Document Support**: EpsillaDB is expanding to support a variety of document formats, including images, audio, video, and more.
 * [ ] **Comprehensive DBMS Features**: We're committed to enhancing our database management system features to provide you with a powerful, flexible tool for managing your data.
