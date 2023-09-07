@@ -6,7 +6,7 @@ We're thrilled to present a comprehensive overview of the features and projects 
 * [ ] **CLI with SQL-style Syntax**: A new command-line interface is in the works, featuring a syntax similar to SQL for intuitive, straightforward commands.
 * [ ] **Integration Support**:&#x20;
   * [x] [\[Launched 8/23/2023\]](https://medium.com/@richard\_50832/epsilla-x-langchain-retrieval-augmented-generation-rag-in-llm-powered-question-answering-3a674c0d7c7b) LangChain
-  * [ ] LlamaIndex
+  * [x] LlamaIndex
   * [ ] OpenAI plugin
   * [ ] AutoGPT
 * [ ] **Built-in Embedding Support**: We aim to streamline your workflow by enabling document embedding directly within EpsillaDB, eliminating the need for pre-insertion embedding.
