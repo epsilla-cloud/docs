@@ -6,14 +6,21 @@ We're thrilled to present a comprehensive overview of the features and projects 
 * [ ] **CLI with SQL-style Syntax**: A new command-line interface is in the works, featuring a syntax similar to SQL for intuitive, straightforward commands.
 * [ ] **Integration Support**:&#x20;
   * [x] [\[Launched 8/23/2023\]](https://medium.com/@richard\_50832/epsilla-x-langchain-retrieval-augmented-generation-rag-in-llm-powered-question-answering-3a674c0d7c7b) LangChain
-  * [x] LlamaIndex
+  * [x] \[Launched 9/6/2023] LlamaIndex
   * [ ] OpenAI plugin
   * [ ] AutoGPT
 * [ ] **Hybrid Search Support**: We plan to support hybrid search allows you to perform semantic and keyword search and combine the results for improving result relevance.
 * [ ] **Built-in Embedding Support**: We aim to streamline your workflow by enabling document embedding directly within EpsillaDB, eliminating the need for pre-insertion embedding.
 * [ ] **Multi-modal Document Support**: EpsillaDB is expanding to support a variety of document formats, including images, audio, video, and more.
 * [ ] **Comprehensive DBMS Features**: We're committed to enhancing our database management system features to provide you with a powerful, flexible tool for managing your data.
+  * [x] \[Launched 8/20/2023] Primary key support
+  * [x] \[Launched 9/11/2023] Delete by primary key
+  * [x] \[Launched 9/15/2023] Filter expression in vector similarity search
+  * [ ] Filter expression in delete
 * [ ] **Serverless Cloud Offering**: A consumption-based pricing model is on the horizon, bringing you the flexibility of a serverless cloud solution akin to DynamoDB for vector search.
+  * [x] \[Launched 9/20/2023] Closed beta
+  * [ ] Public beta
+  * [ ] General availability
 * [ ] **Enterprise Readiness Features**: We're implementing robust enterprise readiness features, such as a distributed vector engine, high availability, access control, integrated authentication and authorization, and observability, amongst others.
 * [ ] **Embedding Visualization**: To give you more insight into your data, we're working on a feature that visualizes embeddings directly within EpsillaDB.
 
