@@ -74,7 +74,7 @@ client = Epsilla::Client.new(protocol="http", host="127.0.0.1", port="8888")
 ```
 {% endtab %}
 
-{% tab title="Shell" %}
+{% tab title="cURL" %}
 ```sh
 curl -X GET "http://localhost:8888"
 ```
@@ -83,6 +83,37 @@ Response
 
 ```sh
 Welcome to Epsilla VectorDB.
+```
+{% endtab %}
+{% endtabs %}
+
+Hint: if you are connecting to a secure server, use protocol parameter:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+client = vectordb.Client(
+  protocol='https',
+  host=...
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+const db = new epsillajs.EpsillaDB({
+    protocol: 'https',
+    host: ...
+});
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+require "epsilla"
+
+## connect to vectordb
+client = Epsilla::Client.new(protocol="https", host="127.0.0.1", port="8888")
 ```
 {% endtab %}
 {% endtabs %}
@@ -111,7 +142,7 @@ puts status_code, response
 ```
 {% endtab %}
 
-{% tab title="Shell" %}
+{% tab title="cURL" %}
 ```sh
 curl -X POST 'http://localhost:8888/api/load' \
     -d '{
@@ -173,7 +204,7 @@ puts status_code, response
 ```
 {% endtab %}
 
-{% tab title="Shell" %}
+{% tab title="cURL" %}
 ```sh
 curl -X POST 'http://localhost:8888/api/MyDB/schema/tables' \
     -d '{
@@ -257,7 +288,7 @@ puts status_code, response
 ```
 {% endtab %}
 
-{% tab title="Shell" %}
+{% tab title="cURL" %}
 ```sh
 curl -X POST 'http://localhost:8888/api/MyDB/data/insert' \
     -d '{
@@ -364,7 +395,7 @@ Output
 ```
 {% endtab %}
 
-{% tab title="Shell" %}
+{% tab title="cURL" %}
 ```sh
 curl -X POST 'http://localhost:8888/api/MyDB/data/query' \
     -d '{
@@ -422,7 +453,7 @@ client.database.drop_table("MyTable")
 ```
 {% endtab %}
 
-{% tab title="Shell" %}
+{% tab title="cURL" %}
 ```sh
 curl -X DELETE 'http://localhost:8888/api/MyDB/schema/tables/MyTable'      
 ```
@@ -461,7 +492,7 @@ client.database.unload_db("MyDB")
 ```
 {% endtab %}
 
-{% tab title="Shell" %}
+{% tab title="cURL" %}
 ```sh
 curl -X POST 'http://localhost:8888/api/MyDB/unload'      
 ```
