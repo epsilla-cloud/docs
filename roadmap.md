@@ -17,6 +17,7 @@ We're thrilled to present a comprehensive overview of the features and projects 
   * [x] \[Launched 9/11/2023] Delete by primary key
   * [x] \[Launched 9/15/2023] Filter expression in vector similarity search
   * [ ] Filter expression in delete
+  * [ ] Batch query support: batch multiple input vectors into single query
 * [ ] **Serverless Cloud Offering**: A consumption-based pricing model is on the horizon, bringing you the flexibility of a serverless cloud solution akin to DynamoDB for vector search.
   * [x] \[Launched 9/20/2023] Closed beta
   * [ ] Public beta
