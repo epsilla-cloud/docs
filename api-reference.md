@@ -179,6 +179,30 @@ For an embedding field, you need to provide a dimension parameter, which specifi
 
 When you specify an embedding field, you can also designate a metric type for the embedding model. The metric types supported currently are **Euclidean** and **Cosine**. Here’s a brief on the benefits of each metric type:
 
+{% tabs %}
+{% tab title="Python" %}
+```python
+...
+    table_fields=[
+        ...
+        {"dataType": "VECTOR_FLOAT", "metricType": "COSINE", ...}
+    ]
+...
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+...
+  [
+    ...
+    {"dataType": "VECTOR_FLOAT", "metricType": "COSINE", ...}
+  ]
+...
+```
+{% endtab %}
+{% endtabs %}
+
 1. **Euclidean**:
    * **Intuitive**: The Euclidean distance is straightforward and intuitive as it's the "ordinary" straight-line distance between two points in space. This can be beneficial in applications where interpretability is important.
    * **Geometry Preserving**: It preserves the geometric structure of the data, making it suitable for applications where the geometric relationships between data points are significant.
