@@ -185,7 +185,12 @@ When you specify an embedding field, you can also designate a metric type for th
 ...
     table_fields=[
         ...
-        {"dataType": "VECTOR_FLOAT", "metricType": "COSINE", ...}
+        {
+            "name": "Embedding",
+            "dataType": "VECTOR_FLOAT",
+            "dimensions": 4,
+            "metricType": "COSINE"
+        }
     ]
 ...
 ```
@@ -196,7 +201,12 @@ When you specify an embedding field, you can also designate a metric type for th
 ...
   [
     ...
-    {"dataType": "VECTOR_FLOAT", "metricType": "COSINE", ...}
+    {
+      "name": "Embedding",
+      "dataType": "VECTOR_FLOAT",
+      "dimensions": 4,
+      "metricType": "COSINE"
+    }
   ]
 ...
 ```
