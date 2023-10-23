@@ -404,6 +404,8 @@ status_code, response = client.get(
                                          # the response. If not provided, will include
                                          # all fields in the table.
   primary_keys=[1, 2, 4, 5],             # (Optional) the list of primary keys for retrieval.
+                                         # If not provided, will not constrian on primary key
+                                         # value.
   filter="Doc <> 'London'",              # (Optional) a boolean expression for filtering
                                          # out the results.
   skip=0,                                # (Optional) how many records to skip. If not
@@ -431,6 +433,8 @@ const query = await db.get(
                                              // the response. If not provided, will include
                                              // all fields in the table.
     primaryKeys: [1, 2, 4, 5],               // (Optional) the list of primary keys for retrieval.
+                                             // If not provided, will not constrian on primary key
+                                             // value.
     filter: 'ID < 6 AND Doc <> \'London\'',  // (Optional) filter: a boolean expression for filtering
                                              // out the results.
     skip: 0,                                 // (Optional) how many records to skip. If not
