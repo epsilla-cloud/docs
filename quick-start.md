@@ -362,9 +362,11 @@ Output
 // search
 const query = await db.query(
   'MyTable',
-  "Embedding", // query field
-  [0.35, 0.55, 0.47, 0.94], // query vector
-  2 // top K
+  {
+    queryField: "Embedding",                 // query field
+    queryVector: [0.35, 0.55, 0.47, 0.94],   // query vector
+    limit: 2                                 // top K
+  }
 );
 console.log(JSON.stringify(query));
 ```

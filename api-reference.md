@@ -325,19 +325,19 @@ Response example:
 ```javascript
 const query = await db.query(
   'MyTable',                                 // The name of the table to query against.
-  'Embedding',                               // The embedding field name to query against.
-  [0.35, 0.55, 0.47, 0.94],                  // The embedded vector from the question.
-  2,                                         // The top K result to return.
-  ["Doc"],                                   // (Optional) which fields to be included in
+  {
+    queryField: 'Embedding',                 // The embedding field name to query against.
+    queryVector: [0.35, 0.55, 0.47, 0.94],   // The embedded vector from the question.
+    limit: 2,                                // The top K result to return.
+    response: ["Doc"],                       // (Optional) which fields to be included in
                                              // the response. If not provided, will include
                                              // all fields in the table.
-  true                                       // (Optional) include the distance or not in
+    filter: 'ID < 6 AND Doc <> \'London\'',  // (Optional) filter: a boolean expression for filtering
+                                             // out the results.
+    withDistance: true                       // (Optional) include the distance or not in
                                              // the response. Default is False. When given
                                              // as true, each matched record will have a
                                              // @distance field returned.
-  {                                          // (Optional) for extra parameters
-    filter: 'ID < 6 AND Doc <> \'London\''   // Filter: a boolean expression for filtering
-                                             // out the results.
   }
 );
 console.log(JSON.stringify(query, undefined, 2));
@@ -400,7 +400,7 @@ Delete records with primary keys:
 ```python
 status_code, response = client.delete(
   table_name="MyTable",        # The name of the table to delete records against.
-  ids=[1, 2, 5],               # The ids of the records to be deleted.
+  primary_keys=[1, 2, 5],      # The ids of the records to be deleted.
 )
 print(response)
 ```
@@ -415,8 +415,10 @@ Response example:
 {% tab title="JavaScript" %}
 ```javascript
 const query = await db.delete(
-  'MyTable',   // The name of the table to delete records against.
-  [1, 2, 5],   // The ids of the records to be deleted.
+  'MyTable',                  // The name of the table to delete records against.
+  {
+    primaryKeys: [1, 2, 5]    // The ids of the records to be deleted.
+  }
 );
 console.log(JSON.stringify(query, undefined, 2));
 ```
