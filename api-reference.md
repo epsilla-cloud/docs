@@ -410,7 +410,7 @@ status_code, response = client.get(
                                          # out the results.
   skip=0,                                # (Optional) how many records to skip. If not
                                          # provided, will not skip any records.
-  limit=2,                               # (Optional) how many records to retrieve. If not
+  limit=2                                # (Optional) how many records to retrieve. If not
                                          # provided, will return all records (after the
                                          # skipped ones)
 )
@@ -439,7 +439,7 @@ const query = await db.get(
                                              // out the results.
     skip: 0,                                 // (Optional) how many records to skip. If not
                                              // provided, will not skip any records.
-    limit: 2,                                // (Optional) how many records to retrieve. If not
+    limit: 2                                 // (Optional) how many records to retrieve. If not
                                              // provided, will return all records (after the
                                              // skipped ones)
   }
@@ -475,7 +475,7 @@ Delete records with primary keys:
 ```python
 status_code, response = client.delete(
   table_name="MyTable",        # The name of the table to delete records against.
-  primary_keys=[1, 2, 5],      # The ids of the records to be deleted.
+  primary_keys=[1, 2, 5]       # The primary keys of the records to be deleted.
 )
 print(response)
 ```
@@ -492,7 +492,7 @@ Response example:
 const query = await db.delete(
   'MyTable',                  // The name of the table to delete records against.
   {
-    primaryKeys: [1, 2, 5]    // The ids of the records to be deleted.
+    primaryKeys: [1, 2, 5]    // The primary keys of the records to be deleted.
   }
 );
 console.log(JSON.stringify(query, undefined, 2));
