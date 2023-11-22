@@ -1,6 +1,6 @@
-# 🏠 Home
+# Home
 
-EpsillaDB is an open-source vector database. Our focus is on ensuring scalability, high performance, and cost-effectiveness of vector search. EpsillaDB bridges the gap between information retrieval and memory retention in Large Language Models. We see ourselves as the **Hippocampus for the AI Brain**.
+Epsilla is an open-source vector database. Our focus is on ensuring scalability, high performance, and cost-effectiveness of vector search. Epsilla bridges the gap between information retrieval and memory retention in Large Language Models. We see ourselves as the **Hippocampus for AI**.
 
 ## Common use cases
 
@@ -8,7 +8,7 @@ Here are some common use cases of Epsilla vector database
 
 ### 1. Augmenting LLMs with Proprietary Data
 
-**Problem:** LLMs don’t have latest knowledge about the world (e.g., GPT-4 has a knowledge cutoff of Jan 2022), and don’t have knowledge about any private data (e.g., your company's knowledge base)
+**Problem:** LLMs don’t have latest knowledge about the world (e.g., GPT-4 has a knowledge cutoff of April 2023), and don’t have knowledge about any private data (e.g., your company's knowledge base)
 
 **Our solution:** Augment LLMs by adding semantically similar information retrieved from vector database into the prompt (also known as [Retrieval Augmented Generation](https://ai.meta.com/blog/retrieval-augmented-generation-streamlining-the-creation-of-intelligent-natural-language-processing-models/)).
 

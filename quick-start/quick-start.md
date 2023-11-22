@@ -514,6 +514,6 @@ Response:
 
 ## Next steps[​](https://docs.trychroma.com/getting-started#-next-steps) <a href="#next-steps" id="next-steps"></a>
 
-Epsilla is designed to be simple enough to get started. Refer to [API Reference](../api-reference.md) for more flexibility and options on each API.
+Epsilla is designed to be simple enough to get started. Refer to [Developer Guide](broken-reference) for more flexibility and options on each API.
 
 We are tirelessly working to enhance Epsilla with more features. Please consult our [Roadmap](../others/roadmap.md) to glimpse into the future developments.
