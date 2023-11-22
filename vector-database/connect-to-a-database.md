@@ -120,7 +120,7 @@ First, create a vector database on Cloud GUI.
 We will support creating vector databases via Python/JavaScript client in the near future.
 {% endhint %}
 
-Then connect to the created database. Replace the PROJECT-ID, DB-ID and YOUR-API-KEY.
+Then connect to the created database. Replace the Project ID, Database ID and API Key.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -149,3 +149,11 @@ await db.connect();
 ```
 {% endtab %}
 {% endtabs %}
+
+The Project ID and Database ID can be copied from the database card under project resources:
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-22 at 10.28.27 AM.png" alt=""><figcaption></figcaption></figure>
+
+The API Key can be created under project configurations:
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.19.00 PM.png" alt=""><figcaption></figcaption></figure>
