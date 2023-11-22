@@ -6,7 +6,11 @@ description: >-
 
 # Connect to a database
 
-## Initialize Client
+There is a slightly difference between Docker and Epsilla Cloud when connecting to a database.
+
+## Connect to a database using Epsilla Docker
+
+### Step 1. Initialize Client
 
 {% tabs %}
 {% tab title="Python" %}
@@ -18,7 +22,7 @@ client = vectordb.Client()
 
 ### client connect to remote server
 from pyepsilla import vectordb
-client = vectordb.Client(
+db = vectordb.Client(
     protocol='http',      # http or https. Default is http
     host='3.100.100.100', # The host machine for the vector db. Default localhost
     port='8888'           # The port for the vector db, default 8888
@@ -44,14 +48,14 @@ const db = new epsillajs.EpsillaDB({
 {% endtab %}
 {% endtabs %}
 
-### Load database
+### Step 2. Load database
 
 Use the command to load a database into memory. Epsilla can hold multiple databases in memory at the same time.
 
 {% tabs %}
 {% tab title="Python" %}
 ```python
-status_code, response = client.load_db(
+status_code, response = db.load_db(
     db_name="myDB",         # The name of the DB. Can give any valid
                             # name when loading a DB from disk.
     db_path="/tmp/epsilla", # The path on the disk where the DB is persisted. 
@@ -88,14 +92,14 @@ const load = await db.loadDB(
 {% endtab %}
 {% endtabs %}
 
-### Use database
+### Step 3. Use database
 
 You can use the command to switch between multiple databases that are already loaded in memory. Then the following interactions will be towards this database.
 
 {% tabs %}
 {% tab title="Python" %}
 ```python
-client.use_db(db_name="myDB")
+db.use_db(db_name="myDB")
 ```
 {% endtab %}
 
@@ -106,20 +110,42 @@ db.useDB("MyDB");
 {% endtab %}
 {% endtabs %}
 
-### Unload database
+## Connect to a vector database on Epsilla Cloud
 
-You can use this command to unload a database from memory. The database files are still retained on disk.
+First, create a vector database on Cloud GUI.
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.42.30 PM.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+We will support creating vector databases via Python/JavaScript client in the near future.
+{% endhint %}
+
+Then connect to the created database. Replace the PROJECT-ID, DB-ID and YOUR-API-KEY.
 
 {% tabs %}
 {% tab title="Python" %}
 ```python
-status_code, response = client.unload_db(db_name="myDB")
+from pyepsilla import cloud
+client = cloud.Client(
+  project_id="PROJECT-ID",     # Copied from the GUI code snippet
+  api_key="YOUR-API-KEY"       # Replace with your API Key
+)
+db = client.vectordb(db_id="DB-ID") # Copied from the GUI code snippet
 ```
 {% endtab %}
 
 {% tab title="JavaScript" %}
 ```javascript
-await db.unloadDB('MyDB');
+const epsillajs = require('epsillajs');
+const client = new epsillajs.EpsillaCloud({
+  projectID: 'PROJECT-ID',  // Copied from the GUI code snippet
+  apiKey: 'YOUR-API-KEY'    // Replace with your API Key
+});
+const db = new epsillajs.VectorDB(
+  'DB-ID',                  // Copied from the GUI code snippet
+   client
+ ); 
+await db.connect();
 ```
 {% endtab %}
 {% endtabs %}

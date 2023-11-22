@@ -12,6 +12,7 @@
 * [Connect to a database](vector-database/connect-to-a-database.md)
 * [Create a new table](vector-database/create-a-new-table.md)
 * [Drop a table](vector-database/api-reference.md)
+* [Delete a database](vector-database/delete-a-database.md)
 * [Insert records](vector-database/insert-records.md)
 * [Search the top K semantically similar records](vector-database/search-the-top-k-semantically-similar-records.md)
 * [Retrieve records (with filters and pagination)](vector-database/retrieve-records-with-filters-and-pagination.md)

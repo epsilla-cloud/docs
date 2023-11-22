@@ -50,7 +50,7 @@ gem install epsilla-ruby
 from pyepsilla import vectordb
 
 ## connect to vectordb
-client = vectordb.Client(
+db = vectordb.Client(
   host='localhost',
   port='8888'
 )
@@ -96,7 +96,7 @@ Hint: if you are connecting to a secure server, use protocol parameter:
 {% tabs %}
 {% tab title="Python" %}
 ```python
-client = vectordb.Client(
+db = vectordb.Client(
   protocol='https',
   host=...
 )
@@ -127,8 +127,8 @@ client = Epsilla::Client.new(protocol="https", host="127.0.0.1", port="8888")
 {% tabs %}
 {% tab title="Python" %}
 ```python
-client.load_db(db_name="MyDB", db_path="/tmp/epsilla")
-client.use_db(db_name="MyDB")
+db.load_db(db_name="MyDB", db_path="/tmp/epsilla")
+db.use_db(db_name="MyDB")
 ```
 {% endtab %}
 
@@ -171,7 +171,7 @@ Response:
 {% tabs %}
 {% tab title="Python" %}
 ```python
-client.create_table(
+db.create_table(
   table_name="MyTable",
   table_fields=[
     {"name": "ID", "dataType": "INT", "primaryKey": True},
@@ -250,7 +250,7 @@ You can insert multiple records in a batch.
 {% tabs %}
 {% tab title="Python" %}
 ```python
-client.insert(
+db.insert(
   table_name="MyTable",
   records=[
     {"ID": 1, "Doc": "Berlin", "Embedding": [0.05, 0.61, 0.76, 0.74]},
@@ -343,7 +343,7 @@ Response:
 {% tabs %}
 {% tab title="Python" %}
 ```python
-status_code, response = client.query(
+status_code, response = db.query(
   table_name="MyTable",
   query_field="Embedding",
   query_vector=[0.35, 0.55, 0.47, 0.94],
@@ -441,7 +441,7 @@ Response:
 {% tabs %}
 {% tab title="Python" %}
 ```python
-client.drop_table("MyTable")
+db.drop_table("MyTable")
 ```
 {% endtab %}
 
@@ -480,7 +480,7 @@ Offload a database that is not in use to release memory (the database files are 
 {% tabs %}
 {% tab title="Python" %}
 ```python
-client.unload_db("MyDB")
+db.unload_db("MyDB")
 ```
 {% endtab %}
 
@@ -514,6 +514,6 @@ Response:
 
 ## Next steps[​](https://docs.trychroma.com/getting-started#-next-steps) <a href="#next-steps" id="next-steps"></a>
 
-Epsilla is designed to be simple enough to get started. Refer to [Developer Guide](broken-reference) for more flexibility and options on each API.
+Epsilla is designed to be simple enough to get started. Refer to [Vector Database](broken-reference) for more flexibility and options on each API.
 
 We are tirelessly working to enhance Epsilla with more features. Please consult our [Roadmap](../others/roadmap.md) to glimpse into the future developments.

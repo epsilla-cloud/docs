@@ -5,7 +5,7 @@ Epsilla supports the retrieval of records from a table. By default, it retrieves
 {% tabs %}
 {% tab title="Python" %}
 ```python
-status_code, response = client.get(
+status_code, response = db.get(
   table_name="MyTable",                  # The name of the table to query against.
   response_fields=["Doc"],               # (Optional) which fields to be included in
                                          # the response. If not provided, will include

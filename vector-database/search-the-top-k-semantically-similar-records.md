@@ -5,7 +5,7 @@
 {% tabs %}
 {% tab title="Python" %}
 ```python
-status_code, response = client.query(
+status_code, response = db.query(
   table_name="MyTable",                  # The name of the table to query against.
   query_field="Embedding",               # The embedding field name to query against.
   query_vector=[0.35, 0.55, 0.47, 0.94], # The embedded vector from the question.

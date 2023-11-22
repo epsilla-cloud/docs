@@ -11,7 +11,7 @@ Make sure the records comply with the defined table schema.
 {% tabs %}
 {% tab title="Python" %}
 ```python
-status_code, response = client.insert(
+status_code, response = db.insert(
   table_name="MyTable",
   records=[
     {"ID": 1, "Doc": "Berlin", "Embedding": [0.05, 0.61, 0.76, 0.74]},

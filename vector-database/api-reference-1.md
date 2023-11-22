@@ -5,7 +5,7 @@ Delete records with primary keys:
 {% tabs %}
 {% tab title="Python" %}
 ```python
-status_code, response = client.delete(
+status_code, response = db.delete(
   table_name="MyTable",        # The name of the table to delete records against.
   primary_keys=[1, 2, 5]       # The primary keys of the records to be deleted.
 )
