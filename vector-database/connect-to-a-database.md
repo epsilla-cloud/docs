@@ -6,7 +6,9 @@ description: >-
 
 # Connect to a database
 
+{% hint style="info" %}
 There is a slightly difference between Docker and Epsilla Cloud when connecting to a database.
+{% endhint %}
 
 ## Connect to a database using Epsilla Docker
 
