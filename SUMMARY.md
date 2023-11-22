@@ -10,5 +10,8 @@
 ***
 
 * [⚙ API Reference](api-reference.md)
-* [🔗 Integrations](integrations.md)
-* [✈ Roadmap](roadmap.md)
+
+## 🧠 Others
+
+* [Integrations](others/integrations.md)
+* [Roadmap](others/roadmap.md)

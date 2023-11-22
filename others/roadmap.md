@@ -1,4 +1,4 @@
-# ✈ Roadmap
+# Roadmap
 
 We're thrilled to present a comprehensive overview of the features and projects we're planning to develop. We're eager to engage with our community and users to shape the priority of these initiatives. We value your input, so don't hesitate to share your thoughts with us.
 

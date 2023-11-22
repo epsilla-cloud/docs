@@ -76,11 +76,11 @@ Then connect to the created database.
 {% tab title="Python" %}
 ```python
 from pyepsilla import cloud
-c = cloud.Client(
+client = cloud.Client(
   project_id="PROJECT-ID",     # Copied from the GUI code snippet
   api_key="YOUR-API-KEY"       # Replace with your API Key
 )
-db = c.vectordb(db_id="DB-ID") # Copied from the GUI code snippet
+db = client.vectordb(db_id="DB-ID") # Copied from the GUI code snippet
 ```
 {% endtab %}
 
@@ -89,7 +89,7 @@ db = c.vectordb(db_id="DB-ID") # Copied from the GUI code snippet
 const epsillajs = require('epsillajs');
 const client = new epsillajs.EpsillaCloud({
   projectID: 'PROJECT-ID',  // Copied from the GUI code snippet
-  apiKey: 'YOUR-API-KEY'.   // Replace with your API Key
+  apiKey: 'YOUR-API-KEY'    // Replace with your API Key
 });
 const db = new epsillajs.VectorDB(
   'DB-ID',                  // Copied from the GUI code snippet

@@ -516,4 +516,4 @@ Response:
 
 Epsilla is designed to be simple enough to get started. Refer to [API Reference](../api-reference.md) for more flexibility and options on each API.
 
-We are tirelessly working to enhance Epsilla with more features. Please consult our [Roadmap](../roadmap.md) to glimpse into the future developments.
+We are tirelessly working to enhance Epsilla with more features. Please consult our [Roadmap](../others/roadmap.md) to glimpse into the future developments.
