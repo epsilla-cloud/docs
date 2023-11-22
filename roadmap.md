@@ -23,6 +23,8 @@ We're thrilled to present a comprehensive overview of the features and projects 
   * [ ] Public beta
   * [ ] General availability
 * [ ] **Enterprise Readiness Features**: We're implementing robust enterprise readiness features, such as a distributed vector engine, high availability, access control, integrated authentication and authorization, and observability, amongst others.
+  * [x] \[Launched 11/21/2023] Distributed vector engine
+  * [x] \[Launched 11/21/2023] High availability
 * [ ] **Embedding Visualization**: To give you more insight into your data, we're working on a feature that visualizes embeddings directly within EpsillaDB.
 
 Your insights are integral to our development journey. We're looking forward to hearing your thoughts on these proposed features and initiatives.

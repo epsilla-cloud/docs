@@ -1,10 +1,14 @@
-# 🚀 Quick Start
+---
+description: >-
+  You can locally deploy the open-source Epsilla vector database by using its
+  Docker image.
+---
+
+# Run with Docker
 
 ## 1. Installation
 
-To run a pre-built EpsillaDB image on your machine, make sure Docker is installed on your system.
-
-Download image from [Dockerhub](https://hub.docker.com/r/epsilla/vectordb).
+To run the pre-built Epsilla docker image on your machine, make sure Docker is installed on your system. Then download image from [Dockerhub](https://hub.docker.com/r/epsilla/vectordb).
 
 ```sh
 docker pull epsilla/vectordb
@@ -16,7 +20,7 @@ Start the docker as the backend service
 docker run --pull=always -d -p 8888:8888 epsilla/vectordb
 ```
 
-Your EpsillaDB service is up and running. You can use REST API to interact with EpsillaDB, or install a Python/JavaScripy client.
+Your Epsilla service is up and running. You can use REST API to interact with Epsilla, or install a Python/JavaScript client.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -38,7 +42,7 @@ gem install epsilla-ruby
 {% endtab %}
 {% endtabs %}
 
-## 2. Connect to EpsillaDB
+## 2. Connect to Epsilla server
 
 {% tabs %}
 {% tab title="Python" %}
@@ -434,8 +438,6 @@ Response:
 
 ## 7. Drop a table
 
-Drop a table will remove the
-
 {% tabs %}
 {% tab title="Python" %}
 ```python
@@ -512,6 +514,6 @@ Response:
 
 ## Next steps[​](https://docs.trychroma.com/getting-started#-next-steps) <a href="#next-steps" id="next-steps"></a>
 
-EpsillaDB is designed to be simple enough to get started. Refer to [API Reference](api-reference.md) for more flexibility and options on each API.
+Epsilla is designed to be simple enough to get started. Refer to [API Reference](../api-reference.md) for more flexibility and options on each API.
 
-We are tirelessly working to enhance EpsillaDB with more features. Please consult our [Roadmap](roadmap.md) to glimpse into the future developments.
+We are tirelessly working to enhance Epsilla with more features. Please consult our [Roadmap](../roadmap.md) to glimpse into the future developments.
