@@ -14,37 +14,37 @@ Create an Epsilla Cloud account at [https://cloud.epsilla.com/](https://cloud.ep
 
 Navigate to the 'Configurations' tab within the project, create a new API Key, and keep it at a secure place.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.19.00 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.19.00 PM.png" alt=""><figcaption></figcaption></figure>
 
 ## 3. Create a vector database, then create a table
 
 Navigate to the 'Resource' tab, and click 'Create Vector Database'.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.42.30 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.42.30 PM.png" alt=""><figcaption></figcaption></figure>
 
 Give the database a name, and click 'Create'. It takes a few seconds to spin up a vector database.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.42.46 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.42.46 PM.png" alt=""><figcaption></figcaption></figure>
 
 Within the newly created database, click 'Create Table', then give the table a name. Adjust the table schema according to your business logic, then click 'Create'.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.43.04 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.43.04 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.43.18 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.43.18 PM.png" alt=""><figcaption></figcaption></figure>
 
 ## 4. Use GUI to CRUD data to the table.
 
 Epsilla automatically generates sample queries for the table. Start with inserting some sample data:
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.59.56 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.59.56 PM.png" alt=""><figcaption></figcaption></figure>
 
 Then query the table with top K semantic similarity search.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 10.00.21 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 10.00.21 PM (1).png" alt=""><figcaption></figcaption></figure>
 
 Switch between Shell, Python, and JavaScript tags, and click the 'Copy' button to copy the curl command, Python code snippet, and JavaScript code snippet of the query.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 10.12.06 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 10.12.06 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Copying the code snippet is the easiest way to integrate with your application as it already has the **project\_id** and **db\_id** prefilled.
