@@ -71,7 +71,7 @@ For an embedding field, you need to provide a dimension parameter, which specifi
 
 ### Metric Type
 
-When you specify an embedding field, you can also designate a metric type for the embedding model. The metric types supported currently are **Euclidean** and **Cosine**. Here’s a brief on the benefits of each metric type:
+When you specify an embedding field, you can also designate a metric type for the embedding model. The metric types supported currently are **Euclidean**, **Cosine**, and **Dot Product**. Here’s a brief on the benefits of each metric type:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -83,7 +83,7 @@ When you specify an embedding field, you can also designate a metric type for th
             "name": "Embedding",
             "dataType": "VECTOR_FLOAT",
             "dimensions": 4,
-            "metricType": "COSINE"
+            "metricType": "COSINE" # EUCLIDEAN, COSINE, or DOT_PRODUCT
         }
     ]
 ...
@@ -99,7 +99,7 @@ When you specify an embedding field, you can also designate a metric type for th
       "name": "Embedding",
       "dataType": "VECTOR_FLOAT",
       "dimensions": 4,
-      "metricType": "COSINE"
+      "metricType": "COSINE" // EUCLIDEAN, COSINE, or DOT_PRODUCT
     }
   ]
 ...
@@ -107,15 +107,16 @@ When you specify an embedding field, you can also designate a metric type for th
 {% endtab %}
 {% endtabs %}
 
-#### **Euclidean**:
+#### **Euclidean Distance**:
 
 * **Intuitive**: The Euclidean distance is straightforward and intuitive as it's the "ordinary" straight-line distance between two points in space. This can be beneficial in applications where interpretability is important.
 * **Geometry Preserving**: It preserves the geometric structure of the data, making it suitable for applications where the geometric relationships between data points are significant.
 
-#### **Cosine**:
+#### **Cosine Distance**:
 
 * **Angle-Based Similarity**: Cosine similarity measures the cosine of the angle between two non-zero vectors. This is particularly useful in scenarios where the angle between vectors is more important than their absolute magnitudes. For instance, in text analysis, cosine similarity can capture the orientation of documents in the vector space irrespective of their length.
 * **Normalization**: Cosine similarity inherently accounts for magnitude, making it useful in scenarios where data is normalized or needs to be comparable on a similar scale. Note: when using Cosine metric for embedding field, Epsilla will automatically normalize the vector (i.e., rescale the vector length to 1.0) before storing it.
+* **Distance vs Similarity:** In Epsilla, we calculate Cosine Distance instead of&#x20;
 
 In Epsilla, if the metric type is not specified, the system defaults to using the Euclidean metric. This setting may be more suitable for general-purpose embedding applications, while the Cosine metric might be more appropriate for specialized or domain-specific applications.
 
