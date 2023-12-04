@@ -61,7 +61,10 @@ STRING       # A string field
 BOOL         # A boolean field
 JSON         # Any valid JSON
 VECTOR_FLOAT # A vector of float field, dimension must be provided
+SPARSE_VECTOR_FLOAT # A sparse vector of float, dimension must be provided
 ```
+
+Learning more about [dense vector vs. sparse vector](dense-vector-vs.-sparse-vector.md).
 
 ### Embedding Fields
 
