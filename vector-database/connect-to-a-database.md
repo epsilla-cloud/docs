@@ -19,7 +19,7 @@ There is a slightly difference between Docker and Epsilla Cloud when connecting 
 ```python
 ### client connect to localhost
 from pyepsilla import vectordb
-client = vectordb.Client()
+db = vectordb.Client()
 
 
 ### client connect to remote server
