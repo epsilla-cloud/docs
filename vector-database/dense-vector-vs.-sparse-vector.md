@@ -111,7 +111,12 @@ Compared with dense vectors, sparse vectors are less effective in capturing the 
 status_code, response = db.create_table(
     table_name="MyTable",
     table_fields=[
-        {"name": "Embedding", "dataType": "SPARSE_VECTOR_FLOAT", "dimensions": 65535}
+        {
+            "name": "Embedding",
+            "dataType": "SPARSE_VECTOR_FLOAT",
+            "dimensions": 65535,
+            "metricType": "DOT_PRODUCT"
+        }
     ]
 )
 ```
@@ -121,7 +126,12 @@ status_code, response = db.create_table(
 ```javascript
 await db.createTable('MyTable',
   [
-    {"name": "Embedding", "dataType": "SPARSE_VECTOR_FLOAT", "dimensions": 65535}
+    {
+      "name": "Embedding",
+      "dataType": "SPARSE_VECTOR_FLOAT",
+      "dimensions": 65535,
+      "metricType": "DOT_PRODUCT"
+    }
   ]
 );
 ```
