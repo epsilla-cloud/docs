@@ -116,7 +116,13 @@ When you specify an embedding field, you can also designate a metric type for th
 
 * **Angle-Based Similarity**: Cosine similarity measures the cosine of the angle between two non-zero vectors. This is particularly useful in scenarios where the angle between vectors is more important than their absolute magnitudes. For instance, in text analysis, cosine similarity can capture the orientation of documents in the vector space irrespective of their length.
 * **Normalization**: Cosine similarity inherently accounts for magnitude, making it useful in scenarios where data is normalized or needs to be comparable on a similar scale. Note: when using Cosine metric for embedding field, Epsilla will automatically normalize the vector (i.e., rescale the vector length to 1.0) before storing it.
-* **Distance vs Similarity:** In Epsilla, we calculate Cosine Distance instead of&#x20;
+* At Epsilla, we opt for calculating the Cosine Distance rather than Cosine Similarity. Cosine Distance is defined as 1 - CosineSimilarity, and its values fall within the range of \[0, 2]. A Cosine Distance of 0 indicates that the two vectors are identical, signifying complete similarity. Conversely, a value of 1 implies that the vectors are uncorrelated, bearing no linear relationship. Lastly, a Cosine Distance of 2 denotes that the vectors are diametrically opposite, representing the highest degree of dissimilarity.
+
+**Dot Product**
+
+* **Magnitude and Direction Representation:** The dot product of two vectors captures both their magnitude and direction, offering a comprehensive measure of their similarity. This makes it particularly useful in contexts where both aspects are crucial, such as in certain neural network applications.
+* **Unbounded Range:** Unlike cosine similarity or distance, the dot product is not confined to a specific range. It can yield any real number, which can provide a more nuanced understanding of vector relationships but may also require additional processing for interpretation.
+* At Epsilla, to enhance the ease of comparing distances when utilizing the dot product metric, we **negate** the values.
 
 In Epsilla, if the metric type is not specified, the system defaults to using the Euclidean metric. This setting may be more suitable for general-purpose embedding applications, while the Cosine metric might be more appropriate for specialized or domain-specific applications.
 
