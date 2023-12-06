@@ -7,7 +7,7 @@ description: >-
 
 # Create a new table
 
-## Create a table using Epsilla Docker
+## Create a table in code
 
 {% tabs %}
 {% tab title="Python" %}
@@ -36,15 +36,11 @@ await db.createTable('MyTable',
 {% endtab %}
 {% endtabs %}
 
-## Create a table on Epsilla Cloud
+## Create a table on Epsilla Cloud portal UI
 
 For now, you can create vector tables via Cloud GUI. Use the 'Add' button to add more fields; Use the 'Delete' icon to remove a field; Give each field a name, data type, and additional options.
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.43.18 PM.png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-We will support creating tables via Python/JavaScript client in the near future.
-{% endhint %}
 
 ## Field Data Types
 
