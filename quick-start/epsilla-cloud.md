@@ -26,9 +26,7 @@ Give the database a name, and click 'Create'. It takes a few seconds to spin up 
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.42.46 PM.png" alt=""><figcaption></figcaption></figure>
 
-Within the newly created database, click 'Create Table', then give the table a name. Adjust the table schema according to your business logic, then click 'Create'.
-
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.43.04 PM.png" alt=""><figcaption></figcaption></figure>
+Within the newly created database, create a new table. Give the table a name. Adjust the table schema according to your business logic, then click 'Create'.
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.43.18 PM.png" alt=""><figcaption></figcaption></figure>
 
