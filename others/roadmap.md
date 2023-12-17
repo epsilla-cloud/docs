@@ -23,9 +23,10 @@ We're thrilled to present a comprehensive overview of the features and projects 
   * [ ] Filter expression in delete
   * [ ] Batch query support: batch multiple input vectors into single query
   * [ ] Update/Upsert support
+  * [ ] DB import/export support
 * [ ] **Serverless Cloud Offering**: A consumption-based pricing model is on the horizon, bringing you the flexibility of a serverless cloud solution akin to DynamoDB for vector search.
   * [x] \[Launched 9/20/2023] Closed beta
-  * [ ] Public beta
+  * [x] \[Launched 12/13/2023] Public beta
   * [ ] General availability
 * [ ] **Enterprise Readiness Features**: We're implementing robust enterprise readiness features, such as a distributed vector engine, high availability, access control, integrated authentication and authorization, and observability, amongst others.
   * [x] \[Launched 11/21/2023] Distributed vector engine
