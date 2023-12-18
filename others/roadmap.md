@@ -14,7 +14,7 @@ We're thrilled to present a comprehensive overview of the features and projects 
   * [ ] Hybrid search API
   * [ ] Integration with BM25 encoding
   * [ ] Integration with SPLADE embedding
-* [ ] **Built-in Embedding Support**: We aim to streamline your workflow by enabling document embedding directly within EpsillaDB, eliminating the need for pre-insertion embedding.
+* [x] **Built-in Embedding Support**: We aim to streamline your workflow by enabling document embedding directly within Epsilla vector DB, eliminating the need for pre-insertion embedding.
 * [ ] **Multi-modal Document Support**: EpsillaDB is expanding to support a variety of document formats, including images, audio, video, and more.
 * [ ] **Comprehensive DBMS Features**: We're committed to enhancing our database management system features to provide you with a powerful, flexible tool for managing your data.
   * [x] \[Launched 8/20/2023] Primary key support
