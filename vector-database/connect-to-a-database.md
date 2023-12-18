@@ -12,6 +12,34 @@ There is a slightly difference between Docker and Epsilla Cloud when connecting 
 
 ## Connect to a database using Epsilla Docker
 
+### Step 0. Download docker image and start
+
+Epsilla vector database docker images can be found at [docker hub](https://hub.docker.com/r/epsilla/vectordb).
+
+Use the command below to pull the latest version of Epsilla vector DB:
+
+```sh
+docker pull epsilla/vectordb
+```
+
+You can also specify the version to pull:
+
+```bash
+docker pull epsilla/vectordb:0.3.1
+```
+
+Start the docker as the backend service
+
+```sh
+docker run --pull=always -d -p 8888:8888 epsilla/vectordb
+```
+
+Use the EMBEDDING\_MODELS environment variable to enable more built-in embedding models (learn more about [embeddings](embeddings.md)):
+
+```bash
+docker run --pull=always -d -p 8888:8888 -e EMBEDDING_MODELS="BAAI/bge-small-zh-v1.5,BAAI/bge-base-en" epsilla/vectordb
+```
+
 ### Step 1. Initialize Client
 
 {% tabs %}
@@ -29,7 +57,6 @@ db = vectordb.Client(
     host='3.100.100.100', # The host machine for the vector db. Default localhost
     port='8888'           # The port for the vector db, default 8888
 )
-
 ```
 {% endtab %}
 
@@ -45,6 +72,32 @@ const db = new epsillajs.EpsillaDB({
     protocol: 'http',      // http or https. Default is http
     host: '3.100.100.100', // The host machine for the vector db. Default localhost
     port: '8888'           // The port for the vector db, default 8888
+});
+```
+{% endtab %}
+{% endtabs %}
+
+In order to use OpenAI for embedding, pass in X-OpenAI-API-Key header:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+db = vectordb.Client(
+    ...
+    headers={
+        "X-OpenAI-API-Key": <Your OpenAI API key here>
+    }
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+const db = new epsillajs.EpsillaDB({
+    ...
+    headers: {
+        "X-OpenAI-API-Key": <Your OpenAI API key here>
+    }
 });
 ```
 {% endtab %}

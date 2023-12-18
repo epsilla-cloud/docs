@@ -316,7 +316,8 @@ Response:
 ```python
 status_code, response = client.query(
   table_name="MyTable",
-  query_text="Where can I find a serene environment, ideal for relaxation and introspection?"
+  query_text="Where can I find a serene environment, ideal for relaxation and introspection?",
+  limit=2
 )
 print(response)
 ```
@@ -341,7 +342,8 @@ Output
 const query = await db.query(
   'MyTable',
   {
-    query: "Where can I find a serene environment, ideal for relaxation and introspection?"
+    query: "Where can I find a serene environment, ideal for relaxation and introspection?",
+    limit: 2
   }
 );
 console.log(JSON.stringify(query));
@@ -366,7 +368,8 @@ Output:
 curl -X POST 'http://localhost:8888/api/MyDB/data/query' \
     -d '{
         "table": "MyTable",
-        query: "Where can I find a serene environment, ideal for relaxation and introspection?"
+        "query": "Where can I find a serene environment, ideal for relaxation and introspection?",
+        "limit": 2
      }'        
 ```
 

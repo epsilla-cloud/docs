@@ -18,6 +18,10 @@ status_code, response = db.create_table(
         {"name": "ID", "dataType": "INT", "primaryKey": True},
         {"name": "Doc", "dataType": "STRING"},
         {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
+    ],
+    # Optionally, add indices on STRING fields with automatic embedding and indexing
+    indices=[
+        {"name": "Index", "field": "Doc", "model": "BAAI/bge-small-en-v1.5"}
     ]
 )
 ```
@@ -30,6 +34,10 @@ await db.createTable('MyTable',
     {"name": "ID", "dataType": "INT", "primaryKey": true},
     {"name": "Doc", "dataType": "STRING"},
     {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
+  ],
+  // Optionally, add indices on STRING fields with automatic embedding and indexing
+  [
+    {"name": "Index", "field": "Doc", "model": "BAAI/bge-small-en-v1.5"}
   ]
 );
 ```
@@ -64,7 +72,7 @@ Learning more about [dense vector vs. sparse vector](dense-vector-vs.-sparse-vec
 
 ### Embedding Fields
 
-Epsilla supports defining multiple embedding fields in one table. This is very convenient for you to manage multiple embeddings (could be embedded from different models) for the same documents.&#x20;
+Epsilla supports defining multiple embedding fields in one table. This is very convenient for you to bring in your own embeddings, and manage multiple embeddings (could be embedded from different models) for the same documents.&#x20;
 
 For an embedding field, you need to provide a dimension parameter, which specifies how many numbers are stored in each vector. This number needs to be consistent with the embedding model that you are using to embed the raw data.
 
@@ -136,3 +144,21 @@ INT
 BIGINT
 STRING
 ```
+
+## Indices
+
+In addition to bringing in your own embedding results of the documents, Epsilla vector database also supports automatically embed your documents, and index them for fast retrieval. Note: adding indices is optional. You can choose to bring in your own embeddings, or let Epsilla handle embedding for you. However, you need make sure each table contains at least one vector field, or one index.
+
+Define indices as a list. Each index contains 3 parts:
+
+* **name:** the name of the index. It must be unique, and cannot be the same as any field name.
+* **field:** the name of the field that will be embedded and indexed by the index. The field must be STRING data type.
+* **model (optional):** the embedding model name. If omitted, Epsilla will use the default embedding model **BAAI/bge-small-en-v1.5**. Learn more about supported embedding models [here](embeddings.md).
+
+You can index multiple STRING fields. You can define multiple indices on the same field with different embedding models. This level of flexibility enables hybrid search on the same vector table.
+
+Epsilla normalizes the embedding vectors, and uses Cosine distance as the metric for semantic search.
+
+{% hint style="info" %}
+Indices will be supported in Epsilla Cloud in the next release.
+{% endhint %}
