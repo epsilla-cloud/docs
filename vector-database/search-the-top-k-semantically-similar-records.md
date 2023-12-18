@@ -99,7 +99,7 @@ If there is only one embedding field, the query field parameter can be omitted. 
 {% tabs %}
 {% tab title="Python" %}
 ```python
-status_code, response = client.query(
+status_code, response = db.query(
   table_name="MyTable",
   query_text="Where can I find a serene environment, ideal for relaxation and introspection?",
   limit=2
