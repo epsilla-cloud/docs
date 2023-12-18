@@ -12,7 +12,7 @@ In embedding models, the mathematical premise is that the closer two vectors are
 
 Starting in v0.3, Epsilla supports automatically embed your documents and questions within the vector database, which significantly simplify the end to end semantic similarity search workflow.
 
-Here is the list of built-in embedding modes Epsilla supports:
+Here is the list of built-in embedding models Epsilla supports:
 
 * BAAI/bge-small-en
 * BAAI/bge-small-en-v1.5
