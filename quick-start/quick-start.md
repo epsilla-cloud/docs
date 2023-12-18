@@ -34,12 +34,6 @@ pip3 install --upgrade pyepsilla
 npm install epsillajs
 ```
 {% endtab %}
-
-{% tab title="Ruby" %}
-```sh
-gem install epsilla-ruby
-```
-{% endtab %}
 {% endtabs %}
 
 ## 2. Connect to Epsilla server
@@ -66,15 +60,6 @@ const db = new epsillajs.EpsillaDB({
   host: 'localhost',
   port: 9999
 });
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-```ruby
-require "epsilla"
-
-## connect to vectordb
-client = Epsilla::Client.new(protocol="http", host="127.0.0.1", port="8888")
 ```
 {% endtab %}
 
@@ -111,15 +96,6 @@ const db = new epsillajs.EpsillaDB({
 });
 ```
 {% endtab %}
-
-{% tab title="Ruby" %}
-```ruby
-require "epsilla"
-
-## connect to vectordb
-client = Epsilla::Client.new(protocol="https", host="127.0.0.1", port="8888")
-```
-{% endtab %}
 {% endtabs %}
 
 ## 3. Create or load a database
@@ -136,13 +112,6 @@ db.use_db(db_name="MyDB")
 ```javascript
 await db.loadDB('/tmp/epsilla', 'MyDB');
 db.useDB("MyDB");
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-```ruby
-status_code, response = client.database.load_db(db_name="MyDB", db_path="/tmp/epsilla")
-puts status_code, response
 ```
 {% endtab %}
 
@@ -175,8 +144,10 @@ db.create_table(
   table_name="MyTable",
   table_fields=[
     {"name": "ID", "dataType": "INT", "primaryKey": True},
-    {"name": "Doc", "dataType": "STRING"},
-    {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
+    {"name": "Doc", "dataType": "STRING"}
+  ],
+  indices=[
+    {"name": "Index", "field": "Doc"}
   ]
 )
 ```
@@ -184,27 +155,16 @@ db.create_table(
 
 {% tab title="JavaScript" %}
 ```javascript
-await db.createTable('MyTable',
+await db.createTable(
+  'MyTable',
   [
     {"name": "ID", "dataType": "INT", "primaryKey": true},
-    {"name": "Doc", "dataType": "STRING"},
-    {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
+    {"name": "Doc", "dataType": "STRING"}
+  ],
+  [
+    {"name": "Index", "field": "Doc"}
   ]
 );
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-```ruby
-status_code, response = client.database.create_table(
-  table_name="MyTable",
-  table_fields=[
-  {"name" => "ID", "dataType" => "INT", "primaryKey" => true},
-  {"name" => "Doc", "dataType" => "STRING"},
-  {"name" => "Embedding", "dataType" => "VECTOR_FLOAT", "dimensions" => 4}
-])
-puts status_code, response
-
 ```
 {% endtab %}
 
@@ -222,11 +182,12 @@ curl -X POST 'http://localhost:8888/api/MyDB/schema/tables' \
           {
             "name": "Doc",
             "dataType": "STRING"
-          },
+          }
+        ],
+        "indices": [
           {
-            "name": "Embedding",
-            "dataType": "VECTOR_FLOAT",
-            "dimensions": 4
+            "name": "Index",
+            "field": "Doc"
           }
         ]
      }'
@@ -253,11 +214,16 @@ You can insert multiple records in a batch.
 db.insert(
   table_name="MyTable",
   records=[
-    {"ID": 1, "Doc": "Berlin", "Embedding": [0.05, 0.61, 0.76, 0.74]},
-    {"ID": 2, "Doc": "London", "Embedding": [0.19, 0.81, 0.75, 0.11]},
-    {"ID": 3, "Doc": "Moscow", "Embedding": [0.36, 0.55, 0.47, 0.94]},
-    {"ID": 4, "Doc": "San Francisco", "Embedding": [0.18, 0.01, 0.85, 0.80]},
-    {"ID": 5, "Doc": "Shanghai", "Embedding": [0.24, 0.18, 0.22, 0.44]}
+    {"ID": 1, "Doc": "The garden was blooming with vibrant flowers, attracting butterflies and bees with their sweet nectar."},
+    {"ID": 2, "Doc": "In the busy city streets, people rushed to and fro, hardly noticing the beauty of the day."},
+    {"ID": 3, "Doc": "The library was a quiet haven, filled with the scent of old books and the soft rustling of pages."},
+    {"ID": 4, "Doc": "High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below."},
+    {"ID": 5, "Doc": "At the beach, children played joyfully in the sand, building castles and chasing the waves."},
+    {"ID": 6, "Doc": "Deep in the forest, a deer cautiously stepped out, its ears alert for any signs of danger."},
+    {"ID": 7, "Doc": "The old town's historical architecture spoke volumes about its rich cultural past."},
+    {"ID": 8, "Doc": "Night fell, and the sky was a canvas of stars, shining brightly in the moon's soft glow."},
+    {"ID": 9, "Doc": "A cozy cafe on the corner served the best hot chocolate, warming the hands and hearts of its visitors."},
+    {"ID": 10, "Doc": "The artist's studio was cluttered but inspiring, filled with unfinished canvases and vibrant paints."}
   ]
 )
 ```
@@ -267,64 +233,69 @@ db.insert(
 ```javascript
 await db.insert('MyTable',
   [
-    {"ID": 1, "Doc": "Berlin", "Embedding": [0.05, 0.61, 0.76, 0.74]},
-    {"ID": 2, "Doc": "London", "Embedding": [0.19, 0.81, 0.75, 0.11]},
-    {"ID": 3, "Doc": "Moscow", "Embedding": [0.36, 0.55, 0.47, 0.94]},
-    {"ID": 4, "Doc": "San Francisco", "Embedding": [0.18, 0.01, 0.85, 0.80]},
-    {"ID": 5, "Doc": "Shanghai", "Embedding": [0.24, 0.18, 0.22, 0.44]}
+    {"ID": 1, "Doc": "The garden was blooming with vibrant flowers, attracting butterflies and bees with their sweet nectar."},
+    {"ID": 2, "Doc": "In the busy city streets, people rushed to and fro, hardly noticing the beauty of the day."},
+    {"ID": 3, "Doc": "The library was a quiet haven, filled with the scent of old books and the soft rustling of pages."},
+    {"ID": 4, "Doc": "High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below."},
+    {"ID": 5, "Doc": "At the beach, children played joyfully in the sand, building castles and chasing the waves."},
+    {"ID": 6, "Doc": "Deep in the forest, a deer cautiously stepped out, its ears alert for any signs of danger."},
+    {"ID": 7, "Doc": "The old town's historical architecture spoke volumes about its rich cultural past."},
+    {"ID": 8, "Doc": "Night fell, and the sky was a canvas of stars, shining brightly in the moon's soft glow."},
+    {"ID": 9, "Doc": "A cozy cafe on the corner served the best hot chocolate, warming the hands and hearts of its visitors."},
+    {"ID": 10, "Doc": "The artist's studio was cluttered but inspiring, filled with unfinished canvases and vibrant paints."}
   ]
 );
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-```ruby
-status_code, response = client.database.insert(
-  table_name="MyTable",
-  table_records=[
-    {"ID" => 1, "Doc" => "Berlin", "Embedding" => [0.05, 0.61, 0.76, 0.74]},
-    {"ID" => 2, "Doc" => "London", "Embedding" => [0.19, 0.81, 0.75, 0.11]},
-    {"ID" => 3, "Doc" => "Moscow", "Embedding" => [0.36, 0.55, 0.47, 0.94]},
-    {"ID" => 4, "Doc" => "San Francisco", "Embedding" => [0.18, 0.01, 0.85, 0.80]},
-    {"ID" => 5, "Doc" => "Shanghai", "Embedding" => [0.24, 0.18, 0.22, 0.44]}  
-])
-puts status_code, response
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 ```sh
 curl -X POST 'http://localhost:8888/api/MyDB/data/insert' \
-    -d '{
+  -d '{
         "table": "MyTable",
         "data": [
-            {
-              "ID": 1,
-              "Doc": "Berlin",
-              "Embedding": [0.05, 0.61, 0.76, 0.74]
-            },
-            {
-              "ID": 2,
-              "Doc": "London",
-              "Embedding": [0.19, 0.81, 0.75, 0.11]
-            },
-            {
-              "ID": 3,
-              "Doc": "Moscow",
-              "Embedding": [0.36, 0.55, 0.47, 0.94]
-            },
-            {
-              "ID": 4,
-              "Doc": "San Francisco",
-              "Embedding": [0.18, 0.01, 0.85, 0.80]
-            },
-            {
-              "ID": 5,
-              "Doc": "Shanghai",
-              "Embedding": [0.24, 0.18, 0.22, 0.44]
-            }
-         ]
-     }'          
+          {
+            "ID": 1,
+            "Doc": "The garden was blooming with vibrant flowers, attracting butterflies and bees with their sweet nectar."
+          },
+          {
+            "ID": 2,
+            "Doc": "In the busy city streets, people rushed to and fro, hardly noticing the beauty of the day."
+          },
+          {
+            "ID": 3,
+            "Doc": "The library was a quiet haven, filled with the scent of old books and the soft rustling of pages."
+          },
+          {
+            "ID": 4,
+            "Doc": "High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below."
+          },
+          {
+            "ID": 5,
+            "Doc": "At the beach, children played joyfully in the sand, building castles and chasing the waves."
+          },
+          {
+            "ID": 6,
+            "Doc": "Deep in the forest, a deer cautiously stepped out, its ears alert for any signs of danger."
+          },
+          {
+            "ID": 7,
+            "Doc": "The old town's historical architecture spoke volumes about its rich cultural past."
+          },
+          {
+            "ID": 8,
+            "Doc": "Night fell, and the sky was a canvas of stars, shining brightly in the moon's soft glow."
+          },
+          {
+            "ID": 9,
+            "Doc": "A cozy cafe on the corner served the best hot chocolate, warming the hands and hearts of its visitors."
+          },
+          {
+            "ID": 10,
+            "Doc": "The artist's studio was cluttered but inspiring, filled with unfinished canvases and vibrant paints."
+          }
+        ]
+      }'          
 ```
 
 Response:
@@ -343,13 +314,9 @@ Response:
 {% tabs %}
 {% tab title="Python" %}
 ```python
-status_code, response = db.query(
+status_code, response = client.query(
   table_name="MyTable",
-  query_field="Embedding",
-  query_vector=[0.35, 0.55, 0.47, 0.94],
-  response_fields=["ID", "Doc", "Embedding"],
-  limit=2,
-  with_distance=True
+  query_text="Where can I find a serene environment, ideal for relaxation and introspection?"
 )
 print(response)
 ```
@@ -357,7 +324,14 @@ print(response)
 Output
 
 ```
-{'statusCode': 200, 'message': 'Query search successfully.', 'result': [{'ID': 3, 'Doc': 'Moscow', 'Embedding': [0.36, 0.55, 0.47, 0.94]}, {'ID': 1, 'Doc': 'Berlin', 'Embedding': [0.05, 0.61, 0.76, 0.74]}]}
+{
+  'message': 'Query search successfully.',
+  'result': [
+    {'Doc': 'The library was a quiet haven, filled with the scent of old books and the soft rustling of pages.', 'ID': 3},
+    {'Doc': 'High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below.', 'ID': 4}
+  ],
+  'statusCode': 200
+}
 ```
 {% endtab %}
 
@@ -367,9 +341,7 @@ Output
 const query = await db.query(
   'MyTable',
   {
-    queryField: "Embedding",                 // query field
-    queryVector: [0.35, 0.55, 0.47, 0.94],   // query vector
-    limit: 2                                 // top K
+    query: "Where can I find a serene environment, ideal for relaxation and introspection?"
   }
 );
 console.log(JSON.stringify(query));
@@ -378,26 +350,14 @@ console.log(JSON.stringify(query));
 Output:
 
 ```
-{"statusCode":200,"message":"Query search successfully.","result":[{"Doc":"Moscow","Embedding":[0.3600000143051147,0.550000011920929,0.4699999988079071,0.9399999976158142],"ID":3},{"Doc":"Berlin","Embedding":[0.05000000074505806,0.6100000143051147,0.7599999904632568,0.7400000095367432],"ID":1}]}
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-```ruby
-status_code, response = client.database.query(
-  table_name="MyTable",
-  query_field="Embedding",
-  query_vector=[0.35, 0.55, 0.47, 0.94],
-  response_fields=["Doc"],
-  limit=2,
-  with_distance=true)
-puts status_code, response
-```
-
-Output
-
-```
-{'statusCode': 200, 'message': 'Query search successfully.', 'result': [{'ID': 3, 'Doc': 'Moscow', 'Embedding': [0.36, 0.55, 0.47, 0.94]}, {'ID': 1, 'Doc': 'Berlin', 'Embedding': [0.05, 0.61, 0.76, 0.74]}]}
+{
+  "statusCode":200,
+  "message":"Query search successfully.",
+  "result":[
+    {"Doc": "The library was a quiet haven, filled with the scent of old books and the soft rustling of pages.", "ID": 3},
+    {"Doc": "High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below.", "ID": 4}
+  ]
+}
 ```
 {% endtab %}
 
@@ -406,10 +366,7 @@ Output
 curl -X POST 'http://localhost:8888/api/MyDB/data/query' \
     -d '{
         "table": "MyTable",
-        "queryField": "Embedding",
-        "queryVector": [0.35, 0.55, 0.47, 0.94],
-        "limit": 2,
-        "withDistance": true
+        query: "Where can I find a serene environment, ideal for relaxation and introspection?"
      }'        
 ```
 
@@ -420,16 +377,8 @@ Response:
     "statusCode": 200,
     "message": "Query search successfully.",
     "result": [
-        {
-            "ID": 3,
-            "Doc": "Moscow",
-            "Embedding": [0.36, 0.55, 0.47, 0.94]
-        },
-        {
-            "ID": 1,
-            "Doc": "Berlin",
-            "Embedding": [0.05, 0.61, 0.76, 0.74]
-        }
+        {"Doc": "The library was a quiet haven, filled with the scent of old books and the soft rustling of pages.", "ID": 3},
+        {"Doc": "High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below.", "ID": 4}
     ]
 }
 ```
@@ -448,12 +397,6 @@ db.drop_table("MyTable")
 {% tab title="JavaScript" %}
 ```javascript
 await db.dropTable('MyTable');
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-```ruby
-client.database.drop_table("MyTable")
 ```
 {% endtab %}
 
@@ -487,12 +430,6 @@ db.unload_db("MyDB")
 {% tab title="JavaScript" %}
 ```javascript
 await db.unloadDB('MyDB');
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-```ruby
-client.database.unload_db("MyDB")
 ```
 {% endtab %}
 
