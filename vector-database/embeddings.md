@@ -31,7 +31,7 @@ When using these built-in embedding models, the embedding are conducted within y
 
 ## OpenAI Embedding
 
-Epsilla also wraps **openai/text-embedding-ada-002** embedding out of box. When using OpenAI embedding, make sure provide the **X-OpenAI-API-Key** header when connecting to the vector database:
+Epsilla wraps **openai/text-embedding-ada-002** embedding out of box. When using OpenAI embedding, make sure provide the **X-OpenAI-API-Key** header when connecting to the vector database:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -51,6 +51,34 @@ const db = new epsillajs.EpsillaDB({
     ...
     headers: {
         "X-OpenAI-API-Key": <Your OpenAI API key here>
+    }
+});
+```
+{% endtab %}
+{% endtabs %}
+
+## Jina AI Embedding
+
+Epsilla wraps **jinaai/jina-embeddings-v2-base-en** embedding out of box (learn more about Jina AI embedding at [https://jina.ai/embeddings/](https://jina.ai/embeddings/)). When using Jina AI embedding, make sure provide the **X-JinaAI-API-Key** header when connecting to the vector database:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+db = vectordb.Client(
+    ...
+    headers={
+        "X-JinaAI-API-Key": <Your Jina AI API key here>
+    }
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+const db = new epsillajs.EpsillaDB({
+    ...
+    headers: {
+        "X-JinaAI-API-Key": <Your Jina AI API key here>
     }
 });
 ```
