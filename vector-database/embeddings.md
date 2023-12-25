@@ -8,9 +8,136 @@ In embedding models, the mathematical premise is that the closer two vectors are
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-12-18 at 3.19.33 PM.png" alt=""><figcaption></figcaption></figure>
 
-## Built-in Embeddings
+## Use Embeddings
 
 Starting in v0.3, Epsilla supports automatically embed your documents and questions within the vector database, which significantly simplify the end to end semantic similarity search workflow.
+
+When creating tables, you can define indices to let Epsilla automatically create embeddings for the STRING fields:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+status_code, response = db.create_table(
+    table_name="MyTable",
+    table_fields=[
+        {"name": "ID", "dataType": "INT", "primaryKey": True},
+        {"name": "Doc", "dataType": "STRING"}
+    ],
+    indices=[
+        {"name": "Index", "field": "Doc", "model": "BAAI/bge-small-en-v1.5"}
+    ]
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await db.createTable('MyTable',
+  [
+    {"name": "ID", "dataType": "INT", "primaryKey": true},
+    {"name": "Doc", "dataType": "STRING"}
+  ],
+  [
+    {"name": "Index", "field": "Doc", "model": "BAAI/bge-small-en-v1.5"}
+  ]
+);
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+You can omit the model when defining indices, and Epsilla uses BAAI/bge-small-en-v1.5 by default.
+{% endhint %}
+
+Then you can insert records in their raw format and let Epsilla handle the embedding:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+status_code, response = db.insert(
+  table_name="MyTable",
+  records=[
+    {"ID": 1, "Doc": "The garden was blooming with vibrant flowers, attracting butterflies and bees with their sweet nectar.", "Embedding": [0.05, 0.61, 0.76, 0.74]},
+    {"ID": 2, "Doc": "In the busy city streets, people rushed to and fro, hardly noticing the beauty of the day.", "Embedding": [0.19, 0.81, 0.75, 0.11]},
+    {"ID": 3, "Doc": "The library was a quiet haven, filled with the scent of old books and the soft rustling of pages.", "Embedding": [0.36, 0.55, 0.47, 0.94]},
+    {"ID": 4, "Doc": "High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below.", "Embedding": [0.18, 0.01, 0.85, 0.80]},
+    {"ID": 5, "Doc": "At the beach, children played joyfully in the sand, building castles and chasing the waves.", "Embedding": [0.24, 0.18, 0.22, 0.44]}
+  ]
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await db.insert('MyTable',
+  [
+    {"ID": 1, "Doc": "The garden was blooming with vibrant flowers, attracting butterflies and bees with their sweet nectar.", "Embedding": [0.05, 0.61, 0.76, 0.74]},
+    {"ID": 2, "Doc": "In the busy city streets, people rushed to and fro, hardly noticing the beauty of the day.", "Embedding": [0.19, 0.81, 0.75, 0.11]},
+    {"ID": 3, "Doc": "The library was a quiet haven, filled with the scent of old books and the soft rustling of pages.", "Embedding": [0.36, 0.55, 0.47, 0.94]},
+    {"ID": 4, "Doc": "High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below.", "Embedding": [0.18, 0.01, 0.85, 0.80]},
+    {"ID": 5, "Doc": "At the beach, children played joyfully in the sand, building castles and chasing the waves.", "Embedding": [0.24, 0.18, 0.22, 0.44]}
+  ]
+);
+```
+{% endtab %}
+{% endtabs %}
+
+After inserting records, you can query the table with natural language questions:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+status_code, response = db.query(
+  table_name="MyTable",
+  query_text="Where can I find a serene environment, ideal for relaxation and introspection?",
+  limit=2
+)
+print(response)
+```
+
+Output
+
+```
+{
+  'message': 'Query search successfully.',
+  'result': [
+    {'Doc': 'The library was a quiet haven, filled with the scent of old books and the soft rustling of pages.', 'ID': 3},
+    {'Doc': 'High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below.', 'ID': 4}
+  ],
+  'statusCode': 200
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+// search
+const query = await db.query(
+  'MyTable',
+  {
+    query: "Where can I find a serene environment, ideal for relaxation and introspection?",
+    limit: 2
+  }
+);
+console.log(JSON.stringify(query));
+```
+
+Output:
+
+```
+{
+  "statusCode":200,
+  "message":"Query search successfully.",
+  "result":[
+    {"Doc": "The library was a quiet haven, filled with the scent of old books and the soft rustling of pages.", "ID": 3},
+    {"Doc": "High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below.", "ID": 4}
+  ]
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## Built-in Embeddings
 
 Here is the list of built-in embedding models Epsilla supports:
 
@@ -137,125 +264,7 @@ await db.createTable(
 {% endtab %}
 {% endtabs %}
 
-## Use Embeddings
 
-When creating tables, you can define indices to let Epsilla automatically create embeddings for the STRING fields:
 
-{% tabs %}
-{% tab title="Python" %}
-```python
-status_code, response = db.create_table(
-    table_name="MyTable",
-    table_fields=[
-        {"name": "ID", "dataType": "INT", "primaryKey": True},
-        {"name": "Doc", "dataType": "STRING"}
-    ],
-    indices=[
-        {"name": "Index", "field": "Doc", "model": "BAAI/bge-small-en-v1.5"}
-    ]
-)
-```
-{% endtab %}
 
-{% tab title="JavaScript" %}
-```javascript
-await db.createTable('MyTable',
-  [
-    {"name": "ID", "dataType": "INT", "primaryKey": true},
-    {"name": "Doc", "dataType": "STRING"}
-  ],
-  [
-    {"name": "Index", "field": "Doc", "model": "BAAI/bge-small-en-v1.5"}
-  ]
-);
-```
-{% endtab %}
-{% endtabs %}
 
-Then you can insert records in their raw format and let Epsilla handle the embedding:
-
-{% tabs %}
-{% tab title="Python" %}
-```python
-status_code, response = db.insert(
-  table_name="MyTable",
-  records=[
-    {"ID": 1, "Doc": "The garden was blooming with vibrant flowers, attracting butterflies and bees with their sweet nectar.", "Embedding": [0.05, 0.61, 0.76, 0.74]},
-    {"ID": 2, "Doc": "In the busy city streets, people rushed to and fro, hardly noticing the beauty of the day.", "Embedding": [0.19, 0.81, 0.75, 0.11]},
-    {"ID": 3, "Doc": "The library was a quiet haven, filled with the scent of old books and the soft rustling of pages.", "Embedding": [0.36, 0.55, 0.47, 0.94]},
-    {"ID": 4, "Doc": "High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below.", "Embedding": [0.18, 0.01, 0.85, 0.80]},
-    {"ID": 5, "Doc": "At the beach, children played joyfully in the sand, building castles and chasing the waves.", "Embedding": [0.24, 0.18, 0.22, 0.44]}
-  ]
-)
-```
-{% endtab %}
-
-{% tab title="JavaScript" %}
-```javascript
-await db.insert('MyTable',
-  [
-    {"ID": 1, "Doc": "The garden was blooming with vibrant flowers, attracting butterflies and bees with their sweet nectar.", "Embedding": [0.05, 0.61, 0.76, 0.74]},
-    {"ID": 2, "Doc": "In the busy city streets, people rushed to and fro, hardly noticing the beauty of the day.", "Embedding": [0.19, 0.81, 0.75, 0.11]},
-    {"ID": 3, "Doc": "The library was a quiet haven, filled with the scent of old books and the soft rustling of pages.", "Embedding": [0.36, 0.55, 0.47, 0.94]},
-    {"ID": 4, "Doc": "High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below.", "Embedding": [0.18, 0.01, 0.85, 0.80]},
-    {"ID": 5, "Doc": "At the beach, children played joyfully in the sand, building castles and chasing the waves.", "Embedding": [0.24, 0.18, 0.22, 0.44]}
-  ]
-);
-```
-{% endtab %}
-{% endtabs %}
-
-After inserting records, you can query the table with natural language questions:
-
-{% tabs %}
-{% tab title="Python" %}
-```python
-status_code, response = db.query(
-  table_name="MyTable",
-  query_text="Where can I find a serene environment, ideal for relaxation and introspection?",
-  limit=2
-)
-print(response)
-```
-
-Output
-
-```
-{
-  'message': 'Query search successfully.',
-  'result': [
-    {'Doc': 'The library was a quiet haven, filled with the scent of old books and the soft rustling of pages.', 'ID': 3},
-    {'Doc': 'High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below.', 'ID': 4}
-  ],
-  'statusCode': 200
-}
-```
-{% endtab %}
-
-{% tab title="JavaScript" %}
-```javascript
-// search
-const query = await db.query(
-  'MyTable',
-  {
-    query: "Where can I find a serene environment, ideal for relaxation and introspection?",
-    limit: 2
-  }
-);
-console.log(JSON.stringify(query));
-```
-
-Output:
-
-```
-{
-  "statusCode":200,
-  "message":"Query search successfully.",
-  "result":[
-    {"Doc": "The library was a quiet haven, filled with the scent of old books and the soft rustling of pages.", "ID": 3},
-    {"Doc": "High in the mountains, the air was crisp and clear, revealing breathtaking views of the valley below.", "ID": 4}
-  ]
-}
-```
-{% endtab %}
-{% endtabs %}
