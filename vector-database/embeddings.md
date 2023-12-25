@@ -57,6 +57,32 @@ const db = new epsillajs.EpsillaDB({
 {% endtab %}
 {% endtabs %}
 
+And use the embedding model when defining the index:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+status_code, response = db.create_table(
+    ...
+    indices=[
+        {"name": "Index", "field": "Doc", "model": "openai/text-embedding-ada-002"}
+    ]
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await db.createTable(
+  ...
+  [
+    {"name": "Index", "field": "Doc", "model": "openai/text-embedding-ada-002"}
+  ]
+);
+```
+{% endtab %}
+{% endtabs %}
+
 ## Jina AI Embedding
 
 Epsilla wraps **jinaai/jina-embeddings-v2-base-en** embedding out of box (learn more about Jina AI embedding at [https://jina.ai/embeddings/](https://jina.ai/embeddings/)). When using Jina AI embedding, make sure provide the **X-JinaAI-API-Key** header when connecting to the vector database:
@@ -81,6 +107,32 @@ const db = new epsillajs.EpsillaDB({
         "X-JinaAI-API-Key": <Your Jina AI API key here>
     }
 });
+```
+{% endtab %}
+{% endtabs %}
+
+And use the embedding model when defining the index:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+status_code, response = db.create_table(
+    ...
+    indices=[
+        {"name": "Index", "field": "Doc", "model": "jinaai/jina-embeddings-v2-base-en"}
+    ]
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await db.createTable(
+  ...
+  [
+    {"name": "Index", "field": "Doc", "model": "jinaai/jina-embeddings-v2-base-en"}
+  ]
+);
 ```
 {% endtab %}
 {% endtabs %}
