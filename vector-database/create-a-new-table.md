@@ -158,7 +158,3 @@ Define indices as a list. Each index contains 3 parts:
 You can index multiple STRING fields. You can define multiple indices on the same field with different embedding models. This level of flexibility enables hybrid search on the same vector table.
 
 Epsilla normalizes the embedding vectors, and uses Cosine distance as the metric for semantic search.
-
-{% hint style="info" %}
-Indices will be supported in Epsilla Cloud in the next release.
-{% endhint %}
