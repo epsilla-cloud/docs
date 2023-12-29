@@ -48,9 +48,9 @@ await db.createTable('MyTable',
 
 ## Create a table on Epsilla Cloud portal UI
 
-For now, you can create vector tables via Cloud GUI. Use the 'Add' button to add more fields; Use the 'Delete' icon to remove a field; Give each field a name, data type, and additional options.
+On Epsilla Cloud, you can also intuitively create vector tables via GUI. Use the 'Add Field' button to add more fields; Use the 'Add Index' button to add more embedding indices;  Use the 'Delete' buttons to remove a field or index; Give each field a name, data type, and additional options; Choose the desired embedding model for each index.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.43.18 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-12-28 at 10.02.27 PM.png" alt=""><figcaption></figcaption></figure>
 
 ## Field Data Types
 

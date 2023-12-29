@@ -20,6 +20,6 @@ await db.dropTable('MyTable');
 
 ## Drop a table on Epsilla Cloud portal UI
 
-For now, you can drop vector tables via Cloud GUI.
+On Epsilla Cloud, you can also intuitively drop vector tables via GUI
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-11-22 at 12.27.54 AM (1).png" alt=""><figcaption></figcaption></figure>
