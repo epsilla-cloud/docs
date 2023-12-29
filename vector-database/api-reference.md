@@ -2,7 +2,7 @@
 
 ## Drop a table from a database in code&#x20;
 
-Note: when dropping a table, the data on disk will also be removed.
+In both self-hosted Epsilla and Epsilla Cloud, you can use the following code to programmatically drop tables:
 
 {% tabs %}
 {% tab title="Python" %}

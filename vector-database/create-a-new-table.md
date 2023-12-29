@@ -9,6 +9,8 @@ description: >-
 
 ## Create a table in code
 
+In both self-hosted Epsilla and Epsilla Cloud, you can use the following code to programmatically create tables:
+
 {% tabs %}
 {% tab title="Python" %}
 ```python
