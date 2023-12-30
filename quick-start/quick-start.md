@@ -456,4 +456,4 @@ Response:
 
 Epsilla is designed to be simple enough to get started. Refer to [Vector Database](broken-reference) for more flexibility and options on each API.
 
-We are tirelessly working to enhance Epsilla with more features. Please consult our [Roadmap](../others/roadmap.md) to glimpse into the future developments.
+We are tirelessly working to enhance Epsilla with more features. Please consult our [Roadmap](../vector-database/roadmap.md) to glimpse into the future developments.

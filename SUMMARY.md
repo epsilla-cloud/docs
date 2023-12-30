@@ -19,8 +19,10 @@
 * [Delete records](vector-database/api-reference-1.md)
 * [Dense vector vs. sparse vector](vector-database/dense-vector-vs.-sparse-vector.md)
 * [Embeddings](vector-database/embeddings.md)
+* [Roadmap](vector-database/roadmap.md)
 
-## Others
+## Platform
 
-* [Integrations](others/integrations.md)
-* [Roadmap](others/roadmap.md)
+* [Integrations](platform/integrations/README.md)
+  * [OpenAI](platform/integrations/openai.md)
+  * [Jina AI](platform/integrations/jina-ai.md)
