@@ -40,5 +40,5 @@ await db.insert('MyTable',
 {% endtabs %}
 
 {% hint style="info" %}
-For now, Epsilla is not automatically converting floating numbers as integers during insertion. If you provide a floating number to an integer field, Epsilla inserts 0. We will improve this in our future release.
+Starting from v0.3.3, Epsilla will automatically converting floating numbers as integers during insertion.
 {% endhint %}
