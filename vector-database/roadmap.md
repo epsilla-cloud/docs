@@ -16,11 +16,14 @@ We're thrilled to present a comprehensive overview of the features and projects 
   * [ ] Integration with SPLADE embedding
 * [x] **Built-in Embedding Support**: We aim to streamline your workflow by enabling document embedding directly within Epsilla vector DB, eliminating the need for pre-insertion embedding.
 * [ ] **Multi-modal Document Support**: EpsillaDB is expanding to support a variety of document formats, including images, audio, video, and more.
+  * [ ] Support built-in embedding models for images, audios, and videos
+  * [ ] Support built-in OpenClip embedding cross image and text modality
+  * [ ] Support natively store images, audios, and videos
 * [ ] **Comprehensive DBMS Features**: We're committed to enhancing our database management system features to provide you with a powerful, flexible tool for managing your data.
   * [x] \[Launched 8/20/2023] Primary key support
   * [x] \[Launched 9/11/2023] Delete by primary key
   * [x] \[Launched 9/15/2023] Filter expression in vector similarity search
-  * [ ] Filter expression in delete
+  * [x] \[Launched 12/25/2023] Filter expression in delete
   * [ ] Batch query support: batch multiple input vectors into single query
   * [ ] Update/Upsert support
   * [ ] DB import/export support
