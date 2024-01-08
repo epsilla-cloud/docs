@@ -14,6 +14,7 @@
 * [Drop a table](vector-database/api-reference.md)
 * [Delete a database](vector-database/delete-a-database.md)
 * [Insert records](vector-database/insert-records.md)
+* [Upsert records](vector-database/upsert-records.md)
 * [Search the top K semantically similar records](vector-database/search-the-top-k-semantically-similar-records.md)
 * [Retrieve records (with filters and pagination)](vector-database/retrieve-records-with-filters-and-pagination.md)
 * [Delete records](vector-database/api-reference-1.md)
