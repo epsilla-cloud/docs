@@ -27,3 +27,4 @@
 * [Integrations](platform/integrations/README.md)
   * [OpenAI](platform/integrations/openai.md)
   * [Jina AI](platform/integrations/jina-ai.md)
+  * [Voyage AI](platform/integrations/voyage-ai.md)

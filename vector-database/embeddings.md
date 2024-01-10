@@ -212,7 +212,7 @@ await db.createTable(
 
 ## Jina AI Embedding
 
-Epsilla wraps **jinaai/jina-embeddings-v2-base-en** embedding out of box (learn more about Jina AI embedding at [https://jina.ai/embeddings/](https://jina.ai/embeddings/)). When using Jina AI embedding, make sure provide the **X-JinaAI-API-Key** header when connecting to the vector database:
+Epsilla wraps **jinaai/jina-embeddings-v2-base-en, jinaai/jina-embeddings-v2-base-zh**, and **jinaai/jina-embeddings-v2-small-en** embedding out of box (learn more about Jina AI embedding at [https://jina.ai/embeddings/](https://jina.ai/embeddings/)). When using Jina AI embedding, make sure provide the **X-JinaAI-API-Key** header when connecting to the vector database:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -258,6 +258,60 @@ await db.createTable(
   ...
   [
     {"name": "Index", "field": "Doc", "model": "jinaai/jina-embeddings-v2-base-en"}
+  ]
+);
+```
+{% endtab %}
+{% endtabs %}
+
+## Voyage AI Embedding
+
+Epsilla wraps **voyageai/voyage-02** and **voyageai/voyage-code-02** embedding out of box (learn more about Voyage AI embedding at [https://www.voyageai.com/](https://www.voyageai.com/)). When using Voyage AI embedding, make sure provide the **X-VoyageAI-API-Key** header when connecting to the vector database:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+db = vectordb.Client(
+    ...
+    headers={
+        "X-VoyageAI-API-Key": <Your Voyage AI API key here>
+    }
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+const db = new epsillajs.EpsillaDB({
+    ...
+    headers: {
+        "X-VoyageAI-API-Key": <Your Voyage AI API key here>
+    }
+});
+```
+{% endtab %}
+{% endtabs %}
+
+And use the embedding model when defining the index:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+status_code, response = db.create_table(
+    ...
+    indices=[
+        {"name": "Index", "field": "Doc", "model": "voyageai/voyage-02"}
+    ]
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await db.createTable(
+  ...
+  [
+    {"name": "Index", "field": "Doc", "model": "voyageai/voyage-02"}
   ]
 );
 ```
