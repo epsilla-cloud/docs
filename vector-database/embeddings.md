@@ -158,7 +158,15 @@ When using these built-in embedding models, the embedding are conducted within y
 
 ## OpenAI Embedding
 
-Epsilla wraps **openai/text-embedding-ada-002** embedding out of box. When using OpenAI embedding, make sure provide the **X-OpenAI-API-Key** header when connecting to the vector database:
+Epsilla supports these OpenAI embedding models:
+
+| Name                              | Dimensions |
+| --------------------------------- | ---------- |
+| **openai/text-embedding-3-large** | 3072       |
+| **openai/text-embedding-3-small** | 1536       |
+| **openai/text-embedding-ada-002** | 1536       |
+
+When using OpenAI embedding, make sure provide the **X-OpenAI-API-Key** header when connecting to the vector database:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -192,7 +200,7 @@ And use the embedding model when defining the index:
 status_code, response = db.create_table(
     ...
     indices=[
-        {"name": "Index", "field": "Doc", "model": "openai/text-embedding-ada-002"}
+        {"name": "Index", "field": "Doc", "model": "openai/text-embedding-3-large"}
     ]
 )
 ```
@@ -212,7 +220,15 @@ await db.createTable(
 
 ## Jina AI Embedding
 
-Epsilla wraps **jinaai/jina-embeddings-v2-base-en, jinaai/jina-embeddings-v2-base-zh**, and **jinaai/jina-embeddings-v2-small-en** embedding out of box (learn more about Jina AI embedding at [https://jina.ai/embeddings/](https://jina.ai/embeddings/)). When using Jina AI embedding, make sure provide the **X-JinaAI-API-Key** header when connecting to the vector database:
+Epsilla supports these JinaAI embedding models (learn more about Jina AI embedding at [https://jina.ai/embeddings/](https://jina.ai/embeddings/)):
+
+| Name                                   | Dimensions |
+| -------------------------------------- | ---------- |
+| **jinaai/jina-embeddings-v2-base-en**  | 768        |
+| **jinaai/jina-embeddings-v2-base-zh**  | 768        |
+| **jinaai/jina-embeddings-v2-small-en** | 512        |
+
+When using Jina AI embedding, make sure provide the **X-JinaAI-API-Key** header when connecting to the vector database:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -266,7 +282,15 @@ await db.createTable(
 
 ## Voyage AI Embedding
 
-Epsilla wraps **voyageai/voyage-02** and **voyageai/voyage-code-02** embedding out of box (learn more about Voyage AI embedding at [https://www.voyageai.com/](https://www.voyageai.com/)). When using Voyage AI embedding, make sure provide the **X-VoyageAI-API-Key** header when connecting to the vector database:
+Epsilla supports these VoyageAI embedding models (learn more about Voyage AI embedding at [https://www.voyageai.com/](https://www.voyageai.com/)):
+
+| Name                                 | Dimensions |
+| ------------------------------------ | ---------- |
+| **voyageai/voyage-2**                | 1024       |
+| **voyageai/voyage-code-2**           | 1536       |
+| **voyageai/voyage-lite-02-instruct** | 1024       |
+
+When using Voyage AI embedding, make sure provide the **X-VoyageAI-API-Key** header when connecting to the vector database:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -318,7 +342,68 @@ await db.createTable(
 {% endtab %}
 {% endtabs %}
 
+## Mixedbread AI Embedding
 
+Epsilla supports these Mixedbread AI embedding models (learn more about Mixedbread AI embedding at [https://www.mixedbread.ai/docs/models/embeddings#models](https://www.mixedbread.ai/docs/models/embeddings#models)):
 
+| Name                                   | Dimensions |
+| -------------------------------------- | ---------- |
+| **mixedbreadai/UAE-Large-V1**          | 1024       |
+| **mixedbreadai/bge-large-en-v1.5**     | 1024       |
+| **mixedbreadai/gte-large**             | 1024       |
+| **mixedbreadai/e5-large-v2**           | 1024       |
+| **mixedbreadai/multilingual-e5-large** | 1024       |
+| **mixedbreadai/multilingual-e5-base**  | 768        |
+| **mixedbreadai/gte-large-zh**          | 1024       |
 
+When using Mixedbread AI embedding, make sure provide the **X-MixedbreadAI-API-Key** header when connecting to the vector database:
 
+{% tabs %}
+{% tab title="Python" %}
+```python
+db = vectordb.Client(
+    ...
+    headers={
+        "X-MixedbreadAI-API-Key": <Your Mixedbread AI API key here>
+    }
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+const db = new epsillajs.EpsillaDB({
+    ...
+    headers: {
+        "X-MixedbreadAI-API-Key": <Your Mixedbread AI API key here>
+    }
+});
+```
+{% endtab %}
+{% endtabs %}
+
+And use the embedding model when defining the index:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+status_code, response = db.create_table(
+    ...
+    indices=[
+        {"name": "Index", "field": "Doc", "model": "mixedbreadai/UAE-Large-V1"}
+    ]
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await db.createTable(
+  ...
+  [
+    {"name": "Index", "field": "Doc", "model": "mixedbreadai/UAE-Large-V1"}
+  ]
+);
+```
+{% endtab %}
+{% endtabs %}
