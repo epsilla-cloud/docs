@@ -407,3 +407,124 @@ await db.createTable(
 ```
 {% endtab %}
 {% endtabs %}
+
+## Nomic AI Embedding
+
+Epsilla supports these Nomic AI embedding models (learn more about Nomic AI embedding at [https://docs.nomic.ai/reference/endpoints/nomic-embed-text](https://docs.nomic.ai/reference/endpoints/nomic-embed-text)):
+
+| Name                            | Dimensions |
+| ------------------------------- | ---------- |
+| **nomicai/nomic-embed-text-v1** | 768        |
+
+When using Nomic AI embedding, make sure provide the **X-NOMIC-API-Key** header when connecting to the vector database:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+db = vectordb.Client(
+    ...
+    headers={
+        "X-NOMIC-API-Key": <Your Nomic AI API key here>
+    }
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+const db = new epsillajs.EpsillaDB({
+    ...
+    headers: {
+        "X-NOMIC-API-Key": <Your Nomic AI API key here>
+    }
+});
+```
+{% endtab %}
+{% endtabs %}
+
+And use the embedding model when defining the index:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+status_code, response = db.create_table(
+    ...
+    indices=[
+        {"name": "Index", "field": "Doc", "model": "nomicai/nomic-embed-text-v1"}
+    ]
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await db.createTable(
+  ...
+  [
+    {"name": "Index", "field": "Doc", "model": "nomicai/nomic-embed-text-v1"}
+  ]
+);
+```
+{% endtab %}
+{% endtabs %}
+
+## Mistral AI Embedding
+
+Epsilla supports these Mistral AI embedding models (learn more about Mistral AI embedding at [https://docs.mistral.ai/guides/embeddings/](https://docs.mistral.ai/guides/embeddings/)):
+
+| Name                        | Dimensions |
+| --------------------------- | ---------- |
+| **mistralai/mistral-embed** | 1024       |
+
+When using Mixedbread AI embedding, make sure provide the **X-MistralAI-API-Key** header when connecting to the vector database:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+db = vectordb.Client(
+    ...
+    headers={
+        "X-MistralAI-API-Key": <Your Mistral AI API key here>
+    }
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+const db = new epsillajs.EpsillaDB({
+    ...
+    headers: {
+        "X-MistralAI-API-Key": <Your Mistral AI API key here>
+    }
+});
+```
+{% endtab %}
+{% endtabs %}
+
+And use the embedding model when defining the index:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+status_code, response = db.create_table(
+    ...
+    indices=[
+        {"name": "Index", "field": "Doc", "model": "mistralai/mistral-embed"}
+    ]
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+await db.createTable(
+  ...
+  [
+    {"name": "Index", "field": "Doc", "model": "mistralai/mistral-embed"}
+  ]
+);
+```
+{% endtab %}
+{% endtabs %}
+
