@@ -222,11 +222,13 @@ await db.createTable(
 
 Epsilla supports these JinaAI embedding models (learn more about Jina AI embedding at [https://jina.ai/embeddings/](https://jina.ai/embeddings/)):
 
-| Name                                   | Dimensions |
-| -------------------------------------- | ---------- |
-| **jinaai/jina-embeddings-v2-base-en**  | 768        |
-| **jinaai/jina-embeddings-v2-base-zh**  | 768        |
-| **jinaai/jina-embeddings-v2-small-en** | 512        |
+| Name                                    | Dimensions |
+| --------------------------------------- | ---------- |
+| **jinaai/jina-embeddings-v2-base-en**   | 768        |
+| **jinaai/jina-embeddings-v2-base-de**   | 768        |
+| **jinaai/jina-embeddings-v2-base-zh**   | 768        |
+| **jinaai/jina-embeddings-v2-base-code** | 768        |
+| **jinaai/jina-embeddings-v2-small-en**  | 512        |
 
 When using Jina AI embedding, make sure provide the **X-JinaAI-API-Key** header when connecting to the vector database:
 

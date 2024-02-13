@@ -26,8 +26,8 @@
 
 * [Integrations](platform/integrations/README.md)
   * [OpenAI](platform/integrations/openai.md)
+  * [Mistral AI](platform/integrations/mistral-ai.md)
   * [Jina AI](platform/integrations/jina-ai.md)
   * [Voyage AI](platform/integrations/voyage-ai.md)
   * [Mixedbread AI](platform/integrations/mixedbread-ai.md)
   * [Nomic AI](platform/integrations/nomic-ai.md)
-  * [Mistral AI](platform/integrations/mistral-ai.md)

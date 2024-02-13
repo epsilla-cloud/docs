@@ -1,12 +1,22 @@
 # Jina AI
 
-Epsilla integrates with Jina AI with the **jinaai/jina-embeddings-v2-base-en, jinaai/jina-embeddings-v2-base-zh**, and **jinaai/jina-embeddings-v2-small-en** embedding model.
-
-For Epsilla open source vector db, you just need to add a header in the data ingestion and semantic search queries [like this](../../vector-database/embeddings.md#jina-ai-embedding).
-
 On Epsilla Cloud, you can enable Jina AI integration by providing your Jina AI API key (we securely manage your keys using AWS KMS):
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-12-29 at 11.41.15 PM.png" alt=""><figcaption></figcaption></figure>
+
+## Embeddings
+
+Epsilla integrates with Jina AI with the following embedding models.
+
+| Name                                    | Dimensions |
+| --------------------------------------- | ---------- |
+| **jinaai/jina-embeddings-v2-base-en**   | 768        |
+| **jinaai/jina-embeddings-v2-base-de**   | 768        |
+| **jinaai/jina-embeddings-v2-base-zh**   | 768        |
+| **jinaai/jina-embeddings-v2-base-code** | 768        |
+| **jinaai/jina-embeddings-v2-small-en**  | 512        |
+
+For Epsilla open source vector db, you just need to add a header in the data ingestion and semantic search queries [like this](../../vector-database/embeddings.md#jina-ai-embedding).
 
 Then you can start using the jinaai embedding model during vector table schema creation:
 
