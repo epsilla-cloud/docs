@@ -160,11 +160,7 @@ When using these built-in embedding models, the embedding are conducted within y
 
 Epsilla supports these OpenAI embedding models:
 
-| Name                              | Dimensions |
-| --------------------------------- | ---------- |
-| **openai/text-embedding-3-large** | 3072       |
-| **openai/text-embedding-3-small** | 1536       |
-| **openai/text-embedding-ada-002** | 1536       |
+<table><thead><tr><th width="313">Name</th><th width="134">Dimensions</th><th>Support Dimension Reduction</th></tr></thead><tbody><tr><td><strong>openai/text-embedding-3-large</strong></td><td>3072</td><td>Yes</td></tr><tr><td><strong>openai/text-embedding-3-small</strong></td><td>1536</td><td>Yes</td></tr><tr><td><strong>openai/text-embedding-ada-002</strong></td><td>1536</td><td>No</td></tr></tbody></table>
 
 When using OpenAI embedding, make sure provide the **X-OpenAI-API-Key** header when connecting to the vector database:
 

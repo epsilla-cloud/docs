@@ -156,6 +156,7 @@ Define indices as a list. Each index contains 3 parts:
 * **name:** the name of the index. It must be unique, and cannot be the same as any field name.
 * **field:** the name of the field that will be embedded and indexed by the index. The field must be STRING data type.
 * **model (optional):** the embedding model name. If omitted, Epsilla will use the default embedding model **BAAI/bge-small-en-v1.5**. Learn more about supported embedding models [here](embeddings.md).
+* **dimensions (optional):** for embedding models that support [dimensionality reduction](https://en.wikipedia.org/wiki/Dimensionality\_reduction), you can provide a dimensions parameter for reducing the embedding dimensions returned by the embedding provider, which can save cost while still preserve a high performance. For example, if the embedding model original dimension is 1536, then you can provide a dimensions value between 1 and 1536 for reduce the dimensions. We don't recommend go below 128 in practice, otherwise the embedding performance will be dramatically lower. The [embeddings page](embeddings.md) shows all embedding models that support dimension reduction.
 
 You can index multiple STRING fields. You can define multiple indices on the same field with different embedding models. This level of flexibility enables hybrid search on the same vector table.
 
