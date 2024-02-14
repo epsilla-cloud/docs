@@ -17,9 +17,9 @@ Here are some common use cases of Epsilla vector database
 
 <figure><img src=".gitbook/assets/Screenshot 2023-09-18 at 7.07.38 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/Screenshot 2023-09-18 at 7.11.34 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2024-02-14 at 4.35.55 PM.png" alt=""><figcaption><p>Example: Upload IRS tax publications</p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/Screenshot 2023-09-18 at 7.15.15 PM (2).png" alt="" width="555"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2024-02-14 at 4.37.25 PM.png" alt=""><figcaption><p>Example: Build a tax assistant chatbot augmented by IRS publications</p></figcaption></figure>
 
 ### 2. Build Better Recommendation Systems
 
