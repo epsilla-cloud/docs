@@ -15,3 +15,7 @@ For Epsilla open source vector db, you just need to add a header in the data ing
 Then you can start using the nomicai embedding model during vector table schema creation:
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-02-13 at 11.23.30 AM.png" alt=""><figcaption></figcaption></figure>
+
+For models that support dimension reduction, you can optionally provide a dimensions parameter to reduce the embedding response size:
+
+<figure><img src="../../.gitbook/assets/Screenshot 2024-02-14 at 4.23.37 PM.png" alt=""><figcaption></figcaption></figure>
