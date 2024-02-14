@@ -236,3 +236,13 @@ A string literal needs to be surrounded by single quotes.&#x20;
 Refer to a field of the record directly by the field name.
 
 Providing an empty filter is same as not providing the filter at all (all records will pass the evaluation).
+
+#### Filter on @distance
+
+Epsilla supports filter the result by the distance. For example, use the following filter condition to only return the matching results that have a semantic similarity distance less than 0.5:
+
+```
+"filter": "@distance < 0.5"
+```
+
+@distance can be combined and nested with all the other filter condition operators.
