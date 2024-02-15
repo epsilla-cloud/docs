@@ -107,11 +107,11 @@ You can insert multiple records in a batch.
 ```python
 status_code, response = db.insert(table_name="MyTable", 
   records=[
-    {"id": 1, "doc": "Berlin", "embedding": [0.05, 0.61, 0.76, 0.74]},
-    {"id": 2, "doc": "London", "embedding": [0.19, 0.81, 0.75, 0.11]},
-    {"id": 3, "doc": "Moscow", "embedding": [0.36, 0.55, 0.47, 0.94]},
-    {"id": 4, "doc": "San Francisco", "embedding": [0.18, 0.01, 0.85, 0.80]},
-    {"id": 5, "doc": "Shanghai", "embedding": [0.24, 0.18, 0.22, 0.44]}
+    {"ID": 1, "Doc": "Berlin", "Embedding": [0.05, 0.61, 0.76, 0.74]},
+    {"ID": 2, "Doc": "London", "Embedding": [0.19, 0.81, 0.75, 0.11]},
+    {"ID": 3, "Doc": "Moscow", "Embedding": [0.36, 0.55, 0.47, 0.94]},
+    {"ID": 4, "Doc": "San Francisco", "Embedding": [0.18, 0.01, 0.85, 0.80]},
+    {"ID": 5, "Doc": "Shanghai", "Embedding": [0.24, 0.18, 0.22, 0.44]}
   ]
 )
 ```
@@ -121,11 +121,11 @@ status_code, response = db.insert(table_name="MyTable",
 ```javascript
 await db.insert('MyTable',
   [
-    {"id": 1, "doc": "Berlin", "embedding": [0.05, 0.61, 0.76, 0.74]},
-    {"id": 2, "doc": "London", "embedding": [0.19, 0.81, 0.75, 0.11]},
-    {"id": 3, "doc": "Moscow", "embedding": [0.36, 0.55, 0.47, 0.94]},
-    {"id": 4, "doc": "San Francisco", "embedding": [0.18, 0.01, 0.85, 0.80]},
-    {"id": 5, "doc": "Shanghai", "embedding": [0.24, 0.18, 0.22, 0.44]}
+    {"ID": 1, "Doc": "Berlin", "Embedding": [0.05, 0.61, 0.76, 0.74]},
+    {"ID": 2, "Doc": "London", "Embedding": [0.19, 0.81, 0.75, 0.11]},
+    {"ID": 3, "Doc": "Moscow", "Embedding": [0.36, 0.55, 0.47, 0.94]},
+    {"ID": 4, "Doc": "San Francisco", "Embedding": [0.18, 0.01, 0.85, 0.80]},
+    {"ID": 5, "Doc": "Shanghai", "Embedding": [0.24, 0.18, 0.22, 0.44]}
   ]
 );
 ```
@@ -140,29 +140,29 @@ curl -X POST 'https://api-us-east-1-1-aws.epsilla.com/api/v2/project/<PROJECT-ID
         "table": "MyTable",
         "data": [
             {
-              "id": 1,
-              "doc": "Berlin",
-              "embedding": [0.05, 0.61, 0.76, 0.74]
+              "ID": 1,
+              "Doc": "Berlin",
+              "Embedding": [0.05, 0.61, 0.76, 0.74]
             },
             {
-              "id": 2,
-              "doc": "London",
-              "embedding": [0.19, 0.81, 0.75, 0.11]
+              "ID": 2,
+              "Doc": "London",
+              "Embedding": [0.19, 0.81, 0.75, 0.11]
             },
             {
-              "id": 3,
-              "doc": "Moscow",
-              "embedding": [0.36, 0.55, 0.47, 0.94]
+              "ID": 3,
+              "Doc": "Moscow",
+              "Embedding": [0.36, 0.55, 0.47, 0.94]
             },
             {
-              "id": 4,
-              "doc": "San Francisco",
-              "embedding": [0.18, 0.01, 0.85, 0.80]
+              "ID": 4,
+              "Doc": "San Francisco",
+              "Embedding": [0.18, 0.01, 0.85, 0.80]
             },
             {
-              "id": 5,
-              "doc": "Shanghai",
-              "embedding": [0.24, 0.18, 0.22, 0.44]
+              "ID": 5,
+              "Doc": "Shanghai",
+              "Embedding": [0.24, 0.18, 0.22, 0.44]
             }
          ]
      }'
@@ -177,7 +177,7 @@ curl -X POST 'https://api-us-east-1-1-aws.epsilla.com/api/v2/project/<PROJECT-ID
 ```python
 status_code, response = db.query(
   table_name="MyTable",
-  query_field="embedding",
+  query_field="Embedding",
   query_vector=[0.35, 0.55, 0.47, 0.94],
   limit=2
 )
@@ -190,7 +190,7 @@ status_code, response = db.query(
 const query = await db.query(
   'MyTable',
   {
-    queryField: "embedding",                 // query field
+    queryField: "Embedding",                 // query field
     queryVector: [0.35, 0.55, 0.47, 0.94],   // query vector
     limit: 2                                 // top K
   }
@@ -205,7 +205,7 @@ curl -X POST 'https://api-us-east-1-1-aws.epsilla.com/api/v2/project/<PROJECT-ID
     -H "Content-Type: application/json" \
     -d '{
         "table": "MyTable",
-        "queryField": "embedding",
+        "queryField": "Embedding",
         "queryVector": [0.35, 0.55, 0.47, 0.94],
         "limit": 2
      }'        
