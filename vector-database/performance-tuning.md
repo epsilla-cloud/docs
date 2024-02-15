@@ -2,7 +2,7 @@
 
 Starting in 0.3.9, Epsilla Vector Database offers advanced performance tuning options to cater to diverse operational needs, ensuring optimal efficiency and speed for vector data processing. By adjusting the configuration through a simple POST request to the API endpoint, users can fine-tune the database's performance to their specific requirements:
 
-```
+```sh
 curl -X POST 'http://localhost:8888/api/config' \
     -d '{
         "IntraQueryThreads": 4,
