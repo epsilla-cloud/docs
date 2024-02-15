@@ -284,6 +284,7 @@ Epsilla supports these VoyageAI embedding models (learn more about Voyage AI emb
 
 | Name                                 | Dimensions |
 | ------------------------------------ | ---------- |
+| **voyageai/voyage-large-2**          | 1536       |
 | **voyageai/voyage-2**                | 1024       |
 | **voyageai/voyage-code-2**           | 1536       |
 | **voyageai/voyage-lite-02-instruct** | 1024       |
@@ -410,9 +411,10 @@ await db.createTable(
 
 Epsilla supports these Nomic AI embedding models (learn more about Nomic AI embedding at [https://docs.nomic.ai/reference/endpoints/nomic-embed-text](https://docs.nomic.ai/reference/endpoints/nomic-embed-text)):
 
-| Name                            | Dimensions |
-| ------------------------------- | ---------- |
-| **nomicai/nomic-embed-text-v1** | 768        |
+| Name                              | Dimensions |
+| --------------------------------- | ---------- |
+| **nomicai/nomic-embed-text-v1.5** | 768        |
+| **nomicai/nomic-embed-text-v1**   | 768        |
 
 When using Nomic AI embedding, make sure provide the **X-NOMIC-API-Key** header when connecting to the vector database:
 

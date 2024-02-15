@@ -20,6 +20,7 @@
 * [Delete records](vector-database/api-reference-1.md)
 * [Dense vector vs. sparse vector](vector-database/dense-vector-vs.-sparse-vector.md)
 * [Embeddings](vector-database/embeddings.md)
+* [Performance Tuning](vector-database/performance-tuning.md)
 * [Roadmap](vector-database/roadmap.md)
 
 ## Platform

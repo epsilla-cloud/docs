@@ -11,7 +11,7 @@ We're thrilled to present a comprehensive overview of the features and projects 
   * [ ] AutoGPT
 * [ ] **Hybrid Search Support**: We plan to support hybrid search allows you to perform semantic and keyword search and combine the results for improving result relevance.
   * [x] \[Launched 12/04/2023] Support sparse vector
-  * [ ] Hybrid search API
+  * [x] \[Launched 2/15/2024] Hybrid search API
   * [ ] Integration with BM25 encoding
   * [ ] Integration with SPLADE embedding
 * [x] **Built-in Embedding Support**: We aim to streamline your workflow by enabling document embedding directly within Epsilla vector DB, eliminating the need for pre-insertion embedding.
