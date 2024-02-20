@@ -12,6 +12,7 @@ Epsilla integrates with Jina AI with the following embedding models.
 | --------------------------------------- | ---------- |
 | **jinaai/jina-embeddings-v2-base-en**   | 768        |
 | **jinaai/jina-embeddings-v2-base-de**   | 768        |
+| **jinaai/jina-embeddings-v2-base-es**   | 768        |
 | **jinaai/jina-embeddings-v2-base-zh**   | 768        |
 | **jinaai/jina-embeddings-v2-base-code** | 768        |
 | **jinaai/jina-embeddings-v2-small-en**  | 512        |
