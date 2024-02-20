@@ -300,5 +300,71 @@ searchEngine.setReranker(
 {% endtab %}
 {% endtabs %}
 
+#### Relative Score Fusion (RSF)
 
+RSF normalizes and combines scores from multiple retrievers to rank each document. The process involves:
 
+1. Normalizing distances from each source to a score between 0 and 1, where 0 indicates the furthest and 1 the closest to the query among the retrieval results of one retriever.
+2. Aggregating these normalized scores for each document across all sources.
+3. Ranking documents based on their aggregated scores, with higher scores indicating higher relevance.
+
+Here is the full API for using Relative Score Fusion reranker:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+search_engine.set_reranker(
+    type="rsf",          # or "relative_score_fusion"
+    limit=3,             # (Optional) limit the top K results after reranking. If not provided, all documents from all retrievers will be returned
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+searchEngine.setReranker(
+    'rsf',                    // or 'relative_score_fusion'
+    {
+        limit: 3,             // (Optional) limit the top K results after reranking. If not provided, all documents from all retrievers will be returned
+    }
+);
+```
+{% endtab %}
+{% endtabs %}
+
+#### Distribution-Based Score Fusion (DBSF)
+
+DBSF is a more advanced reranking algorithm than RSF, which takes the embedding distribution of different embedding models, and normalize within the 3 sigma range from median of the embedding distance. [Learn more here](https://medium.com/plain-simple-software/distribution-based-score-fusion-dbsf-a-new-approach-to-vector-search-ranking-f87c37488b18). \
+To use DBSF, you will need to provide a scale range for each embedding or index field. [Talk to us](https://epsilla-ai.larksuite.com/scheduler/a80f6a3202d4c328) if you need help to setup the parameters.
+
+Here is the full API for using Distribution-Based Score Fusion reranker:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+search_engine.set_reranker(
+    type="dbsf",         # or "distribution_based_score_fusion"
+    scale_ranges=[       # Provide the scale range for each retriever based on the embedding model used
+        [0.4, 0.8],
+        [0.18, 0.3]
+    ],
+    limit=3,             # (Optional) limit the top K results after reranking. If not provided, all documents from all retrievers will be returned
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+searchEngine.setReranker(
+    'dbsf',                  // or 'distribution_based_score_fusion'
+    {
+        scaleRanges: [       // Provide the scale range for each retriever based on the embedding model used
+            [0.4, 0.8],
+            [0.18, 0.3]
+        ],
+        limit: 3,            // (Optional) limit the top K results after reranking. If not provided, all documents from all retrievers will be returned
+    }
+);
+```
+{% endtab %}
+{% endtabs %}
