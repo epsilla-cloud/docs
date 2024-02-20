@@ -18,8 +18,9 @@
 * [Search the top K semantically similar records](vector-database/search-the-top-k-semantically-similar-records.md)
 * [Retrieve records (with filters and pagination)](vector-database/retrieve-records-with-filters-and-pagination.md)
 * [Delete records](vector-database/api-reference-1.md)
-* [Dense vector vs. sparse vector](vector-database/dense-vector-vs.-sparse-vector.md)
 * [Embeddings](vector-database/embeddings.md)
+* [Dense vector vs. sparse vector](vector-database/dense-vector-vs.-sparse-vector.md)
+* [Hybrid Search](vector-database/hybrid-search.md)
 * [Performance Tuning](vector-database/performance-tuning.md)
 * [Roadmap](vector-database/roadmap.md)
 
