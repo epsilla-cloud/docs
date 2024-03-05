@@ -278,13 +278,13 @@ Here is the full API for using Reciprocal Rank Fusion reranker:
 
 {% tabs %}
 {% tab title="Python" %}
-```python
-search_engine.set_reranker(
+<pre class="language-python"><code class="lang-python">search_engine.set_reranker(
     type="rrf",          # or "reciprocal_rank_fusion"
     weights=[0.3, 0.7],  # (Optional) give a weight for different retrivers, will use [1, 1, ...] if not provided
-    limit=3,             # (Optional) limit the top K results after reranking. If not provided, all documents from all retrievers will be returned
-)
-```
+<strong>    k=50,                # (Optional) ranking constant, default to 50 if not provided.
+</strong><strong>    limit=3,             # (Optional) limit the top K results after reranking. If not provided, all documents from all retrievers will be returned
+</strong>)
+</code></pre>
 {% endtab %}
 
 {% tab title="JavaScript" %}
@@ -293,6 +293,7 @@ searchEngine.setReranker(
     'rrf',                    // or 'reciprocal_rank_fusion'
     {
         weights: [0.3, 0.7],  // (Optional) give a weight for different retrivers, will use [1, 1, ...] if not provided
+        k: 50,                // (Optional) ranking constant, default to 50 if not provided.
         limit: 3,             // (Optional) limit the top K results after reranking. If not provided, all documents from all retrievers will be returned
     }
 );
