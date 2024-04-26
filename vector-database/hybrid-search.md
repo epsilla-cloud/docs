@@ -21,7 +21,7 @@ Here is a hybrid search example:
 {% tabs %}
 {% tab title="Python" %}
 ```python
-search_engine = client.as_search_engine( 
+search_engine = db.as_search_engine( 
 ).add_retriever(
      table_name="MyTable",
      query_index="DenseIndex",
@@ -46,7 +46,7 @@ search_result = search_engine.search(
 
 {% tab title="JavaScript" %}
 ```javascript
-const searchEngine = client
+const searchEngine = db
     .asSearchEngine()
     .addRetriever({
         table: 'MyTable',
@@ -81,24 +81,24 @@ Assume you have already [connected to a vector database](connect-to-a-database.m
 {% tab title="Python" %}
 ```python
 # Open source
-client = vectordb.Client(...)
-client.use_db(db_name="...")
+db = vectordb.Client(...)
+db.use_db(db_name="...")
 
 # Epsilla cloud
-client = cloud.Client(...).vectordb(...)
+db = cloud.Client(...).vectordb(...)
 ```
 {% endtab %}
 
 {% tab title="JavaScript" %}
 ```javascript
 // Open source
-const client = new epsillajs.EpsillaDB(...);
-client.useDB(...);
+const db = new epsillajs.EpsillaDB(...);
+db.useDB(...);
 
 // Epsilla cloud
 const cloud = new epsillajs.EpsillaCloud(...);
-const client = new epsillajs.VectorDB(...); 
-await client.connect();
+const db = new epsillajs.VectorDB(...); 
+await db.connect();
 ```
 {% endtab %}
 {% endtabs %}
@@ -108,13 +108,13 @@ await client.connect();
 {% tabs %}
 {% tab title="Python" %}
 ```python
-search_engine = client.as_search_engine()
+search_engine = db.as_search_engine()
 ```
 {% endtab %}
 
 {% tab title="JavaScript" %}
 ```javascript
-const searchEngine = client.asSearchEngine()
+const searchEngine = db.asSearchEngine()
 ```
 {% endtab %}
 {% endtabs %}
