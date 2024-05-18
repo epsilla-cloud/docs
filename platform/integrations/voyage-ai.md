@@ -2,7 +2,7 @@
 
 On Epsilla Cloud, you can enable Voyage AI integration by providing your Voyage AI API key (we securely manage your keys using AWS KMS):
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-01-10 at 10.54.00 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-05-18 at 8.52.45 AM.png" alt=""><figcaption></figcaption></figure>
 
 ## Embeddings
 

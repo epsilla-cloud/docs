@@ -2,7 +2,7 @@
 
 On Epsilla Cloud, you can enable OpenAI integration by providing your OpenAI API key (we securely manage your keys using AWS KMS):
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-12-29 at 11.36.48 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-05-18 at 8.51.21 AM.png" alt=""><figcaption></figcaption></figure>
 
 ## Embeddings
 
