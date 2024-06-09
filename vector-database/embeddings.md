@@ -288,14 +288,17 @@ await db.createTable(
 
 ## Voyage AI Embedding
 
-Epsilla supports these VoyageAI embedding models (learn more about Voyage AI embedding at [https://www.voyageai.com/](https://www.voyageai.com/)):
+Epsilla supports these VoyageAI embedding models (learn more about Voyage AI embedding at [https://docs.voyageai.com/docs/embeddings](https://docs.voyageai.com/docs/embeddings)):
 
 | Name                                 | Dimensions |
 | ------------------------------------ | ---------- |
+| **voyageai/voyage-large-2-instruct** | 1024       |
+| **voyageai/voyage-finance-2**        | 1024       |
+| **voyageai/voyage-multilingual-2**   | 1024       |
+| **voyageai/voyage-law-2**            | 1024       |
+| **voyageai/voyage-code-2**           | 1536       |
 | **voyageai/voyage-large-2**          | 1536       |
 | **voyageai/voyage-2**                | 1024       |
-| **voyageai/voyage-code-2**           | 1536       |
-| **voyageai/voyage-lite-02-instruct** | 1024       |
 
 When using Voyage AI embedding on Docker, make sure provide the **X-VoyageAI-API-Key** header when connecting to the vector database:
 
