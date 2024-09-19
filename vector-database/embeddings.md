@@ -293,9 +293,15 @@ Epsilla supports these VoyageAI embedding models (learn more about Voyage AI emb
 | Name                                 | Dimensions |
 | ------------------------------------ | ---------- |
 | **voyageai/voyage-large-2**          | 1536       |
-| **voyageai/voyage-2**                | 1024       |
 | **voyageai/voyage-code-2**           | 1536       |
+| **voyageai/voyage-2**                | 1024       |
+| **voyageai/voyage-02**               | 1024       |
+| **voyageai/voyage-law-2**            | 1024       |
+| **voyageai/voyage-finance-2**        | 1024       |
+| **voyageai/voyage-multilingual-2**   | 1024       |
 | **voyageai/voyage-lite-02-instruct** | 1024       |
+| **voyageai/voyage-3**                | 1024       |
+| **voyageai/voyage-3-lite**           | 512        |
 
 When using Voyage AI embedding on Docker, make sure provide the **X-VoyageAI-API-Key** header when connecting to the vector database:
 
