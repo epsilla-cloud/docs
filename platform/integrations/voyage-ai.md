@@ -9,7 +9,9 @@ On Epsilla Cloud, you can enable Voyage AI integration by providing your Voyage 
 Epsilla integrates with Voyage AI with the following embedding models:
 
 | Name                                 | Dimensions |
-| ------------------------------------ | ---------- |
+|--------------------------------------|------------|
+| **voyageai/voyage-3**                | 1024       |
+| **voyageai/voyage-3-lite**           | 512        |
 | **voyageai/voyage-large-2**          | 1536       |
 | **voyageai/voyage-2**                | 1024       |
 | **voyageai/voyage-code-2**           | 1536       |
