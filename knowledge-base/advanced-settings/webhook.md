@@ -30,6 +30,6 @@ When the data processing finishes, we will POST the following payload to your we
 }
 ```
 
-The DataSourceID is an identifier for your knowledge base's data source. You can get the knowledge base's data source ID from the URL (the last parameter of the link):
+The DataSourceID is an identifier for your knowledge base's data source. You can obtain the data source ID from the URL, specifically from the last parameter of the link.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-10-04 at 6.39.34 PM.png" alt=""><figcaption></figcaption></figure>
