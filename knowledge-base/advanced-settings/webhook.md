@@ -4,9 +4,9 @@ The Webhook is used to receive updates on the status of knowledge base data proc
 
 Provide an endpoint where Epsilla should post status updates:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-10-04 at 6.24.55 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-10-04 at 6.45.34 PM.png" alt=""><figcaption></figcaption></figure>
 
-When the data processing starts, we will POST the following payload to your webhook endpoint:
+When the data processing starts, Epsilla will POST the following payload to your webhook endpoint:
 
 ```json
 {
@@ -18,7 +18,7 @@ When the data processing starts, we will POST the following payload to your webh
 }
 ```
 
-When the data processing finishes, we will POST the following payload to your webhook endpoint:
+When the data processing finishes, Epsilla will POST the following payload to your webhook endpoint:
 
 ```json
 {
