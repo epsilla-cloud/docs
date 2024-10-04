@@ -70,7 +70,7 @@ If you find a search result inspiring, share it with your community:
 
 Click the hamburger button at top right corner:
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-09-27 at 4.58.28 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-09-27 at 4.58.28 PM (1).png" alt="" width="68"><figcaption></figcaption></figure>
 
 and you open the side navigation bar for viewing search history:
 

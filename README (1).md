@@ -15,11 +15,11 @@ Here are some common use cases of Epsilla vector database
 **Benefits:** Enable the LLMs to work for your own data and knowledge. Compare to using fine-tuning, RAG has a much faster time-to-value, is much cheaper for both engineering cost and hardware cost, and support real time knowledge updates.\
 
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-09-18 at 7.07.38 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2023-09-18 at 7.07.38 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-02-14 at 4.35.55 PM.png" alt=""><figcaption><p>Example: Upload IRS tax publications</p></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2024-02-14 at 4.35.55 PM.png" alt=""><figcaption><p>Example: Upload IRS tax publications</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-02-14 at 4.37.25 PM.png" alt=""><figcaption><p>Example: Build a tax assistant chatbot augmented by IRS publications</p></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2024-02-14 at 4.37.25 PM.png" alt=""><figcaption><p>Example: Build a tax assistant chatbot augmented by IRS publications</p></figcaption></figure>
 
 ### 2. Build Better Recommendation Systems
 
@@ -29,7 +29,7 @@ Here are some common use cases of Epsilla vector database
 
 **Benefits:** Vector DB that leverages the hidden relevance improves recommendation recall. Epsilla’s low query latency is vital to building a realtime recommendation system.
 
-<figure><img src="../.gitbook/assets/renchusong_draw_a_recommendation_system_with_input_product_imag_b9b02df5-bc55-4c5a-ac75-466bb16339be.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/renchusong_draw_a_recommendation_system_with_input_product_imag_b9b02df5-bc55-4c5a-ac75-466bb16339be.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### 3. Find Hidden Insights From Unstructured Data
 
@@ -39,7 +39,7 @@ Here are some common use cases of Epsilla vector database
 
 **Benefits:** Multimodal search becomes as easy as text search. No need to manually label unstructured data and convert to structured data anymore.
 
-<figure><img src="../.gitbook/assets/Recomendation System.drawio (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Recomendation System.drawio (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-09-26 at 12.36.44 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2023-09-26 at 12.36.44 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 

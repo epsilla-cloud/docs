@@ -22,8 +22,8 @@ Have questions or need help? Our community and support channels are here for you
 
 You can also chat with us via the **Help Me** chatbox at the bottom right corner of our website:
 
-<figure><img src=".gitbook/assets/Screenshot 2024-09-20 at 8.21.17 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2024-09-20 at 8.21.17 AM.png" alt="" width="92"><figcaption></figcaption></figure>
 
 Or click the Help Me at the left side navigation bar after you register and login to [**Epsilla Cloud**](https://cloud.epsilla.com)**:**
 
-<figure><img src=".gitbook/assets/Screenshot 2024-09-20 at 8.22.29 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2024-09-20 at 8.22.29 AM.png" alt="" width="194"><figcaption></figcaption></figure>
