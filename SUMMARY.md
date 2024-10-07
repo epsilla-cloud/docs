@@ -17,6 +17,8 @@
     * [Webhook](knowledge-base/advanced-settings/webhook.md)
     * [Meta Data](knowledge-base/advanced-settings/meta-data.md)
   * [Data Storage](knowledge-base/data-storage.md)
+  * [Programmatically Manage Knowledge Bases](knowledge-base/programmatically-manage-knowledge-bases.md)
+* [Project Management](project-management.md)
 
 ## Epsilla Vector Database
 
