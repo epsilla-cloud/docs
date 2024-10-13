@@ -18,7 +18,10 @@
     * [Meta Data](knowledge-base/advanced-settings/meta-data.md)
   * [Data Storage](knowledge-base/data-storage.md)
   * [Programmatically Manage Knowledge Bases](knowledge-base/programmatically-manage-knowledge-bases.md)
+* [Evaluation](evaluation.md)
+* [Team Member Management](team-member-management.md)
 * [Project Management](project-management.md)
+* [Billing Management](billing-management.md)
 
 ## Epsilla Vector Database
 

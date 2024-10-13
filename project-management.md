@@ -2,7 +2,7 @@
 
 In Epsilla, you can use projects to organize resources (AI agents, knowledge bases, evaluations, integrations, etc.) into groups and grant access to different team members.
 
-When a new user registers at Epsilla, a **Default Project** is created automatically. Free Tier and Starter Tier users can have only one project. Professional Tier users can have up to 10 projects, while Enterprise Tier users can have unlimited projects.&#x20;
+When a new user registers at Epsilla, a **Default Project** is created automatically. Free Tier and Starter Tier organizations can have only one project. Professional Tier organization can have up to 10 projects, while Enterprise Tier organization can have unlimited projects.&#x20;
 
 You can switch between projects at the top of the left navigation bar:
 
