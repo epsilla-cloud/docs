@@ -6,8 +6,8 @@ This approach is conceptually similar to Continuous Integration/Continuous Deliv
 
 On the navigation bar, click on the **Evaluations** tab.
 
-<figure><img src=".gitbook/assets/Screenshot 2024-10-12 at 11.55.33 PM.png" alt="" width="253"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-12 at 11.55.33 PM.png" alt="" width="253"><figcaption></figcaption></figure>
 
 This will lead you to the page where you can create and manage all your evaluations.
 
-<figure><img src=".gitbook/assets/Screenshot 2024-10-12 at 11.59.24 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-12 at 11.59.24 PM.png" alt=""><figcaption></figcaption></figure>
