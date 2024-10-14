@@ -11,6 +11,7 @@
   * [Local Files](knowledge-base/local-files.md)
   * [Website](knowledge-base/website.md)
   * [S3](knowledge-base/s3.md)
+  * [Notion](knowledge-base/notion.md)
   * [Advanced Settings](knowledge-base/advanced-settings/README.md)
     * [Auto Sync](knowledge-base/advanced-settings/auto-sync.md)
     * [Embedding](knowledge-base/advanced-settings/embedding.md)
