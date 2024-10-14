@@ -16,7 +16,7 @@ Provide a **Knowledge Base Name**. The name should begin with a letter or an und
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-13 at 1.02.49 AM.png" alt="" width="563"><figcaption></figcaption></figure>
 
-**Add Webpage URLs**
+### **Add Webpage URLs**
 
 In the **Webpage URLs** section, input the publicly accessible URLs you want to extract data from.
 
@@ -52,7 +52,7 @@ You can also use the **Add multiple webpages** option to input multiple URLs at 
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-13 at 1.05.07 AM.png" alt="" width="563"><figcaption></figcaption></figure>
 
-**Data Processing**
+### **Data Processing**
 
 Once you've added the desired URLs, click **Create** to begin processing the data.&#x20;
 
