@@ -1,0 +1,3 @@
+# Basic Smart Search Config
+
+Working in progress ...
