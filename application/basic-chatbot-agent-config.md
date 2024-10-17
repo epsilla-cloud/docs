@@ -1,6 +1,6 @@
 # Basic Chatbot Agent Config
 
-Following the steps in previous, once the chatbot agent is created, its basic settings are prefilled based on the initial configuration.
+Following the previous steps, once the chatbot agent is created, its basic settings are prefilled based on the initial configuration.
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-17 at 12.38.36 AM.png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -74,7 +74,7 @@ For each knowledge base you add, a corresponding retriever is automatically adde
   * **Basic Retriever:** The system retrieves the records as-is, without any further processing.
   * (Coming soon) Other options: You may have more advanced retriever types depending on your specific use case, such as sentence-window retriever and auto-merging retriever.
 * **Filter (Optional):** If you want to apply semantic distance filters and meta data filters to refine the retrieved results, you can use this field.
-  * **Example:** You can add a filter like `@distance < 0.7` to ensure that only records with a certain level of similarity (based on the distance between vectors) are returned. You can add a meta data filter like `Filename LIKE '%Instruction 1040%'` to constrain the results to only those documents that contain specific terms, such as files related to IRS Instruction 1040, ensuring the chatbot retrieves information from highly relevant documents.
+  * **Example:** You can add a filter like `@distance < 0.7` to ensure that only records with a certain level of similarity (based on the distance between vectors) are returned. You can add a meta data filter like `Filename LIKE '%Instruction 1040%'` to constrain the results to only those documents related to IRS Instruction 1040, ensuring the chatbot retrieves information from highly relevant documents.
   * You can also provide filters dynamically through an API payload when integrating external systems with the chatbot. This allows the chatbot’s behavior to adapt in real-time, making its responses more flexible and tailored to specific contexts or user queries.
 
 A reranker reorganizes the results retrieved by the chatbot, prioritizing them based on their relevance to the user’s query. By applying different reranking methods, the reranker ensures that the most relevant and useful information is surfaced first, improving the overall quality of the chatbot's responses. When you have only one retriever, using a reranker is optional. However, if your chatbot is connected to multiple knowledge bases (resulting in multiple retrievers), enabling a reranker becomes essential to effectively combine and rank the results from each retriever.

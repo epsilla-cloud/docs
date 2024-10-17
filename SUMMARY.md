@@ -25,7 +25,7 @@
 * [Application](application/README.md)
   * [Create New AI Agent](application/create-new-ai-agent.md)
   * [Basic Chatbot Agent Config](application/basic-chatbot-agent-config.md)
-  * [Basic Smart Search Config](application/basic-smart-search-config.md)
+  * [Basic Smart Search Agent Config](application/basic-smart-search-agent-config.md)
   * [Advanced Workflow Customization](application/advanced-workflow-customization.md)
   * [Publish and Deployment](application/publish-and-deployment.md)
   * [User Engagement Analytics](application/user-engagement-analytics.md)
