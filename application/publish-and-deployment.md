@@ -32,7 +32,7 @@ The **Publish to App Portal** feature allows you to make your AI agent publicly 
 
 After selecting the appropriate access control and deployment method, an access link for the AI agent is generated. This unique link can be shared based on the access control settings you've chosen.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-14 at 12.02.06 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-14 at 12.02.06 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 You can copy or open the link directly using the icons provided next to the link.
 

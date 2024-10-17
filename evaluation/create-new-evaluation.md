@@ -12,11 +12,11 @@ You will be taken to an empty evaluation titled **Untitled Evaluation - {Creatio
 
 Click on the title field, which will initially display the default name, and give your evaluation a meaningful name (e.g., "Financial Agent Evaluation").&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-13 at 12.12.30 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-13 at 12.12.30 AM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 Unfocus the name input to apply the changes.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-13 at 12.12.39 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-13 at 12.12.39 AM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### **Fill in Test Case Details**
 
