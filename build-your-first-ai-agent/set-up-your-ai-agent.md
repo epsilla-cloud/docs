@@ -1,6 +1,6 @@
 # Set Up Your AI Agent
 
-Currently Epsilla supports two types of agents: Chatbot Agents and Smart Search Agents. Chatbot Agents provide an interactive experience similar to ChatGPT, generating context-aware responses for use cases such as customer support or domain-specific conversations, often tailored to specific knowledge bases. Smart Search Agents focus on efficient information retrieval, inspired by platforms like Perplexity. They excel in providing precise answers to user queries, making them ideal for use cases such as research, content discovery, and data-driven decision-making.
+Currently Epsilla supports two types of agents: Chat Agents and Smart Search Agents. Chat Agents provide an interactive experience similar to ChatGPT, generating context-aware responses for use cases such as customer support or domain-specific conversations, often tailored to specific knowledge bases. Smart Search Agents focus on efficient information retrieval, inspired by platforms like Perplexity. They excel in providing precise answers to user queries, making them ideal for use cases such as research, content discovery, and data-driven decision-making.
 
 ### **Navigate to the Application Tab**
 
@@ -12,25 +12,25 @@ Or click on the **Applications** tab. This will lead you to the page where you c
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-09-28 at 10.20.17 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
-Select **Chatbot** as the application type from the available options.
+Select **Chat Agent** as the application type from the available options.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-09-28 at 10.22.43 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-18 at 10.10.49 AM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### **Add Application Details**
 
-**Name Your Chatbot**: Enter a name for your chatbot that reflects its purpose.
+**Name Your Chat Agent**: Enter a name for your chat agent that reflects its purpose.
 
-**Provide a Description**: Add a description for your chatbot to indicate what kind of tasks or questions it is intended to handle.
+**Provide a Description**: Add a description for your chat agent to indicate what kind of tasks or questions it is intended to handle.
 
-**Upload a Logo** (Optional): For a personalized touch, upload a logo to represent your chatbot visually in the interface.
+**Upload a Logo** (Optional): For a personalized touch, upload a logo to represent your chat agent visually in the interface.
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-09-28 at 10.23.30 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
-The chatbot will be created in 15 - 30 seconds. Now you can preview the Chatbot and modify its configurations side by side:
+The chat agent will be created in 15 - 30 seconds. Now you can preview the Chat Agent and modify its configurations side by side:
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-09-28 at 10.31.07 PM.png" alt=""><figcaption></figcaption></figure>
 
-### **Define the Chatbot Role**
+### **Define the Chat Agent Role**
 
 Technically this is the system prompt to instruct the LLM to behave with desired personality. For instance, if you're creating a tax assistant, you could use a system prompt like:
 
@@ -38,11 +38,11 @@ Technically this is the system prompt to instruct the LLM to behave with desired
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-09-28 at 10.32.01 PM.png" alt=""><figcaption></figcaption></figure>
 
-This role setup is crucial as it helps ensure that the chatbot’s responses are aligned with your intended use case.
+This role setup is crucial as it helps ensure that the chat agent’s responses are aligned with your intended use case.
 
-### **Add Knowledge to the Chatbot**
+### **Add Knowledge to the Chat Agent**
 
-**Link the Knowledge Base**: Select the knowledge base you created and attach it to your chatbot. This ensures that the chatbot can ground its responses in the specific data you provided, making answers more relevant and accurate. You can add multiple knowledge bases to an AI agent.
+**Link the Knowledge Base**: Select the knowledge base you created and attach it to your chat agent. This ensures that the chat agent can ground its responses in the specific data you provided, making answers more relevant and accurate. You can add multiple knowledge bases to an AI agent.
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-09-28 at 10.33.49 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -56,7 +56,7 @@ This role setup is crucial as it helps ensure that the chatbot’s responses are
 
 ### **Configure Chat Experience**
 
-**Introduction Message**: Set an introductory message that the chatbot will use to greet new users. This helps set the context of the conversation.
+**Introduction Message**: Set an introductory message that the chat agent will use to greet new users. This helps set the context of the conversation.
 
 **Chatbox Placeholder:** Set the placeholder text in the chatbox.
 
@@ -66,17 +66,17 @@ This role setup is crucial as it helps ensure that the chatbot’s responses are
 
 **How to Label a Chat:** Config how to label a chat. By default Epsilla will use LLM to summarize the a chat.
 
-**Hide Epsilla Logo:** For a paid tier, you can choose to hide Epsilla logo from the Chatbot for white labeling.
+**Hide Epsilla Logo:** For a paid tier, you can choose to hide Epsilla logo from the Chat Agent for white labeling.
 
-**Collect User Feedback:** Whether allow users to provide feedback to the Chatbot response.
+**Collect User Feedback:** Whether allow users to provide feedback to the Chat Agent response.
 
 **Allow Message Sharing:** Whether allow other users to share the chat with others.
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-09-28 at 10.37.50 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
-### **Test Your Chatbot**
+### **Test Your Chat Agent**
 
-You can test the chatbot in the right hand  side **Preview.** Test the chatbot in the interface to ensure it responds appropriately. Verify that it can answer questions using the knowledge base and that the defined role aligns with its response:
+You can test the chat agent in the right hand  side **Preview.** Test the chat agent in the interface to ensure it responds appropriately. Verify that it can answer questions using the knowledge base and that the defined role aligns with its response:
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-09-28 at 10.45.48 PM.png" alt=""><figcaption></figcaption></figure>
 

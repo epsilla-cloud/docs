@@ -6,13 +6,13 @@ From the **Applications** section, you can create a variety of AI agents. Click 
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-14 at 1.25.00 AM.png" alt="" width="140"><figcaption></figcaption></figure>
 
-Currently, Epsilla supports two main types of applications: **Chatbot** and **Smart Search**
+Currently, Epsilla supports two main types of applications: **Chat Agent** and **Smart Search Agent**
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-14 at 1.20.43 AM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-18 at 10.10.49 AM (2).png" alt=""><figcaption></figcaption></figure>
 
-### **Creating a Chatbot**
+### **Creating a Chat Agent**
 
-A chatbot in Epsilla is designed to answer questions and have conversation based on your knowledge base. Here's a step-by-step guide to setting up your chatbot:
+A chat agent in Epsilla is designed to answer questions and have conversation based on your knowledge base. Here's a step-by-step guide to setting up your chatbot:
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-14 at 1.21.44 AM.png" alt="" width="563"><figcaption></figcaption></figure>
 

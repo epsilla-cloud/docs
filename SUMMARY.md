@@ -24,7 +24,7 @@
   * [Programmatically Manage Knowledge Bases](knowledge-base/programmatically-manage-knowledge-bases.md)
 * [Application](application/README.md)
   * [Create New AI Agent](application/create-new-ai-agent.md)
-  * [Basic Chatbot Agent Config](application/basic-chatbot-agent-config.md)
+  * [Basic Chat Agent Config](application/basic-chat-agent-config.md)
   * [Basic Smart Search Agent Config](application/basic-smart-search-agent-config.md)
   * [Advanced Workflow Customization](application/advanced-workflow-customization.md)
   * [Publish and Deployment](application/publish-and-deployment.md)
