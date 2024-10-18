@@ -12,7 +12,7 @@ Epsilla integrates with Nomic AI with the following embedding models.
 | --------------------------- | ---------- |
 | **mistralai/mistral-embed** | 1024       |
 
-For Epsilla open source vector db, you just need to add a header in the data ingestion and semantic search queries [like this](../../epsilla-vector-database/advanced-topics/embeddings.md#mistral-ai-embedding).
+For Epsilla open source vector db, you just need to add a header in the data ingestion and semantic search queries [like this](../../vector-database/embeddings.md#mistral-ai-embedding).
 
 Then you can start using the nomicai embedding model during vector table schema creation:
 

@@ -50,7 +50,7 @@ It will be applied along with the semantic search to further narrow down the res
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-09-30 at 12.59.02 AM.png" alt=""><figcaption></figcaption></figure>
 
-Read more about supported [filter expression](../epsilla-vector-database/user-manual/search-the-top-k-semantically-similar-records.md#filter-expression).
+Read more about supported [filter expression](../vector-database/search-the-top-k-semantically-similar-records.md#filter-expression).
 
 ### Add New Records
 
@@ -86,7 +86,7 @@ Hover over a table with your mouse, then click the **Edit** icon to view and ins
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-09-30 at 1.22.07 AM.png" alt="" width="326"><figcaption></figcaption></figure>
 
-The first tab displays the table schema, which defines the structure of the table, including the fields, data types, and semantic indices. Read more about [table schema](../epsilla-vector-database/user-manual/create-a-new-table.md#create-a-table-on-epsilla-cloud-portal-ui).
+The first tab displays the table schema, which defines the structure of the table, including the fields, data types, and semantic indices. Read more about [table schema](../vector-database/create-a-new-table.md#create-a-table-on-epsilla-cloud-portal-ui).
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-09-30 at 1.22.54 AM.png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -120,7 +120,7 @@ The table fields at the "Create Table" stage define the structure and type of da
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-09-30 at 1.34.30 AM.png" alt="" width="563"><figcaption></figcaption></figure>
 
-Read more about the table fields at [create table](../epsilla-vector-database/user-manual/create-a-new-table.md#create-a-table-on-epsilla-cloud-portal-ui).
+Read more about the table fields at [create table](../vector-database/create-a-new-table.md#create-a-table-on-epsilla-cloud-portal-ui).
 
 ### Delete Table
 

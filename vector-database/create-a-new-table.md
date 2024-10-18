@@ -50,7 +50,7 @@ await db.createTable('MyTable',
 
 On Epsilla Cloud, you can also intuitively create vector tables via GUI. Use the 'Add Field' button to add more fields; Use the 'Add Index' button to add more embedding indices;  Use the 'Delete' buttons to remove a field or index; Give each field a name, data type, and additional options; Choose the desired embedding model for each index.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-12-28 at 10.02.27 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-12-28 at 10.02.27 PM.png" alt=""><figcaption></figcaption></figure>
 
 ## Field Data Types
 
@@ -70,7 +70,7 @@ VECTOR_FLOAT # A vector of float field, dimension must be provided
 SPARSE_VECTOR_FLOAT # A sparse vector of float, dimension must be provided
 ```
 
-Learning more about [dense vector vs. sparse vector](../advanced-topics/dense-vector-vs.-sparse-vector.md).
+Learning more about [dense vector vs. sparse vector](dense-vector-vs.-sparse-vector.md).
 
 ### Embedding Fields
 
@@ -155,8 +155,8 @@ Define indices as a list. Each index contains 3 parts:
 
 * **name:** the name of the index. It must be unique, and cannot be the same as any field name.
 * **field:** the name of the field that will be embedded and indexed by the index. The field must be STRING data type.
-* **model (optional):** the embedding model name. If omitted, Epsilla will use the default embedding model **BAAI/bge-small-en-v1.5**. Learn more about supported embedding models [here](../advanced-topics/embeddings.md).
-* **dimensions (optional):** for embedding models that support [dimensionality reduction](https://en.wikipedia.org/wiki/Dimensionality\_reduction), you can provide a dimensions parameter for reducing the embedding dimensions returned by the embedding provider, which can save cost while still preserve a high performance. For example, if the embedding model original dimension is 1536, then you can provide a dimensions value between 1 and 1536 for reduce the dimensions. We don't recommend go below 128 in practice, otherwise the embedding performance will be dramatically lower. The [embeddings page](../advanced-topics/embeddings.md) shows all embedding models that support dimension reduction.
+* **model (optional):** the embedding model name. If omitted, Epsilla will use the default embedding model **BAAI/bge-small-en-v1.5**. Learn more about supported embedding models [here](embeddings.md).
+* **dimensions (optional):** for embedding models that support [dimensionality reduction](https://en.wikipedia.org/wiki/Dimensionality\_reduction), you can provide a dimensions parameter for reducing the embedding dimensions returned by the embedding provider, which can save cost while still preserve a high performance. For example, if the embedding model original dimension is 1536, then you can provide a dimensions value between 1 and 1536 for reduce the dimensions. We don't recommend go below 128 in practice, otherwise the embedding performance will be dramatically lower. The [embeddings page](embeddings.md) shows all embedding models that support dimension reduction.
 
 You can index multiple STRING fields. You can define multiple indices on the same field with different embedding models. This level of flexibility enables hybrid search on the same vector table.
 

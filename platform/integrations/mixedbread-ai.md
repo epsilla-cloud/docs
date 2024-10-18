@@ -18,7 +18,7 @@ Epsilla integrates with Mixedbread AI with the following embedding models.
 | **mixedbreadai/multilingual-e5-base**  | 768        |
 | **mixedbreadai/gte-large-zh**          | 1024       |
 
-For Epsilla open source vector db, you just need to add a header in the data ingestion and semantic search queries [like this](../../epsilla-vector-database/advanced-topics/embeddings.md#mixedbread-ai-embedding).
+For Epsilla open source vector db, you just need to add a header in the data ingestion and semantic search queries [like this](../../vector-database/embeddings.md#mixedbread-ai-embedding).
 
 Then you can start using the mixedbreadai embedding model during vector table schema creation:
 

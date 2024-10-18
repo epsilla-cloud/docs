@@ -2,11 +2,11 @@
 
 Embeddings/vectors are numerical representations of complex data like text or images in a format that machines can process. Embedding models convert text, images, audios, and videos into vectors of real numbers. This process captures semantic meaning, allowing algorithms to understand content similarity and context. This technique is pivotal in various applications, from Retrieval Augmented Generation (RAG) to recommendation systems to language translation, as it enables computers to 'understand' and work with human language.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-12-18 at 1.56.44 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-12-18 at 1.56.44 PM.png" alt=""><figcaption></figcaption></figure>
 
 In embedding models, the mathematical premise is that the closer two vectors are in high-dimensional space, the more semantically similar they are. This characteristic is leveraged in vector databases for semantic similarity search, using algorithms like nearest neighbor search. These algorithms compute the distances between vectors, interpreting smaller distances as higher similarity. This approach enables applications to find closely related items (like texts, images, audios, videos) based on their embedded vector representations, making it possible to conduct searches and analyses based on the meaning and context of the data, rather than just literal matches.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-12-18 at 3.19.33 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-12-18 at 3.19.33 PM.png" alt=""><figcaption></figcaption></figure>
 
 ## Use Embeddings
 
@@ -189,7 +189,7 @@ const db = new epsillajs.EpsillaDB({
 {% endtabs %}
 
 {% hint style="info" %}
-If you are using Epsilla Cloud, make sure to add [OpenAI integration](../../platform/integrations/openai.md) instead of passing the header.
+If you are using Epsilla Cloud, make sure to add [OpenAI integration](../platform/integrations/openai.md) instead of passing the header.
 {% endhint %}
 
 And use the embedding model when defining the index:
@@ -257,7 +257,7 @@ const db = new epsillajs.EpsillaDB({
 {% endtabs %}
 
 {% hint style="info" %}
-If you are using Epsilla Cloud, make sure to add [JinaAI integration](../../platform/integrations/jina-ai.md) instead of passing the header.
+If you are using Epsilla Cloud, make sure to add [JinaAI integration](../platform/integrations/jina-ai.md) instead of passing the header.
 {% endhint %}
 
 And use the embedding model when defining the index:
@@ -330,7 +330,7 @@ const db = new epsillajs.EpsillaDB({
 {% endtabs %}
 
 {% hint style="info" %}
-If you are using Epsilla Cloud, make sure to add [VoyageAI integration](../../platform/integrations/voyage-ai.md) instead of passing the header.
+If you are using Epsilla Cloud, make sure to add [VoyageAI integration](../platform/integrations/voyage-ai.md) instead of passing the header.
 {% endhint %}
 
 And use the embedding model when defining the index:
@@ -400,7 +400,7 @@ const db = new epsillajs.EpsillaDB({
 {% endtabs %}
 
 {% hint style="info" %}
-If you are using Epsilla Cloud, make sure to add [Mixedbread AI integration](../../platform/integrations/mixedbread-ai.md) instead of passing the header.
+If you are using Epsilla Cloud, make sure to add [Mixedbread AI integration](../platform/integrations/mixedbread-ai.md) instead of passing the header.
 {% endhint %}
 
 And use the embedding model when defining the index:
@@ -465,7 +465,7 @@ const db = new epsillajs.EpsillaDB({
 {% endtabs %}
 
 {% hint style="info" %}
-If you are using Epsilla Cloud, make sure to add [Nomic AI integration](../../platform/integrations/nomic-ai.md) instead of passing the header.
+If you are using Epsilla Cloud, make sure to add [Nomic AI integration](../platform/integrations/nomic-ai.md) instead of passing the header.
 {% endhint %}
 
 And use the embedding model when defining the index:
@@ -529,7 +529,7 @@ const db = new epsillajs.EpsillaDB({
 {% endtabs %}
 
 {% hint style="info" %}
-If you are using Epsilla Cloud, make sure to add [Mistral AI integration](../../platform/integrations/mistral-ai.md) instead of passing the header.
+If you are using Epsilla Cloud, make sure to add [Mistral AI integration](../platform/integrations/mistral-ai.md) instead of passing the header.
 {% endhint %}
 
 And use the embedding model when defining the index:

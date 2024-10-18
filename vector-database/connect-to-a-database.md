@@ -34,7 +34,7 @@ Start the docker as the backend service
 docker run --pull=always -d -p 8888:8888 epsilla/vectordb
 ```
 
-Use the EMBEDDING\_MODELS environment variable to enable more built-in embedding models (learn more about [embeddings](../advanced-topics/embeddings.md)):
+Use the EMBEDDING\_MODELS environment variable to enable more built-in embedding models (learn more about [embeddings](embeddings.md)):
 
 ```bash
 docker run --pull=always -d -p 8888:8888 -e EMBEDDING_MODELS="BAAI/bge-small-zh-v1.5,BAAI/bge-base-en" epsilla/vectordb
@@ -169,7 +169,7 @@ db.useDB("MyDB");
 
 First, create a vector database on Cloud GUI.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-11-21 at 9.42.30 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.42.30 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 We will support creating vector databases via Python/JavaScript client in the near future.
@@ -207,8 +207,8 @@ await db.connect();
 
 The Project ID and Database ID can be copied from the database card under project resources:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-11-22 at 10.28.27 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-22 at 10.28.27 AM.png" alt=""><figcaption></figcaption></figure>
 
 The API Key can be created under project configurations:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-11-21 at 9.19.00 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.19.00 PM.png" alt=""><figcaption></figcaption></figure>

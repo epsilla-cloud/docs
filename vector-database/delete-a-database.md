@@ -22,7 +22,7 @@ await db.unloadDB('MyDB');
 
 For now, you can delete vector databases via Cloud GUI.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-11-22 at 10.38.29 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-11-22 at 10.38.29 AM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 We will support deleting databases via Python/JavaScript client in the near future.
