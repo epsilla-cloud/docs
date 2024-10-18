@@ -10,7 +10,7 @@ Epsilla integrates with OpenAI with the following embedding models:
 
 <table><thead><tr><th width="311">Name</th><th width="171">Dimensions</th><th>Support Dimension Reduction</th></tr></thead><tbody><tr><td><strong>openai/text-embedding-3-large</strong></td><td>3072</td><td>Yes</td></tr><tr><td><strong>openai/text-embedding-3-small</strong></td><td>1536</td><td>Yes</td></tr><tr><td><strong>openai/text-embedding-ada-002</strong></td><td>1536</td><td>No</td></tr></tbody></table>
 
-For Epsilla open source vector db, you just need to add a header in the data ingestion and semantic search queries [like this](../../vector-database/embeddings.md#openai-embedding).
+For Epsilla open source vector db, you just need to add a header in the data ingestion and semantic search queries [like this](../../epsilla-vector-database/advanced-topics/embeddings.md#openai-embedding).
 
 Then you can start using the openai embedding model during vector table schema creation:
 

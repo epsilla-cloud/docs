@@ -10,7 +10,7 @@ Epsilla integrates with Nomic AI with the following embedding models.
 
 <table><thead><tr><th width="322">Name</th><th width="133">Dimensions</th><th>Support Dimension Reduction</th></tr></thead><tbody><tr><td><strong>nomicai/nomic-embed-text-v1.5</strong></td><td>768</td><td>Yes</td></tr><tr><td><strong>nomicai/nomic-embed-text-v1</strong></td><td>768</td><td>No</td></tr></tbody></table>
 
-For Epsilla open source vector db, you just need to add a header in the data ingestion and semantic search queries [like this](../../vector-database/embeddings.md#nomic-ai-embedding).
+For Epsilla open source vector db, you just need to add a header in the data ingestion and semantic search queries [like this](../../epsilla-vector-database/advanced-topics/embeddings.md#nomic-ai-embedding).
 
 Then you can start using the nomicai embedding model during vector table schema creation:
 

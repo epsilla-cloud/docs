@@ -12,7 +12,7 @@ The default **epsilla/text-embedding-3-small** and **epsilla/text-embedding-3-la
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-09-30 at 1.51.28 AM.png" alt="" width="375"><figcaption></figcaption></figure>
 
-Read more about [embedding](../../vector-database/embeddings.md).
+Read more about [embedding](../../epsilla-vector-database/advanced-topics/embeddings.md).
 
 ### Which Embedding Model Fits My Needs Best
 

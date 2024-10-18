@@ -9,7 +9,7 @@ On Epsilla Cloud, you can enable Voyage AI integration by providing your Voyage 
 Epsilla integrates with Voyage AI with the following embedding models:
 
 | Name                                 | Dimensions |
-|--------------------------------------|------------|
+| ------------------------------------ | ---------- |
 | **voyageai/voyage-3**                | 1024       |
 | **voyageai/voyage-3-lite**           | 512        |
 | **voyageai/voyage-large-2**          | 1536       |
@@ -17,7 +17,7 @@ Epsilla integrates with Voyage AI with the following embedding models:
 | **voyageai/voyage-code-2**           | 1536       |
 | **voyageai/voyage-lite-02-instruct** | 1024       |
 
-For Epsilla open source vector db, you just need to add a header in the data ingestion and semantic search queries [like this](../../vector-database/embeddings.md#voyage-ai-embedding).
+For Epsilla open source vector db, you just need to add a header in the data ingestion and semantic search queries [like this](../../epsilla-vector-database/advanced-topics/embeddings.md#voyage-ai-embedding).
 
 Then you can start using the voyageai embedding models during vector table schema creation:
 

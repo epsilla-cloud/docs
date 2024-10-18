@@ -12,7 +12,7 @@ Hybrid search leverages the strengths of both, employing sparse vectors (generat
 
 Here is a hybrid search architecture. When the user query comes, it will trigger multiple retrievers to retrieve the top K documents based on their dense vector embeddings, sparse vector embeddings, (and potentially other indices) concurrently. Each retriever gives back a list of documents as candidate results. Then, the documents go through a reranker component to calculate the final rank of all documents from all retrievers, and give the final retrieval result.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-02-19 at 6.27.45 PM.png" alt=""><figcaption><p>Hybrid Search Architecture</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-02-19 at 6.27.45 PM.png" alt=""><figcaption><p>Hybrid Search Architecture</p></figcaption></figure>
 
 ### Epsilla Hybrid Search API
 
@@ -75,7 +75,7 @@ Now let's breakdown hybrid search API step by step.
 
 #### Prerequisite:
 
-Assume you have already [connected to a vector database](connect-to-a-database.md).
+Assume you have already [connected to a vector database](../user-manual/connect-to-a-database.md).
 
 {% tabs %}
 {% tab title="Python" %}
