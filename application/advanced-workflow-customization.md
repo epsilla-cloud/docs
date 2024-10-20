@@ -13,11 +13,11 @@ This feature is ideal for:
 
 * Locate the "Edit Workflow" toggle at the bottom of the settings panel.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-20 at 12.41.49 AM (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-20 at 12.41.49 AM (1).png" alt=""><figcaption></figcaption></figure>
 
 * Switch the toggle from "Off" to "On" to activate the workflow editor.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-20 at 12.48.31 AM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-20 at 12.48.31 AM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 The workflow view offers a higher degree of flexibility for customizing your AI agent. However, once you enter the workflow view, you cannot revert to the normal view without losing all customizations made in the workflow view. This is because workflow customizations involve advanced settings that the normal view cannot support.
@@ -283,4 +283,76 @@ The **Document String Reducer** then converts the merged and ranked results into
 
 In this section, we explore some common design patterns that can be used to further customize workflows in various scenarios. These patterns offer flexibility and control, enabling users to tailor the behavior of chat and smart search agents to meet specific needs. By implementing these strategies, you can optimize how your AI agent processes, retrieves, and responds to user queries, creating a more dynamic and effective experience. Keep in mind that these are just a few examples—your creativity can take these ideas even further. The possibilities are limitless!
 
-Working in progress ...
+**Example 1. Metadata Filtering Pattern**
+
+The metadata filtering pattern in the workflow view is designed to refine document retrieval based on specific conditions derived from user queries. A key part of this pattern is the **LLM Completion** node, which generates the filter condition dynamically.
+
+First you need follow [instructions](../knowledge-base/advanced-settings/meta-data.md) to attach additional metadata fields to the knowledge table.
+
+Then, create a workflow pattern with an additional LLM node connected after the user input node to analyze the user's input and identify references to particular metadata tags. This condition is then applied as a filter in subsequent retrieval steps, ensuring that only documents matching the specified criteria are returned. This approach enables a more targeted search, allowing the workflow to focus on highly relevant information, which improves the accuracy and relevance of the AI's responses.
+
+In the example below, the system message within the LLM node might direct it to produce a filter string if the user's question mentions a specific source:
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-20 at 11.17.01 AM.png" alt="" width="563"><figcaption></figcaption></figure>
+
+```
+You analyze the user question, and if the user question mention anything about specific data source, then response a filter string:
+Source LIKE '%{the_data_source}%'
+Otherwise, response:
+true
+DON'T INCLUDE ANYTHING BEFORE OR AFTER YOUR RESPONSE FILTER STRING
+```
+
+Here is a more sophisticated case to create a nested condition for a financial analyst use case to filter on company ticker and quarter (read more [here](https://epsilla.com/blogs/ready-to-say-goodbye-to-data-chaos-discover-metadata-filtering-for-ai-agents-on-epsilla-cloud)):
+
+```
+Given the user question, extract the following key information and produce a single string with filter conditions accordingly based on instructions below:
+
+1. If the user question mentions 1 company's name, produce filter string:
+
+CompanyName = '{company_name}'
+Example filter:
+
+CompanyName = 'Apple'
+2. If the user question mentions multiple companies' names instead of just 1 company, produce a filter string that uses OR to connect them, and add surrounding parentheses:
+
+(CompanyName = '{company1_name}' OR CompanyName = '{company2_name}' OR ...)
+Example filter:
+
+(CompanyName = 'Nvidia' OR CompanyName = 'Meta')
+3. If the user question mentions 1 quarter, like Q1, Q2, Q3, or Q4, produce filter string:
+
+Time = '{the_quarter} 2024'
+Example filter:
+
+Time = 'Q1 2024'
+4. If the user question mentions multiple quarters instead of just 1 quarter, produce a filter string that uses OR to connect them, and add surrounding parentheses:
+
+(Time = '{the_quarter_1} 2024' OR Time = '{the_quarter_2} 2024' OR ...)
+Example filter:
+
+(Time = 'Q2 2024' OR Time = 'Q3 2024')
+5. If ONLY ONE of the above rules is satisfied, then respond with that filter as the final result.
+
+6. If more than one rule was satisfied in the above, generate a final filter that uses AND to concatenate them.
+
+Example filter:
+
+(CompanyName = 'Microsoft' OR CompanyName = 'Alphabet') AND Time = 'Q2 2024'
+7. If no company or quarter is mentioned in the user question, then produce the response:
+
+true
+JUST RESPONSE THE FILTER CONDITION. DON'T INCLUDE ANYTHING BEFORE OR AFTER YOUR FILTER STRING.
+```
+
+&#x20;**Example 2. Knowledge Prioritization Pattern**
+
+The knowledge prioritization pattern in the workflow view allows for direct integration of multiple retriever results into the LLM, without using a reranking mechanism. Instead of merging documents into a single list, this pattern feeds each set of retrieved knowledge directly to the LLM, letting it decide how to prioritize and weigh information from different sources. A **String Template** is used to guide the LLM on how to handle the inputs, such as always giving preference to knowledge from one source unless it lacks sufficient information, then falling back on the other. This approach offers a high degree of control over the AI's behavior, allowing for nuanced handling of knowledge sources. It is especially useful when specific sources of data should take precedence, enabling the agent to respond with a richer, more context-aware output based on a prioritized hierarchy of knowledge.
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-20 at 1.16.34 PM.png" alt=""><figcaption></figcaption></figure>
+
+
+
+
+
+Working in progress for more examples ...
