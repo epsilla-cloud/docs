@@ -142,7 +142,7 @@ The appearance configuration allows you to customize the look and feel of the ch
 
 Epsilla provides multiple options to fine-tune the chat experience, allowing you to personalize how the chat agent interacts with users and adjust key interface elements. Below are the key settings you can configure to create a seamless and engaging chat interface:
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-17 at 2.02.35 AM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-03 at 4.09.49 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 * **Chatbot Introduction Message:** This is the initial message the chat agent sends when a user opens the chat window. It acts as a welcome message, giving the user an idea of what the chat agent can help with.
 
@@ -155,6 +155,24 @@ Epsilla provides multiple options to fine-tune the chat experience, allowing you
 * **Sample Questions:** This feature allows you to predefine a set of sample questions that appear as clickable suggestions below the chatbox. These suggestions help guide users who might not know what to ask or who need a starting point.
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-17 at 2.04.12 AM.png" alt="" width="563"><figcaption></figcaption></figure>
+
+* **Citations:** Users can configure how citations appear and interact within chat responses. These settings offer flexibility to tailor the presentation of sources and references.
+
+In the **How to show citations** option, users can select between two main display styles: a simple **Quotation Mark** style or a more detailed **Card** style. Quotation Mark is the default choice.
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-03 at 4.18.10 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+
+The **Card** style includes a brief title and description of the knowledge record, limited to three lines for readability. Additionally, users can choose to display a **Thumbnail** image along with the title, enhancing the visual context of the citation.
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-03 at 4.19.24 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+
+The **Behavior when clicking on a citation** setting controls when user click a citation in the message, how to show citation details in the drawer. By default, Epsilla will decide automatically. It will highlight PDF, or show the knowledge record content directly for non-PDF files.
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-03 at 4.20.32 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+
+When choosing **Webpage of the Provided URL**, Epsilla will fetch the linked webpage from the configured **URL field**  in the knowledge record and render the webpage.
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-03 at 4.21.17 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 * **Generate Follow-Up Questions:** This setting enables the chat agent to automatically generate follow-up questions based on the user’s previous queries. The questions are intended to keep the conversation flowing and prompt deeper engagement. You can even customize the prompt, and choose which LLM to power the generation.
 
