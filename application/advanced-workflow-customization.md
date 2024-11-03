@@ -279,6 +279,16 @@ The **Document String Reducer** then converts the merged and ranked results into
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-20 at 2.01.03 AM.png" alt="" width="563"><figcaption></figcaption></figure>
 
+### Display Workflow Progress
+
+LLM Completion nodes and Knowledge Retriever nodes are the most time-consuming steps in agent workflow execution. Epsilla allows you to enable **Display In Progress** to indicate when these nodes are in progress and to customize the descriptions of these nodes.
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-03 at 5.03.16 PM (2).png" alt="" width="352"><figcaption></figcaption></figure>
+
+When enabled, this feature provides end users with a much better experience while waiting for a long-running agent workflow to complete.
+
+{% embed url="https://youtu.be/fSX7GniUnes" %}
+
 ### Advanced Workflow Design Patterns
 
 In this section, we explore some common design patterns that can be used to further customize workflows in various scenarios. These patterns offer flexibility and control, enabling users to tailor the behavior of chat and smart search agents to meet specific needs. By implementing these strategies, you can optimize how your AI agent processes, retrieves, and responds to user queries, creating a more dynamic and effective experience. Keep in mind that these are just a few examples—your creativity can take these ideas even further. The possibilities are limitless!
