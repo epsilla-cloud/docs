@@ -1,5 +1,7 @@
 # Integration
 
+## Model Providers
+
 Integrating with large language models (LLMs) and embedding model providers in Epsilla allows users to tap into cutting-edge AI models for a variety of applications. Epsilla offers seamless connections to a range of providers such as OpenAI, Anthropic, and others, supporting models like GPT-4, Claude, Mistral, and embedding solutions like JinaAI, VoyageAI, etc.
 
 <figure><img src=".gitbook/assets/Screenshot 2024-10-14 at 12.50.11 AM.png" alt=""><figcaption></figcaption></figure>
@@ -21,3 +23,9 @@ By integrating your own LLM API key into Epsilla, all usage will be directly lin
 {% hint style="warning" %}
 OpenAI has a sophisticated API key billing system that includes multiple tiers, model access options, and rate limits, and this can make the integration overwhelming and confusing. If you encounter any issues during the API key validation process or have questions about your integration, feel free to reach out to us for assistance.
 {% endhint %}
+
+## Web Search Providers
+
+Web search providers enable your chat agent to retrieve real-time information from the internet. By integrating with services like Tavily, you can use their API to enhance the chat agent's capabilities with up-to-date web search functionality. Simply input and validate your API key to activate this feature, ensuring seamless access to internet-based knowledge for your AI agent.
+
+<figure><img src=".gitbook/assets/Screenshot 2024-11-22 at 1.04.20 AM.png" alt=""><figcaption></figcaption></figure>

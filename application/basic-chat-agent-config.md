@@ -109,7 +109,7 @@ The **Tools** section allows you to enhance the AI agent's capabilities by integ
 <figure><img src="../.gitbook/assets/Screenshot 2024-11-22 at 12.53.58 AM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 * The **Search the Internet** tool enables your chat agent to retrieve relevant information from the web. This feature can be customized to focus on specific domains or perform general searches. Below are the configurable settings:
-  * **Enable/Disable Search**: Toggle the tool on or off to activate or deactivate internet search capabilities for the chat agent.
+  * **Enable/Disable Search**: Toggle the tool on or off to activate or deactivate internet search capabilities for the chat agent. You will need add [Tavily integration](../integration.md#web-search-providers) before enabling it.
   * **Max Number of Results**: Define the maximum number of results the search should return. For example, you can set it to 5 to limit the number of results retrieved.
   * **Advanced Search**: Enable or disable advanced search options for more refined queries.
   * **Focus Search**: Narrow down search results by specifying one or more focus domains. For instance, you can add a domain such as `https://stackoverflow.com` to constrain retrieving results from that specific site. If leaving empty, the search will be from the whole internet.
