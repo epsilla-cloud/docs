@@ -191,6 +191,10 @@ When choosing **Webpage of the Provided URL**, Epsilla will fetch the linked web
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-11-03 at 4.21.17 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
+When choosing **Open the webpage of the provided URL in a new tab,** Epsilla will open the linked webpage from the configured **URL field** in a new browser tab.
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-22 at 9.40.12 AM.png" alt="" width="563"><figcaption></figcaption></figure>
+
 * **Generate Follow-Up Questions:** This setting enables the chat agent to automatically generate follow-up questions based on the user’s previous queries. The questions are intended to keep the conversation flowing and prompt deeper engagement. You can even customize the prompt, and choose which LLM to power the generation.
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-17 at 2.05.14 AM.png" alt="" width="563"><figcaption></figcaption></figure>
