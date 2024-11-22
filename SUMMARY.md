@@ -18,6 +18,7 @@
     * [Embedding](knowledge-base/advanced-settings/embedding.md)
     * [Data Parsing](knowledge-base/advanced-settings/data-parsing.md)
     * [Data Chunking](knowledge-base/advanced-settings/data-chunking.md)
+    * [Hypothetical Questions](knowledge-base/advanced-settings/hypothetical-questions.md)
     * [Webhook](knowledge-base/advanced-settings/webhook.md)
     * [Meta Data](knowledge-base/advanced-settings/meta-data.md)
   * [Data Storage](knowledge-base/data-storage.md)

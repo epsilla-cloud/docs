@@ -72,6 +72,7 @@ For each knowledge base you add, a corresponding retriever is automatically adde
 * **Number of Candidates:** This field controls how many records the retriever should pull from the knowledge base based on best match of chosen similarity search function. You can increase or decrease this number based on how many records you want the model to consider. The default value is 10.
 * **Retriever Type:** How to retrieve the records from the knowledge base.
   * **Basic Retriever:** The system retrieves the records as-is, without any further processing.
+  * **Hypothetical Question Retriever:** The system retrieves the [generated hypothetical questions](../knowledge-base/advanced-settings/hypothetical-questions.md)  via semantic search first, then traces back to the original documents.
   * (Coming soon) Other options: You may have more advanced retriever types depending on your specific use case, such as sentence-window retriever and auto-merging retriever.
 * **Filter (Optional):** If you want to apply semantic distance filters and meta data filters to refine the retrieved results, you can use this field.
   * **Example:** You can add a filter like `@distance < 0.7` to ensure that only records with a certain level of similarity (based on the distance between vectors) are returned. You can add a meta data filter like `Filename LIKE '%Instruction 1040%'` to constrain the results to only those documents related to IRS Instruction 1040, ensuring the chat agent retrieves information from highly relevant documents.
@@ -96,6 +97,22 @@ A reranker reorganizes the results retrieved by the chat agent, prioritizing the
 * **Jina AI Reranker:** This reranker leverages a pre-trained Jina AI reranker model, such as `jinaai/jina-reranker-v1-base-en`, to reorder documents with a learned ranking model. It applies more sophisticated machine learning techniques for reranking based on training data.
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-17 at 12.59.43 AM.png" alt="" width="563"><figcaption></figcaption></figure>
+
+### Tools
+
+The **Tools** section allows you to enhance the AI agent's capabilities by integrating additional skills. These tools enable the chat agent to perform specialized tasks, such as retrieving real-time information from the internet or accessing external systems, ensuring more dynamic and contextually relevant interactions.
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-22 at 12.52.44 AM.png" alt="" width="563"><figcaption></figcaption></figure>
+
+#### **Search the Internet**
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-22 at 12.53.58 AM.png" alt="" width="563"><figcaption></figcaption></figure>
+
+* The **Search the Internet** tool enables your chat agent to retrieve relevant information from the web. This feature can be customized to focus on specific domains or perform general searches. Below are the configurable settings:
+  * **Enable/Disable Search**: Toggle the tool on or off to activate or deactivate internet search capabilities for the chat agent.
+  * **Max Number of Results**: Define the maximum number of results the search should return. For example, you can set it to 5 to limit the number of results retrieved.
+  * **Advanced Search**: Enable or disable advanced search options for more refined queries.
+  * **Focus Search**: Narrow down search results by specifying one or more focus domains. For instance, you can add a domain such as `https://stackoverflow.com` to constrain retrieving results from that specific site. If leaving empty, the search will be from the whole internet.
 
 ### Configuring Chatbot Appearance
 
