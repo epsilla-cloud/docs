@@ -14,8 +14,12 @@ In most cases, the default Auto mode is sufficient. It automatically detects the
 
 If you only have one type of file in your knowledge base, you can optionally use PDF, CSV, or JSONL as your parsing option.
 
+When using CSV and JSONL as parsing option, Epsilla automatically detects the schema of uploaded CSV and JSON files, creating additional metadata fields for each column in a CSV or each object field in a JSON file. This ensures that all relevant data attributes are seamlessly integrated into the knowledge base. Additionally, users can define custom semantic indices on these fields, enabling advanced search and retrieval capabilities tailored to their specific needs. This functionality provides a flexible and efficient way to structure and index data for improved discoverability and analysis.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2024-12-01 at 7.45.14 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+
 ### When to use Advanced Parsing with Tables/Charts
 
-This option is currently available only for the Enterprise tier. It provides superior data extraction accuracy using an industry-leading Large Vision Language Model (VLM) technique provided by [CambioML](https://www.cambioml.com/). At present, we support only PDF files. This option can accurately extract text, nested tables, and charts from PDF files in any layout. Read more in our [white paper](https://epsilla.com/AnyParser\_Epsilla\_Whitepaper.pdf#zoom=100%).
+This option is currently available only for the Enterprise tier. It provides superior data extraction accuracy using an industry-leading Large Vision Language Model (VLM) technique provided by [CambioML](https://www.cambioml.com/). At present, we support only PDF files. This option can accurately extract text, nested tables, and charts from PDF files in any layout. Read more in our [white paper](https://epsilla.com/AnyParser_Epsilla_Whitepaper.pdf#zoom=100%).
 
 [Talk to us](https://epsilla-ai.larksuite.com/scheduler/4aca8159d1224454) if you want to use this technology without an Enterprise tier to test it out. We'd love to enable it for you and support your use case!
