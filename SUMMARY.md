@@ -10,6 +10,7 @@
 * [Knowledge Base](knowledge-base/README.md)
   * [Local Files](knowledge-base/local-files.md)
   * [Website](knowledge-base/website.md)
+  * [Google Drive](knowledge-base/google-drive.md)
   * [S3](knowledge-base/s3.md)
   * [Notion](knowledge-base/notion.md)
   * [Share Point](knowledge-base/share-point.md)
