@@ -14,6 +14,7 @@
   * [S3](knowledge-base/s3.md)
   * [Notion](knowledge-base/notion.md)
   * [Share Point](knowledge-base/share-point.md)
+  * [Google Cloud Storage](knowledge-base/google-cloud-storage.md)
   * [Advanced Settings](knowledge-base/advanced-settings/README.md)
     * [Auto Sync](knowledge-base/advanced-settings/auto-sync.md)
     * [Embedding](knowledge-base/advanced-settings/embedding.md)
