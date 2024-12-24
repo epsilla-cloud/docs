@@ -17,6 +17,7 @@
   * [Google Cloud Storage](knowledge-base/google-cloud-storage.md)
   * [Azure Blob Storage](knowledge-base/azure-blob-storage.md)
   * [Confluence](knowledge-base/confluence.md)
+  * [Jira](knowledge-base/jira.md)
   * [Advanced Settings](knowledge-base/advanced-settings/README.md)
     * [Auto Sync](knowledge-base/advanced-settings/auto-sync.md)
     * [Embedding](knowledge-base/advanced-settings/embedding.md)

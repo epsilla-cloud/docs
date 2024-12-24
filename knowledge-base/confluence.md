@@ -10,7 +10,7 @@ Choose **Confluence** to continue.
 
 ### **Knowledge Base Name**
 
-Provide a **Knowledge Base Name**. A valid name should start with a letter or `_`, and can contain only letters, digits, underscores, and whitespaces.
+Provide a **Knowledge Base Name**. A valid name should start with a letter or `_`, and can contain only letters, digits, underscores, and whitespaces. Example: `MyConfluenceDocs`.
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-12-24 at 11.36.35 AM.png" alt="" width="563"><figcaption></figcaption></figure>
 
