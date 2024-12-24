@@ -6,6 +6,8 @@ Currently, the following data source types support Auto Sync:
 
 * SharePoint
 * S3
+* Confluence
+* Jira
 
 ### Enable Auto Sync
 
