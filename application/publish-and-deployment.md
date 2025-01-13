@@ -2,7 +2,7 @@
 
 Once you've built and configured your AI agent on Epsilla's platform, you can easily publish and deploy it for broader usage. The platform provides several options to control access and deploy the agent on different platforms, either as a web component or via API integration. This guide will walk you through the steps of publishing and deploying your AI agent.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-14 at 12.01.30 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-01-14 at 1.54.34 AM.png" alt=""><figcaption></figcaption></figure>
 
 ### Access Control Configuration
 
@@ -73,3 +73,25 @@ For Smart Search agent, the following APIs are provided:
 * **Delete a search**
 
 With the REST API integration, Epsilla enables you to build custom applications leveraging AI capabilities, making it easier to automate interactions, streamline processes, and deliver intelligent responses at scale.
+
+#### **WhatsApp**
+
+To enable WhatsApp access for your Epsilla AI agent, ensure that the access control setting is configured as "Anyone with the link."&#x20;
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-01-14 at 1.55.50 AM.png" alt=""><figcaption></figcaption></figure>
+
+Once enabled, a QR code will be generated for the WhatsApp access. Share this QR code with your users:
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-01-14 at 1.55.26 AM.png" alt=""><figcaption></figcaption></figure>
+
+After scanning the QR code, your users need to send a pre-filled message to initiate conversations with your AI agent.
+
+<figure><img src="../.gitbook/assets/IMG_9846.PNG" alt="" width="188"><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/IMG_9847 (1).PNG" alt="" width="188"><figcaption></figcaption></figure>
+
+Now, your user is ready to chat with your AI agent on WhatsApp!
+
+<figure><img src="../.gitbook/assets/IMG_9848.PNG" alt="" width="188"><figcaption></figcaption></figure>
+
+This streamlined deployment method makes it easier to reach a broader audience while maintaining an intuitive and accessible communication channel through WhatsApp.
