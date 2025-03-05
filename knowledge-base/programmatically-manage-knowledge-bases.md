@@ -98,7 +98,7 @@ curl -X POST https://etl.epsilla.com/api/v1/datasources/<project_id>/create \
 **Request**
 
 ```bash
-curl -X PUT https://etl.epsilla.com/api/v1/datasources/<project_id>/pipelines/update/<datasource_id> \
+curl -X PUT https://etl.epsilla.com/api/v1/datasources/<project_id>/pipeline/update/<datasource_id> \
      -H "X-API-Key: <Project-API-Key>" \
      -d '{"auto_sync": true, "sync_schedule": "15min"}' # Only provide the entries that need to be updated
 ```
@@ -120,7 +120,7 @@ curl -X PUT https://etl.epsilla.com/api/v1/datasources/<project_id>/pipelines/up
 **Request**
 
 ```bash
-curl -X POST https://etl.epsilla.com/api/v1/datasources/<project_id>/pipelines/<datasource_id> \
+curl -X POST https://etl.epsilla.com/api/v1/datasources/<project_id>/pipeline/<datasource_id> \
      -H "X-API-Key: <Project-API-Key>"
 ```
 
