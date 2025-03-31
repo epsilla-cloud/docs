@@ -43,6 +43,7 @@
 * [Team Member Management](team-member-management.md)
 * [Project Management](project-management.md)
 * [Billing Management](billing-management.md)
+* [Release Notes](release-notes.md)
 
 ## Epsilla Vector Database
 
