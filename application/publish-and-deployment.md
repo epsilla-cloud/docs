@@ -95,3 +95,27 @@ Now, your user is ready to chat with your AI agent on WhatsApp!
 <figure><img src="../.gitbook/assets/IMG_9848.PNG" alt="" width="188"><figcaption></figcaption></figure>
 
 This streamlined deployment method makes it easier to reach a broader audience while maintaining an intuitive and accessible communication channel through WhatsApp.
+
+#### **MCP**
+
+Epsilla supports **Model Context Protocol (MCP) integration**, allowing your AI agent to connect seamlessly with other MCP-compatible tools and platforms. This enables your agent to go beyond simple Q\&A—letting it interact with other systems and take real actions.
+
+Ensure that the access control setting is configured as "Anyone with the link."&#x20;
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 9.07.08 PM.png" alt=""><figcaption></figcaption></figure>
+
+Once you’ve published your AI agent, you’ll see the **MCP server config** available:
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 9.08.36 PM.png" alt=""><figcaption></figcaption></figure>
+
+Copy the config snippet and paste it into your target MCP-supported platform (such as Cursor or other compatible apps).
+
+Test the connection to confirm your agent is properly registered and discoverable.
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 9.09.55 PM (1).png" alt=""><figcaption></figcaption></figure>
+
+Now, your agent can be called by the other platforms as an extension to their capability.
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 9.13.16 PM.png" alt=""><figcaption></figcaption></figure>
+
+This integration expands your agent’s reach—letting it operate as part of a **broader AI ecosystem** with minimal setup.
