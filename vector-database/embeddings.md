@@ -154,7 +154,7 @@ Here is the list of built-in embedding models Epsilla supports:
 docker run --pull=always -d -p 8888:8888 -e EMBEDDING_MODELS="BAAI/bge-small-zh-v1.5,BAAI/bge-base-en" epsilla/vectordb
 ```
 
-When using these built-in embedding models, the embedding are conducted within your local laptop without outbound network. They use CPU first to do the embedding. So make sure you have enough CPU power and memory to handle the models before enabling them.&#x20;
+When using these built-in embedding models, the embedding are conducted within your local laptop without outbound network. They use CPU first to do the embedding. So make sure you have enough CPU power and memory to handle the models before enabling them.
 
 ## OpenAI Embedding
 
@@ -293,9 +293,17 @@ Epsilla supports these VoyageAI embedding models (learn more about Voyage AI emb
 | Name                                 | Dimensions |
 | ------------------------------------ | ---------- |
 | **voyageai/voyage-large-2**          | 1536       |
-| **voyageai/voyage-2**                | 1024       |
 | **voyageai/voyage-code-2**           | 1536       |
+| **voyageai/voyage-2**                | 1024       |
+| **voyageai/voyage-02**               | 1024       |
+| **voyageai/voyage-law-2**            | 1024       |
+| **voyageai/voyage-finance-2**        | 1024       |
+| **voyageai/voyage-multilingual-2**   | 1024       |
 | **voyageai/voyage-lite-02-instruct** | 1024       |
+| **voyageai/voyage-3-large**          | 1024       |
+| **voyageai/voyage-3**                | 1024       |
+| **voyageai/voyage-3-lite**           | 512        |
+| **voyageai/voyage-code-3**           | 1024       |
 
 When using Voyage AI embedding on Docker, make sure provide the **X-VoyageAI-API-Key** header when connecting to the vector database:
 
@@ -551,4 +559,3 @@ await db.createTable(
 ```
 {% endtab %}
 {% endtabs %}
-

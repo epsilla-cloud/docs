@@ -1,45 +1,29 @@
-# Home
+# Welcome
 
-Epsilla is an open-source vector database. Our focus is on ensuring scalability, high performance, and cost-effectiveness of vector search. Epsilla bridges the gap between information retrieval and memory retention in Large Language Models. We see ourselves as the **Hippocampus for AI**.
+Welcome to the **Epsilla Documentation**, your comprehensive guide to building, deploying, and managing AI agents powered by your private data and knowledge. Whether you're just starting out or are a seasoned GenAI expert, this documentation is designed to support your journey with Epsilla.
 
-## Common use cases
+#### What is Epsilla?
 
-Here are some common use cases of Epsilla vector database
+Epsilla is an **all-in-one platform** for creating AI agents tailored to your domain expertise. With a powerful interface, flexible customization options, and built-in Retrieval-Augmented Generation (RAG) capabilities, Epsilla simplifies the process of deploying AI agents, from concept to production. Our platform caters to professionals from various industries, empowering them to build and scale AI solutions without needing advanced technical skills.
 
-### 1. Augmenting LLMs with Proprietary Data
+Watch this quick 2-minute demo to learn about Epsilla:
 
-**Problem:** LLMs don’t have latest knowledge about the world (e.g., GPT-4 has a knowledge cutoff of April 2023), and don’t have knowledge about any private data (e.g., your company's knowledge base)
+{% embed url="https://www.youtube.com/watch?v=ZhBPsxr2AL0" %}
 
-**Our solution:** Augment LLMs by adding semantically similar information retrieved from vector database into the prompt (also known as [Retrieval Augmented Generation](https://ai.meta.com/blog/retrieval-augmented-generation-streamlining-the-creation-of-intelligent-natural-language-processing-models/)).
+#### Who is this Documentation For?
 
-**Benefits:** Enable the LLMs to work for your own data and knowledge. Compare to using fine-tuning, RAG has a much faster time-to-value, is much cheaper for both engineering cost and hardware cost, and support real time knowledge updates.\
+* **Domain Professionals**: Want to build AI agents without writing code? We guide you through setting up your agent in minutes, optimizing it for your specific knowledge base.
+* **GenAI Builders**: Looking for deeper customization? Learn how to configure workflows, prompts, and advanced RAG techniques to fine-tune your AI agent's performance.
+* **Enterprises**: Ready to scale? Our platform supports enterprise-level infrastructure, security, and scalability for high-demand environments.
 
+#### Support & Community
 
-<figure><img src=".gitbook/assets/Screenshot 2023-09-18 at 7.07.38 PM (1).png" alt="" width="563"><figcaption></figcaption></figure>
+Have questions or need help? Our community and support channels are here for you. Contact us at info@epsilla.com, or join the [**Discord Channel**](https://discord.gg/ZhJxn8TN) to connect with other users and share insights.
 
-<figure><img src=".gitbook/assets/Screenshot 2024-02-14 at 4.35.55 PM.png" alt=""><figcaption><p>Example: Upload IRS tax publications</p></figcaption></figure>
+You can also chat with us via the **Help Me** chatbox at the bottom right corner of our website:
 
-<figure><img src=".gitbook/assets/Screenshot 2024-02-14 at 4.37.25 PM.png" alt=""><figcaption><p>Example: Build a tax assistant chatbot augmented by IRS publications</p></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2024-09-20 at 8.21.17 AM.png" alt="" width="92"><figcaption></figcaption></figure>
 
-### 2. Build Better Recommendation Systems
+Or click the Help Me at the left side navigation bar after you register and login to [**Epsilla Cloud**](https://cloud.epsilla.com)**:**
 
-**Problem:** It’s really hard to improve recommendation result relevance, and even harder to build a scalable realtime recommendation system.
-
-**Our Solution:** Use embedding as the bridge between incomparable data types to leverage the hidden relevance of user behavioral data during recommendation.
-
-**Benefits:** Vector DB that leverages the hidden relevance improves recommendation recall. Epsilla’s low query latency is vital to building a realtime recommendation system.
-
-<figure><img src=".gitbook/assets/renchusong_draw_a_recommendation_system_with_input_product_imag_b9b02df5-bc55-4c5a-ac75-466bb16339be.png" alt="" width="563"><figcaption></figcaption></figure>
-
-### 3. Find Hidden Insights From Unstructured Data
-
-**Problem:** It’s really hard to analyze and query unstructured data (images, audios, videos) based on their content semantics.
-
-**Our Solution:** Connect and index the unstructured data based on the semantic relevance of their content, and enable multimodal search and analytics.
-
-**Benefits:** Multimodal search becomes as easy as text search. No need to manually label unstructured data and convert to structured data anymore.
-
-<figure><img src=".gitbook/assets/Recomendation System.drawio (1).png" alt="" width="563"><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/Screenshot 2023-09-26 at 12.36.44 PM.png" alt="" width="563"><figcaption></figcaption></figure>
-
+<figure><img src=".gitbook/assets/Screenshot 2024-09-20 at 8.22.29 AM.png" alt="" width="194"><figcaption></figcaption></figure>
