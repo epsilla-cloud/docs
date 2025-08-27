@@ -33,6 +33,7 @@
   * [Basic Chat Agent Config](application/basic-chat-agent-config.md)
   * [Basic Smart Search Agent Config](application/basic-smart-search-agent-config.md)
   * [Advanced Workflow Customization](application/advanced-workflow-customization.md)
+  * [Version Control](application/version-control.md)
   * [Publish and Deployment](application/publish-and-deployment.md)
   * [User Engagement Analytics](application/user-engagement-analytics.md)
 * [Evaluation](evaluation/README.md)
