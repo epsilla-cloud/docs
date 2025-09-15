@@ -56,7 +56,7 @@ The agent will now dynamically select and invoke appropriate external tools via 
 
 ### Publishing Your Epsilla Agent as an MCP Server
 
-Epsilla allows you to **expose any agent** as an MCP-compatible tool server so it can be used by other platforms (like Cursor, Claude Desktop, and other MCP clients).
+Epsilla allows you to **expose any agent** as an MCP-compatible tool server so it can be used by other platforms (like Cursor, Claude Desktop, **another Epsilla AI agent**, and other MCP clients).
 
 Ensure that the access control setting is configured as "Anyone with the link."&#x20;
 
