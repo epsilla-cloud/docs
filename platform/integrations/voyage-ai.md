@@ -10,6 +10,9 @@ Epsilla integrates with Voyage AI with the following embedding models:
 
 | Name                                 | Dimensions |
 |--------------------------------------|------------|
+| **voyageai/voyage-4-large**          | 1024       |
+| **voyageai/voyage-4**                | 1024       |
+| **voyageai/voyage-4-lite**           | 1024       |
 | **voyageai/voyage-multimodal-3**     | 1024       |
 | **voyageai/voyage-context-3**        | 1024       |
 | **voyageai/voyage-3.5**              | 1024       |

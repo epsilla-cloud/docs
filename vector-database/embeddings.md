@@ -292,6 +292,9 @@ Epsilla supports these VoyageAI embedding models (learn more about Voyage AI emb
 
 | Name                                 | Dimensions |
 | ------------------------------------ | ---------- |
+| **voyageai/voyage-4-large**          | 1024       |
+| **voyageai/voyage-4**                | 1024       |
+| **voyageai/voyage-4-lite**           | 1024       |
 | **voyageai/voyage-large-2**          | 1536       |
 | **voyageai/voyage-code-2**           | 1536       |
 | **voyageai/voyage-2**                | 1024       |
