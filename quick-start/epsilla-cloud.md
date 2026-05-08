@@ -6,7 +6,7 @@ description: Get your cloud hosted Epsilla vector database up and running within
 
 ## 1. Sign up Epsilla Cloud
 
-Create an Epsilla Cloud account at [https://cloud.epsilla.com/](https://cloud.epsilla.com/), then sign in. You will get $25 free credit.
+Create an Epsilla Cloud account at [https://cloud.epsilla.com/](https://cloud.epsilla.com/), then sign in.
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-11-21 at 9.15.04 PM.png" alt="" width="292"><figcaption></figcaption></figure>
 

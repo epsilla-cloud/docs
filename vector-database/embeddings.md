@@ -154,7 +154,7 @@ Here is the list of built-in embedding models Epsilla supports:
 docker run --pull=always -d -p 8888:8888 -e EMBEDDING_MODELS="BAAI/bge-small-zh-v1.5,BAAI/bge-base-en" epsilla/vectordb
 ```
 
-When using these built-in embedding models, the embedding are conducted within your local laptop without outbound network. They use CPU first to do the embedding. So make sure you have enough CPU power and memory to handle the models before enabling them.&#x20;
+When using these built-in embedding models, the embedding are conducted within your local laptop without outbound network. They use CPU first to do the embedding. So make sure you have enough CPU power and memory to handle the models before enabling them.
 
 ## OpenAI Embedding
 
@@ -162,7 +162,7 @@ Epsilla supports these OpenAI embedding models:
 
 <table><thead><tr><th width="313">Name</th><th width="134">Dimensions</th><th>Support Dimension Reduction</th></tr></thead><tbody><tr><td><strong>openai/text-embedding-3-large</strong></td><td>3072</td><td>Yes</td></tr><tr><td><strong>openai/text-embedding-3-small</strong></td><td>1536</td><td>Yes</td></tr><tr><td><strong>openai/text-embedding-ada-002</strong></td><td>1536</td><td>No</td></tr></tbody></table>
 
-When using OpenAI embedding, make sure provide the **X-OpenAI-API-Key** header when connecting to the vector database:
+When using OpenAI embedding on Docker, make sure provide the **X-OpenAI-API-Key** header when connecting to the vector database:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -187,6 +187,10 @@ const db = new epsillajs.EpsillaDB({
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+If you are using Epsilla Cloud, make sure to add [OpenAI integration](../platform/integrations/openai.md) instead of passing the header.
+{% endhint %}
 
 And use the embedding model when defining the index:
 
@@ -226,7 +230,7 @@ Epsilla supports these JinaAI embedding models (learn more about Jina AI embeddi
 | **jinaai/jina-embeddings-v2-base-code** | 768        |
 | **jinaai/jina-embeddings-v2-small-en**  | 512        |
 
-When using Jina AI embedding, make sure provide the **X-JinaAI-API-Key** header when connecting to the vector database:
+When using Jina AI embedding on Docker, make sure provide the **X-JinaAI-API-Key** header when connecting to the vector database:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -251,6 +255,10 @@ const db = new epsillajs.EpsillaDB({
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+If you are using Epsilla Cloud, make sure to add [JinaAI integration](../platform/integrations/jina-ai.md) instead of passing the header.
+{% endhint %}
 
 And use the embedding model when defining the index:
 
@@ -290,9 +298,19 @@ Epsilla supports these VoyageAI embedding models (learn more about Voyage AI emb
 | **voyageai/voyage-law-2**            | 1024       |
 | **voyageai/voyage-code-2**           | 1536       |
 | **voyageai/voyage-large-2**          | 1536       |
+| **voyageai/voyage-code-2**           | 1536       |
 | **voyageai/voyage-2**                | 1024       |
+| **voyageai/voyage-02**               | 1024       |
+| **voyageai/voyage-law-2**            | 1024       |
+| **voyageai/voyage-finance-2**        | 1024       |
+| **voyageai/voyage-multilingual-2**   | 1024       |
+| **voyageai/voyage-lite-02-instruct** | 1024       |
+| **voyageai/voyage-3-large**          | 1024       |
+| **voyageai/voyage-3**                | 1024       |
+| **voyageai/voyage-3-lite**           | 512        |
+| **voyageai/voyage-code-3**           | 1024       |
 
-When using Voyage AI embedding, make sure provide the **X-VoyageAI-API-Key** header when connecting to the vector database:
+When using Voyage AI embedding on Docker, make sure provide the **X-VoyageAI-API-Key** header when connecting to the vector database:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -317,6 +335,10 @@ const db = new epsillajs.EpsillaDB({
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+If you are using Epsilla Cloud, make sure to add [VoyageAI integration](../platform/integrations/voyage-ai.md) instead of passing the header.
+{% endhint %}
 
 And use the embedding model when defining the index:
 
@@ -358,7 +380,7 @@ Epsilla supports these Mixedbread AI embedding models (learn more about Mixedbre
 | **mixedbreadai/multilingual-e5-base**  | 768        |
 | **mixedbreadai/gte-large-zh**          | 1024       |
 
-When using Mixedbread AI embedding, make sure provide the **X-MixedbreadAI-API-Key** header when connecting to the vector database:
+When using Mixedbread AI embedding on Docker, make sure provide the **X-MixedbreadAI-API-Key** header when connecting to the vector database:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -383,6 +405,10 @@ const db = new epsillajs.EpsillaDB({
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+If you are using Epsilla Cloud, make sure to add [Mixedbread AI integration](../platform/integrations/mixedbread-ai.md) instead of passing the header.
+{% endhint %}
 
 And use the embedding model when defining the index:
 
@@ -419,7 +445,7 @@ Epsilla supports these Nomic AI embedding models (learn more about Nomic AI embe
 | **nomicai/nomic-embed-text-v1.5** | 768        |
 | **nomicai/nomic-embed-text-v1**   | 768        |
 
-When using Nomic AI embedding, make sure provide the **X-NOMIC-API-Key** header when connecting to the vector database:
+When using Nomic AI embedding on Docker, make sure provide the **X-NOMIC-API-Key** header when connecting to the vector database:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -444,6 +470,10 @@ const db = new epsillajs.EpsillaDB({
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+If you are using Epsilla Cloud, make sure to add [Nomic AI integration](../platform/integrations/nomic-ai.md) instead of passing the header.
+{% endhint %}
 
 And use the embedding model when defining the index:
 
@@ -479,7 +509,7 @@ Epsilla supports these Mistral AI embedding models (learn more about Mistral AI 
 | --------------------------- | ---------- |
 | **mistralai/mistral-embed** | 1024       |
 
-When using Mixedbread AI embedding, make sure provide the **X-MistralAI-API-Key** header when connecting to the vector database:
+When using Mistral AI embedding on Docker, make sure provide the **X-MistralAI-API-Key** header when connecting to the vector database:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -504,6 +534,10 @@ const db = new epsillajs.EpsillaDB({
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+If you are using Epsilla Cloud, make sure to add [Mistral AI integration](../platform/integrations/mistral-ai.md) instead of passing the header.
+{% endhint %}
 
 And use the embedding model when defining the index:
 
@@ -530,4 +564,3 @@ await db.createTable(
 ```
 {% endtab %}
 {% endtabs %}
-

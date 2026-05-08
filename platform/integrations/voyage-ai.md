@@ -2,7 +2,7 @@
 
 On Epsilla Cloud, you can enable Voyage AI integration by providing your Voyage AI API key (we securely manage your keys using AWS KMS):
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-01-10 at 10.54.00 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-05-18 at 8.52.45 AM.png" alt=""><figcaption></figcaption></figure>
 
 ## Embeddings
 
@@ -10,6 +10,14 @@ Epsilla integrates with Voyage AI with the following embedding models:
 
 | Name                                 | Dimensions |
 |--------------------------------------|------------|
+| **voyageai/voyage-multimodal-3**     | 1024       |
+| **voyageai/voyage-context-3**        | 1024       |
+| **voyageai/voyage-3.5**              | 1024       |
+| **voyageai/voyage-3.5-lite**         | 512        |
+| **voyageai/voyage-3-large**          | 1024       |
+| **voyageai/voyage-3**                | 1024       |
+| **voyageai/voyage-3-lite**           | 512        |
+| **voyageai/voyage-code-3**           | 1024       |
 | **voyageai/voyage-large-2-instruct** | 1024       |
 | **voyageai/voyage-finance-2**        | 1024       |
 | **voyageai/voyage-multilingual-2**   | 1024       |
